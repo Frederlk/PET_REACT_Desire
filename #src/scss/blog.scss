@@ -1,0 +1,536 @@
+.breadcrumbs {
+   &_blog {
+      @include adaptiv-value("margin-bottom", 60, 20, 1);
+   }
+}
+
+.page {
+   &__blog-content {
+      @include adaptiv-value("margin-bottom", 60, 40, 1);
+   }
+}
+
+.blog-content {
+   &_post {
+      margin-bottom: 40px;
+   }
+   &__container {
+      display: flex;
+      @media (max-width: $md3+px) {
+         flex-wrap: wrap;
+      }
+   }
+
+   &__fill {
+      min-width: 0;
+      flex: 0 1 730px;
+      margin: 0px 15px 0px 0px;
+      @media (max-width: $md3+px) {
+         flex: 1 1 100%;
+         @include adaptiv-value("margin-bottom", 60, 40, 1);
+         margin-right: 0;
+      }
+   }
+
+   &__sidebar {
+      flex: 0 1 350px;
+      margin: 0px 0px 0px 15px;
+      @media (max-width: $md3+px) {
+         flex: 1 1 100%;
+         margin: 0;
+      }
+   }
+}
+.fill {
+   &__item {
+      @include adaptiv-value("margin-bottom", 70, 40, 1);
+      &_post {
+         margin-bottom: 0;
+      }
+   }
+   &__quote {
+      @include adaptiv-value("padding-bottom", 50, 25, 1);
+   }
+
+   &__bottom {
+   }
+}
+
+.quote {
+   &__body {
+      @include adaptiv-value("padding-right", 65, 20, 1);
+      @include adaptiv-value("padding-left", 65, 20, 1);
+      @include adaptiv-value("padding-top", 55, 15, 1);
+      @include adaptiv-value("padding-bottom", 55, 15, 1);
+      background-color: rgba(223, 223, 223, 0.5);
+      text-align: center;
+   }
+
+   &__label {
+      @extend .quote;
+      position: relative;
+      &::after {
+         content: "";
+         @extend .line;
+         @include adaptiv-value("width", 200, 50, 1);
+         transform: translate(-50%, 0px);
+         left: 50%;
+      }
+      @include adaptiv-value("padding-bottom", 25, 15, 1);
+      @include adaptiv-value("margin-bottom", 25, 15, 1);
+   }
+
+   &__author {
+      @extend .subtitle;
+      font-style: normal;
+      color: rgba(54, 56, 56, 0.9);
+   }
+}
+
+.pagination-fill {
+   &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+         margin: 0px 6px;
+         @extend .link;
+         color: #707070;
+      }
+   }
+
+   &__prev,
+   &__next,
+   &__number {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+      &._active {
+         color: #363838;
+      }
+   }
+
+   &__number {
+   }
+
+   &__dots {
+   }
+
+   &__next {
+   }
+}
+
+//========================================================================================================================================================
+
+.sidebar {
+   @media (max-width: $md3+px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+   }
+   &__categories,
+   &__posts,
+   &__tags {
+      @media (max-width: $md3+px) {
+         flex: 1 1 100%;
+      }
+   }
+   &__categories {
+      @include adaptiv-value("margin-bottom", 45, 20, 1);
+   }
+
+   &__label {
+      @extend .subtitle;
+      @include adaptiv-value("margin-bottom", 20, 15, 1);
+   }
+
+   &__list {
+      li {
+         @include adaptiv-value("margin-bottom", 12, 10, 1);
+         span {
+            @extend .text;
+            margin: 0px 0px 0px 5px;
+         }
+         &:last-child {
+            margin: 0px 0px 0px 0px;
+         }
+      }
+   }
+
+   &__link {
+      @extend .text;
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+   }
+
+   &__posts {
+      @include adaptiv-value("margin-bottom", 45, 20, 1);
+   }
+
+   &__post {
+      @include adaptiv-value("margin-bottom", 12, 10, 1);
+   }
+
+   &__post-text {
+      @extend .text;
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+   }
+
+   &__post-bottom {
+      font-size: 14px;
+      line-height: 28 / 14 * 100%;
+      color: #a1a1a1;
+   }
+
+   &__post-date,
+   &__post-name {
+      color: inherit;
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+   }
+
+   &__post-name {
+   }
+
+   &__tags {
+      @include adaptiv-value("margin-bottom", 50, 20, 1);
+   }
+
+   &__tags-tag {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 28px;
+      white-space: nowrap;
+      margin: 0px 5px 10px 0px;
+      padding: 0px 14px;
+      color: #8f8d8d;
+      @extend .link;
+      transition: all 0.3s ease 0s;
+      border: 1px solid rgba(69, 70, 71, 0.5);
+      border-radius: 14px;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+   }
+
+   &__social {
+      display: flex;
+      align-items: center;
+   }
+
+   &__social-item {
+      margin: 0px 20px 0px 0px;
+      &::before {
+         font-size: 16px;
+         transition: all 0.3s ease 0s;
+         color: #5a5a5a;
+      }
+      @media (min-width: $md2+px) {
+         &:hover {
+            &::before {
+               color: #363838;
+            }
+         }
+      }
+      &:last-child {
+         margin: 0px 0px 0px 0px;
+      }
+   }
+}
+.sidebar-form {
+   position: relative;
+   @include adaptiv-value("margin-bottom", 45, 20, 1);
+   &__input {
+      padding-right: 45px;
+   }
+
+   &__btn {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background-color: #fff;
+      font-size: 17px;
+   }
+}
+
+//========================================================================================================================================================
+
+.post-quote {
+   &__body {
+      @include adaptiv-value("padding-right", 42, 20, 1);
+      @include adaptiv-value("padding-left", 42, 20, 1);
+   }
+
+   &__label {
+      @extend .quote;
+      position: relative;
+      &::after {
+         content: "";
+         @extend .line;
+         @include adaptiv-value("width", 200, 50, 1);
+      }
+      @include adaptiv-value("padding-bottom", 25, 15, 1);
+      @include adaptiv-value("margin-bottom", 25, 15, 1);
+      @media (max-width: $md3+px) {
+         &::after {
+            left: 50%;
+            transform: translate(-50%, 0px);
+         }
+      }
+   }
+
+   &__author {
+      @extend .subtitle;
+      font-style: normal;
+      color: rgba(54, 56, 56, 0.9);
+   }
+}
+
+//========================================================================================================================================================
+
+.bottom-fill {
+   &__more {
+      @include adaptiv-value("margin-top", 30, 10, 1);
+      @include adaptiv-value("margin-bottom", 40, 20, 1);
+      position: relative;
+      @include adaptiv-value("min-height", 130, 60, 1);
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #dfdfdf;
+      border-bottom: 1px solid #dfdfdf;
+      padding: 10px 0px;
+   }
+
+   &__slider {
+      min-width: 0;
+   }
+
+   &__slide {
+      display: flex;
+      @include adaptiv-value("padding-right", 30, 15, 1);
+      @include adaptiv-value("padding-left", 30, 15, 1);
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 600px) {
+         justify-content: center;
+      }
+   }
+
+   &__text {
+      @extend .link;
+      color: #707070;
+      flex: 0 1 243px;
+      transition: all 0.3s ease 0s;
+      &:last-child {
+         text-align: right;
+      }
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #383838;
+         }
+      }
+      @media (max-width: 600px) {
+         &:first-child {
+            display: none;
+         }
+         &:last-child {
+            text-align: center;
+         }
+      }
+   }
+
+   &__navigation {
+   }
+
+   &__navigation-arrow {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translate(0%, -50%);
+      display: flex;
+      @include adaptiv-font(23, 18, 1);
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #707070;
+         }
+      }
+      &_prev {
+         left: 0;
+      }
+
+      &_next {
+         right: 0;
+      }
+   }
+
+   &__coments {
+   }
+
+   &__form {
+   }
+}
+
+//========================================================================================================================================================
+
+.coments-fill {
+   &__title {
+      color: #363838;
+      @extend .subtitle_md;
+      margin-bottom: 20px;
+      @media (max-width: $md4+px) {
+         text-align: center;
+      }
+   }
+
+   &__body {
+   }
+}
+.body-coments-fill {
+   &__coment {
+      display: flex;
+      margin-bottom: 40px;
+      @media (max-width: $md4+px) {
+         flex-wrap: wrap;
+      }
+   }
+   &__avatar {
+      flex: 0 0 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0px 15px 0px 0px;
+      img {
+         max-width: 100%;
+      }
+      @media (max-width: $md4+px) {
+         height: 48px;
+         flex: 0 0 48px;
+      }
+   }
+
+   &__content {
+      flex: 1 1 auto;
+   }
+
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px -10px 10px -10px;
+   }
+
+   &__info {
+      padding: 0px 10px;
+   }
+
+   &__name {
+      @extend .subtitle;
+      color: #363838;
+   }
+
+   &__date {
+      font-size: 14px;
+      line-height: 28 / 14 * 100%;
+      color: #a1a1a1;
+   }
+
+   &__reply {
+      padding: 0px 10px;
+      text-align: right;
+      @extend .link;
+      color: #707070;
+      transition: all 0.3s ease 0s;
+      @media (min-width: $md2+px) {
+         &:hover {
+            color: #363838;
+         }
+      }
+   }
+
+   &__text {
+      @extend .text;
+      @media (max-width: $md4+px) {
+         flex: 1 1 100%;
+         text-align: center;
+      }
+   }
+}
+
+//========================================================================================================================================================
+
+.form-fill {
+   @include adaptiv-value("margin-bottom", 60, 20, 1);
+   &__body {
+   }
+   &__row {
+      display: flex;
+      margin: 0px -5px;
+      @media (max-width: $md3+px) {
+         flex-wrap: wrap;
+      }
+   }
+   &__title {
+      @extend .subtitle;
+      @include adaptiv-value("margin-bottom", 25, 20, 1);
+      @media (max-width: $md4+px) {
+         text-align: center;
+      }
+   }
+
+   &__textarea {
+      @include adaptiv-value("margin-bottom", 12, 10, 1);
+   }
+
+   &__input {
+      margin: 0px 5px;
+      @include adaptiv-value("margin-bottom", 20, 15, 1);
+      flex: 0 1 50%;
+      @media (max-width: $md3+px) {
+         flex: 1 1 100%;
+      }
+   }
+
+   &__checkbox {
+      display: block;
+      @include adaptiv-value("margin-bottom", 20, 15, 1);
+      @media (max-width: $md4+px) {
+         display: flex;
+         justify-content: center;
+      }
+   }
+
+   &__checkbox-input {
+   }
+   &__checkbox-text {
+   }
+   &__btn {
+      padding: 0px 50px;
+      @media (max-width: $md4+px) {
+         display: flex;
+         width: 100%;
+      }
+   }
+}

@@ -1,0 +1,11 @@
+.breadcrumbs {
+   &_gallery {
+      @include adaptiv-value("margin-bottom", 85, 40, 1);
+   }
+}
+
+.gallery {
+   &_land {
+      @include adaptiv-value("margin-bottom", 120, 40, 1);
+   }
+}
