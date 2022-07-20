@@ -4,22 +4,65 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 .input {
-	border-radius: 0 !important;
-	width: 100%;
-	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._focus {
-	}
-	&._error {
-	}
+    border-radius: 0 !important;
+    width: 100%;
+    display: block;
+    padding: 0px 20px;
+    border: 1px solid #eee;
+    &._focus {
+    }
+    &._error {
+    }
 }
 textarea.input {
-	resize: none;
-	padding: 0px 0px;
+    resize: none;
+    padding: 0px 0px;
+}
+
+//========================================================================================================================================================
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0px 18px;
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    color: #a1a1a1;
+    font-size: 16px;
+    line-height: 28 / 16 * 100%;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+    &._focus {
+        border: 1px solid hsla(0, 2%, 22%, 1);
+        color: #363838;
+    }
+    &._error {
+        border: 1px solid red;
+        color: red;
+    }
+    &_footer {
+        border: 1px solid hsla(0, 2%, 22%, 1);
+    }
+}
+textarea.input {
+    resize: none;
+    min-height: 125px;
+    padding: 14px 18px;
+    border-radius: 24px;
 }

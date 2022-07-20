@@ -1,1 +1,155 @@
-// Заголовки, общие БЄМ блоки и проче...
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+.subtitle {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22 / 16 * 100%;
+}
+.subtitle_md {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24 / 20 * 100%;
+}
+.text {
+    font-size: 16px;
+    line-height: 27 / 16 * 100%;
+    color: #5a5a5a;
+}
+.link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28 / 14 * 100%;
+    color: #363838;
+}
+.title {
+    font-family: "Montserrat";
+    font-weight: 700;
+    @include adaptiv-font(36, 28, 1);
+    line-height: 51 / 36 * 100%;
+    color: #363838;
+}
+.label {
+    font-family: "Montserrat";
+    font-weight: 700;
+    @include adaptiv-font(24, 20, 1);
+    line-height: 38 / 24 * 100%;
+    color: #363838;
+}
+.quote {
+    font-style: italic;
+    font-weight: 300;
+    @include adaptiv-font(24, 20, 1);
+    line-height: 38 / 24 * 100%;
+    color: #363838;
+}
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: #979797;
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.ideas {
+    &__container {
+    }
+
+    &__title {
+        @extend .title;
+        text-align: center;
+        max-width: 430px;
+        margin: 0 auto;
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
+        @media (max-width: $md3+px) {
+            max-width: none;
+        }
+    }
+
+    &__row {
+        display: flex;
+        margin: 0px -15px;
+        @media (max-width: $md3+px) {
+            flex-wrap: wrap;
+            margin: 0;
+        }
+    }
+
+    &__column {
+        padding: 0px 15px;
+        flex: 0 1 50%;
+        margin: 0px 0px 40px 0px;
+        @media (max-width: $md3+px) {
+            flex: 1 1 100%;
+            padding: 0;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @media (max-width: $md3+px) {
+            text-align: center;
+        }
+    }
+
+    &__image {
+        display: flex;
+        @include adaptiv-value("margin-bottom", 20, 10, 1);
+        padding: 0px 0px 56.7% 0px;
+        img {
+            transition: all 0.3s ease 0s;
+        }
+        @media (min-width: $md2+px) {
+            overflow: hidden;
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__post-quote {
+        @include adaptiv-value("margin-bottom", 40, 20, 1);
+    }
+    &__links {
+        flex: 1 1 auto;
+        margin-bottom: 5px;
+        @extend .link;
+        color: #707070;
+    }
+
+    &__date,
+    &__name,
+    &__category {
+        transition: all 0.3s ease 0s;
+        color: inherit;
+        @media (min-width: $md2+px) {
+            &:hover {
+                color: #363838;
+            }
+        }
+    }
+
+    &__label {
+        @extend .label;
+        transition: all 0.3s ease 0s;
+        @media (min-width: $md2+px) {
+            &:hover {
+                color: #707070;
+            }
+        }
+    }
+
+    &__text {
+        @extend .text;
+        &_post-text {
+            @include adaptiv-value("margin-bottom", 40, 35, 1);
+        }
+    }
+}
