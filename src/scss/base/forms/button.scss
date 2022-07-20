@@ -5,22 +5,19 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 60px;
-    height: 40px;
-    background-color: #363838;
-    border-radius: 21px;
+    padding: 0px rem(60);
+    height: rem(40);
+    background-color: $mainColor;
+    border-radius: rem(21);
     font-weight: 600;
-    font-size: 16px;
-    line-height: 28 / 16 * 100%;
-    color: #fff;
-    transition: all 0.3s ease 0s;
-    @media (min-width: 992px) {
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+    color: $white;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+    @media (any-hover: hover) {
         &:hover {
-            background-color: #fff;
-            color: #363838;
+            background-color: $white;
+            color: $mainColor;
         }
-    }
-    &._fw {
-        width: 100%;
     }
 }

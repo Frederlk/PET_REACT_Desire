@@ -1,46 +1,46 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import { images } from "../constants";
 
 const Header = () => {
     return (
-        <header className="header">
-            <div className="header__container _container">
+        <header data-lp className="header">
+            <div className="header__container">
                 <div className="header__menu menu">
-                    <a href="index.html" className="menu__logo">
-                        <img src="img/logo.png" alt="Logo" />
-                    </a>
-                    <div className="menu__body">
+                    <Link to="/" className="menu__logo">
+                        <img src={images.defaultImages.logo} alt="Logo" />
+                    </Link>
+                    <nav className="menu__body">
                         <ul className="menu__list menu__list_left">
-                            <li>
-                                <a href="about.html" className="menu__link">
+                            <li className="menu__item">
+                                <NavLink to="/about" className="menu__link">
                                     About
-                                </a>
+                                </NavLink>
                             </li>
-                            <li>
-                                <a href="gallery.html" className="menu__link">
+                            <li className="menu__item">
+                                <NavLink to="/gallery" className="menu__link">
                                     Gallery
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                         <ul className="menu__list menu__list_right">
-                            <li>
-                                <a href="blog.html" className="menu__link">
+                            <li className="menu__item">
+                                <NavLink to="/blog" className="menu__link">
                                     Blog
-                                </a>
+                                </NavLink>
                             </li>
-                            <li>
-                                <a href="contact.html" className="menu__link">
+                            <li className="menu__item">
+                                <NavLink to="/contact" className="menu__link">
                                     Contact
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
-                    </div>
-                    <div className="menu__icon icon-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    </nav>
                 </div>
+                <button type="button" className="header__icon icon-menu">
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </header>
     );

@@ -1,12 +1,52 @@
 import { Header, Footer } from "./_containers";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import * as flsFunctions from "./js/files/functions";
+import * as flsScroll from "./js/files/scroll/scroll";
+import { Spinner } from "./_components";
+
+const Page404 = lazy(() => import("./_pages/Page404")),
+    Home = lazy(() => import("./_pages/HomePage")),
+    Blog = lazy(() => import("./_pages/BlogPage")),
+    SingleBlog = lazy(() => import("./_pages/SingleBlogPage")),
+    About = lazy(() => import("./_pages/AboutPage")),
+    Gallery = lazy(() => import("./_pages/GalleryPage")),
+    Contact = lazy(() => import("./_pages/ContactPage"));
+
+const ScrollToTop = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        flsFunctions.menuClose();
+    }, [pathname]);
+    return null;
+};
 
 const App = () => {
+    useEffect(() => {
+        flsFunctions.menuInit();
+        flsScroll.headerScroll();
+    }, []);
+
     return (
-        <>
+        <Router>
+            <ScrollToTop />
             <Header />
-            <main className="page"></main>
+            <main className="page">
+                <Suspense fallback={<Spinner />}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        {/* <Route path="/about" element={<About />} /> */}
+                        {/* <Route path="/blog" element={<Blog />} /> */}
+                        {/* <Route path="/blog/:article" element={<SingleBlog />} /> */}
+                        {/* <Route path="/gallery" element={<Gallery />} /> */}
+                        {/* <Route path="/contact" element={<Contact />} /> */}
+                        <Route path="*" element={<Page404 />} />
+                    </Routes>
+                </Suspense>
+            </main>
             <Footer />
-        </>
+        </Router>
     );
 };
 

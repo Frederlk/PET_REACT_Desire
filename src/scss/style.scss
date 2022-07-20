@@ -21,7 +21,14 @@ $fontSize: rem(14); // где 14(px) - размер шрифта по умолч
 
 // Основные цвета
 $white: #fff;
-$mainColor: #363838; // Цвет шрифта по умолчанию
+$black: #000;
+$gray_01: #363838;
+$gray_02: #5a5a5a;
+$gray_03: #979797;
+$gray_04: #707070;
+$gray_05: #a1a1a1;
+$light_01: #dfdfdf;
+$mainColor: $gray_01; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -60,14 +67,6 @@ body {
     // Сайт загружен
     .loaded & {
     }
-    &._scroll {
-        .menu {
-            height: 60px;
-        }
-        .page {
-            padding: 60px 0px 0px 0px;
-        }
-    }
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
@@ -76,6 +75,14 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    &._scroll {
+        .menu {
+            height: rem(60);
+        }
+        .page {
+            // padding-top: rem(60);
+        }
+    }
     // Прижимаем footer
     > main {
         flex: 1 1 auto;
@@ -138,42 +145,40 @@ body {
 
 // Подключение стилей общих элементов проекта
 @import "common";
-@import "lightgallery";
+// @import "lightgallery";
 
 // Подключение стилей отдельных блоков
 @import "header";
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
-@import "about";
-@import "gallery";
-@import "blog";
-@import "contact";
+// @import "home";
+// @import "about";
+// @import "gallery";
+// @import "blog";
+// @import "contact";
 
 //========================================================================================================================================================
 
 .page {
-    transition: all 0.3s ease 0s;
-    @include adaptiv-value("padding-top", 120, 60, 1);
-    flex: 1 1 auto;
-
+    transition: padding-top 0.5s ease 0s;
+    @include adaptiveValue("padding-top", 120, 60, 1110, 767.98, 1);
     &__home {
-        @include adaptiv-value("margin-bottom", 46, 40, 1);
+        @include adaptiveValue("margin-bottom", 46, 40, 1110, 767.98, 1);
     }
 
     &__collection {
-        @include adaptiv-value("margin-bottom", 80, 50, 1);
+        @include adaptiveValue("margin-bottom", 80, 50, 1110, 767.98, 1);
     }
 
     &__how {
-        @include adaptiv-value("margin-bottom", 110, 50, 1);
+        @include adaptiveValue("margin-bottom", 110, 50, 1110, 767.98, 1);
     }
 
     &__gallery {
     }
 
     &__ideas {
-        @include adaptiv-value("margin-bottom", 60, 20, 1);
+        @include adaptiveValue("margin-bottom", 60, 20, 1110, 767.98, 1);
     }
 }

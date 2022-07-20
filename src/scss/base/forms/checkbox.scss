@@ -1,5 +1,7 @@
 .checkbox {
     position: relative;
+    display: flex;
+    align-items: center;
     &:not(:last-child) {
         margin-bottom: em(5);
     }
@@ -10,10 +12,10 @@
         height: 0;
         opacity: 0;
         &:focus + .checkbox__label:before {
-            box-shadow: 0 0 5px #000;
+            box-shadow: 0 0 rem(5) $mainColor;
         }
         &:checked + .checkbox__label:before {
-            background: #000;
+            background-color: $mainColor;
         }
     }
     // .checkbox__label
@@ -40,35 +42,21 @@
 //========================================================================================================================================================
 
 .checkbox {
-    position: relative;
-    display: flex;
-    align-items: center;
-    // .checkbox__input
-    &__input {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        visibility: hidden;
-        &:checked + .checkbox__text:before {
-            background-color: #363838;
-        }
-    }
-    // .checkbox__text
     &__text {
         display: inline-flex;
         align-items: center;
         position: relative;
         cursor: pointer;
-        font-size: 14px;
-        line-height: 28 / 14 * 100%;
-        color: #a1a1a1;
-        padding: 0px 0px 0px 30px;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $md2+px) {
+        font-size: rem(14);
+        line-height: math.div(28, 14);
+        padding-left: rem(30);
+        color: $gray_05;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #383838;
+                color: $mainColor;
                 &::before {
-                    border: 1px solid #383838;
+                    border: rem(1) solid $mainColor;
                 }
             }
         }
@@ -76,30 +64,32 @@
             content: "";
             position: absolute;
             align-self: flex-start;
-            flex: 0 0 21px;
+            flex: 0 0 rem(21);
             left: 0;
             top: 50%;
             transform: translate(0px, -50%);
-            width: 21px;
-            height: 21px;
-            background: #fff;
-            transition: all 0.3s ease 0s;
-            border: 1px solid #979797;
+            width: rem(21);
+            height: rem(21);
+            background: $white;
+            border: rem(1) solid $gray_03;
+            transition: border 0.3s ease 0s;
         }
     }
+
     a {
-        color: #fff;
+        color: $white;
         text-decoration: underline;
-        @media (min-width: 992px) {
+        @media (any-hover: hover) {
             &:hover {
                 text-decoration: none;
             }
         }
     }
+
     &._error {
         .checkbox__text {
             &:before {
-                border: 1px solid #ee1212;
+                border: rem(1) solid #ee1212;
             }
         }
     }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SIngleBlogPage = () => {
+const SingleBlogPage = () => {
     return (
         <>
             <section className="page__breadcrumbs breadcrumbs breadcrumbs_blog breadcrumbs_no-bg">
@@ -340,4 +340,4 @@ const SIngleBlogPage = () => {
     );
 };
 
-export default SIngleBlogPage;
+export default SingleBlogPage;

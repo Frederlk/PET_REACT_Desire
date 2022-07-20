@@ -1,111 +1,98 @@
-//<ОСНОВНОЙ БЛОК>====================================================================================================
-
-.subtitle {
+%subtitle {
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: 16px;
-    line-height: 22 / 16 * 100%;
+    font-size: rem(16);
+    line-height: math.div(22, 16);
 }
-.subtitle_md {
+%subtitle_md {
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: 20px;
-    line-height: 24 / 20 * 100%;
+    font-size: rem(20);
+    line-height: math.div(24, 20);
 }
-.text {
-    font-size: 16px;
-    line-height: 27 / 16 * 100%;
-    color: #5a5a5a;
+%text {
+    font-size: rem(16);
+    line-height: math.div(27, 16);
+    color: $gray_02;
 }
-.link {
+%link {
     font-weight: 600;
-    font-size: 14px;
-    line-height: 28 / 14 * 100%;
-    color: #363838;
+    font-size: rem(14);
+    line-height: math.div(28, 14);
 }
-.title {
+%title {
     font-family: "Montserrat";
     font-weight: 700;
-    @include adaptiv-font(36, 28, 1);
-    line-height: 51 / 36 * 100%;
-    color: #363838;
+    @include adaptiveValue("font-size", 36, 28);
+    line-height: math.div(51, 36);
 }
-.label {
+%label {
     font-family: "Montserrat";
     font-weight: 700;
-    @include adaptiv-font(24, 20, 1);
-    line-height: 38 / 24 * 100%;
-    color: #363838;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: math.div(38, 24);
 }
-.quote {
+%quote {
     font-style: italic;
     font-weight: 300;
-    @include adaptiv-font(24, 20, 1);
-    line-height: 38 / 24 * 100%;
-    color: #363838;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: math.div(38, 24);
 }
-.line {
+%line {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 1px;
-    background-color: #979797;
+    height: rem(1);
+    background-color: $gray_03;
 }
 
-//</ОСНОВНОЙ БЛОК>====================================================================================================
+// IDEAS ====================================================================================================
 
 .ideas {
     &__container {
     }
 
     &__title {
-        @extend .title;
+        @extend %title;
         text-align: center;
         max-width: 430px;
         margin: 0 auto;
-        @include adaptiv-value("margin-bottom", 30, 20, 1);
-        @media (max-width: $md3+px) {
+        @include adaptiveValue("margin-bottom", 30, 20);
+        @media (max-width: $mobile) {
             max-width: none;
         }
     }
 
     &__row {
-        display: flex;
-        margin: 0px -15px;
-        @media (max-width: $md3+px) {
-            flex-wrap: wrap;
-            margin: 0;
+        @media (min-width: $mobile) {
+            gap: rem(30);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
     &__column {
-        padding: 0px 15px;
-        flex: 0 1 50%;
-        margin: 0px 0px 40px 0px;
-        @media (max-width: $md3+px) {
-            flex: 1 1 100%;
-            padding: 0;
-        }
+        margin-bottom: rem(40);
     }
 
     &__body {
         display: flex;
         flex-direction: column;
         height: 100%;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             text-align: center;
         }
     }
 
     &__image {
         display: flex;
-        @include adaptiv-value("margin-bottom", 20, 10, 1);
-        padding: 0px 0px 56.7% 0px;
+        @include adaptiveValue("margin-bottom", 20, 10);
+        padding-bottom: 56.6%;
+        overflow: hidden;
         img {
-            transition: all 0.3s ease 0s;
+            transition: transform 0.3s ease 0s;
         }
-        @media (min-width: $md2+px) {
-            overflow: hidden;
+        @media (any-hover: hover) {
             &:hover {
                 img {
                     transform: scale(1.1);
@@ -115,41 +102,41 @@
     }
 
     &__post-quote {
-        @include adaptiv-value("margin-bottom", 40, 20, 1);
+        @include adaptiveValue("margin-bottom", 40, 20);
     }
     &__links {
         flex: 1 1 auto;
-        margin-bottom: 5px;
-        @extend .link;
-        color: #707070;
+        margin-bottom: rem(5);
+        @extend %link;
+        color: $gray_04;
     }
 
     &__date,
     &__name,
     &__category {
-        transition: all 0.3s ease 0s;
         color: inherit;
-        @media (min-width: $md2+px) {
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #363838;
+                color: $mainColor;
             }
         }
     }
 
     &__label {
-        @extend .label;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $md2+px) {
+        @extend %label;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #707070;
+                color: $gray_04;
             }
         }
     }
 
     &__text {
-        @extend .text;
+        @extend %text;
         &_post-text {
-            @include adaptiv-value("margin-bottom", 40, 35, 1);
+            @include adaptiveValue("margin-bottom", 40, 35);
         }
     }
 }
