@@ -1,56 +1,12 @@
 import React from "react";
-import { Collection, Home } from "../_containers";
+import { Collection, Home, How } from "../_containers";
 
 const HomePage = () => {
     return (
         <>
             <Home />
             <Collection />
-            <section className="page__how how">
-                <div className="how__container _container">
-                    <h3 className="how__title">How it works</h3>
-                    <div className="how__row-top">
-                        <div className="how__column">
-                            <div className="how__body">
-                                <div className="how__top _icon-graphic">Designer Consultation</div>
-                                <div className="how__text">
-                                    Kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick
-                                    coloring book. Semiotics man bun venmo viral cliche
-                                </div>
-                            </div>
-                        </div>
-                        <div className="how__column" data-da=".how__row-bottom,767,2"></div>
-                        <div className="how__column">
-                            <div className="how__body">
-                                <div className="how__top _icon-sofa">Production</div>
-                                <div className="how__text">Everyday carry actually neutra authentic kogi shabby chic</div>
-                            </div>
-                        </div>
-                        <div className="how__column" data-da=".how__row-bottom,767,4"></div>
-                    </div>
-                    <div className="how__row-bottom">
-                        <div className="how__column"></div>
-                        <div className="how__column" data-da=".how__row-top,767,2">
-                            <div className="how__body">
-                                <div className="how__top _icon-measur">Measurements</div>
-                                <div className="how__text">
-                                    Intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche
-                                </div>
-                            </div>
-                        </div>
-                        <div className="how__column"></div>
-                        <div className="how__column" data-da=".how__row-top,767,4">
-                            <div className="how__body">
-                                <div className="how__top _icon-mail">Designer Consultation</div>
-                                <div className="how__text">
-                                    Kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick
-                                    coloring book.{" "}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <How />
             <section className="page__gallery gallery gallery_home _tabs">
                 <div className="gallery__top">
                     <div className="gallery__container _container">
