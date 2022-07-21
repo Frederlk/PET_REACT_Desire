@@ -137,11 +137,11 @@
 
 .collection {
     &__top {
-        @include adaptiveValue("margin-bottom", 25, 20);
+        @include adaptiveValue("margin-bottom", 50, 40, 1110, 767.98, 1);
     }
 
     &__body {
-        @include adaptiveValue("margin-bottom", 72, 20);
+        @include adaptiveValue("margin-bottom", 104, 40, 1110, 767.98, 1);
     }
 
     &__bottom {
@@ -158,12 +158,12 @@
     &__title {
         @extend %title;
         position: relative;
-        @include adaptiveValue("padding-bottom", 25, 20);
-        @include adaptiveValue("margin-bottom", 25, 20);
+        @include adaptiveValue("padding-bottom", 25, 20, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 20, 1110, 767.98, 1);
         &::after {
             content: "";
             @extend %line;
-            @include adaptiveValue("width", 250, 100);
+            @include adaptiveValue("width", 250, 100, 1110, 767.98, 1);
             left: 50%;
             transform: translate(-50%, 0px);
         }
@@ -171,11 +171,9 @@
 
     &__text {
         @extend %text;
-        max-width: 730px;
-        margin: 0px auto;
-        @include adaptiveValue("margin-bottom", 25, 20);
-        @media (max-width: $mobile) {
-            max-width: none;
+        @media (min-width: $mobile) {
+            max-width: rem(730);
+            margin: 0px auto;
         }
     }
 }
@@ -183,45 +181,38 @@
 //========================================================================================================================================================
 
 .body-collection {
-    display: flex;
-    padding: 0px 14px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    @include adaptiveValue("gap", 28, 20, 1110, 991.98, 1);
     @media (max-width: $tablet) {
-        padding: 0px 10px;
+        grid-template-columns: repeat(4, 1fr);
     }
-    @media (max-width: 860px) {
-        flex-wrap: wrap;
+    @media (max-width: $mobile) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $mobileSmall) {
+        grid-template-columns: 1fr;
     }
     &__column {
         position: relative;
-        flex: 0 1 20%;
-        padding: 0px 14px;
-        @include adaptiveValue("margin-bottom", 28, 20);
         @media (max-width: $tablet) {
-            padding: 0px 10px;
-            flex: 0 1 25%;
             &:last-child {
                 display: none;
             }
         }
-        @media (max-width: 860px) {
-            flex: 0 1 50%;
-        }
-        @media (max-width: $mobileSmall) {
-            flex: 1 1 100%;
-        }
     }
 
     &__info {
-        padding: 0px 20px;
+        padding: 0px rem(20);
         position: absolute;
-        width: calc(100% - 28px);
+        width: 100%;
         height: 100%;
         top: 0;
-        left: 14px;
+        left: 0;
         z-index: 2;
         text-align: center;
         opacity: 0;
-        transition: all 0.3s ease 0s;
+        transition: opacity 0.3s ease 0s;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -235,14 +226,12 @@
             top: 0;
             left: 0;
             background-color: rgba(255, 255, 255, 0.6);
-            transition: all 0.3s ease 0s;
         }
         @media (max-width: $tablet) {
             opacity: 1;
-            width: calc(100% - 20px);
-            left: 10px;
+            width: 100%;
         }
-        @media (min-width: $tablet) {
+        @media (any-hover: hover) {
             &:hover {
                 opacity: 1;
             }
@@ -251,67 +240,70 @@
 
     &__title {
         @extend %subtitle_md;
-        @include adaptiveValue("margin-bottom", 20, 10);
-        @include adaptiveValue("padding-bottom", 20, 10);
         display: inline-flex;
         justify-content: center;
         align-items: center;
         color: $mainColor;
-        transition: all 0.3s ease 0s;
-        position: relative;
+        transition: color 0.3s ease 0s;
         &::after {
             content: "";
             @extend %line;
-            @include adaptiveValue("width", 200, 50);
-            left: 50%;
-            transform: translate(-50%, 0px);
         }
         @media (min-width: $tablet) {
+            position: relative;
+            @include adaptiveValue("margin-bottom", 20, 10);
+            @include adaptiveValue("padding-bottom", 20, 10);
+            &::after {
+                @include adaptiveValue("width", 200, 50);
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+        }
+        @media (any-hover: hover) {
             &:hover {
-                color: #707070;
+                color: $gray_04;
             }
         }
     }
 
     &__text {
+        @media (max-width: $tablet) {
+            display: none;
+        }
         @extend %link;
-        color: #707070;
+        color: $gray_04;
     }
 
-    &__link {
+    &__tag {
         color: inherit;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $tablet) {
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
                 color: $mainColor;
             }
         }
-    }
-
-    &__category {
-        color: inherit;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $tablet) {
-            &:hover {
-                color: $mainColor;
+        &:not(:last-child) {
+            &::after {
+                content: "|";
+                padding: 0px rem(3);
             }
         }
     }
 
-    &__image {
+    &__image-ibg {
+        display: block;
         z-index: 1;
-        padding: 0px 0px 100% 0px;
+        padding-bottom: 100%;
     }
 }
 
 //========================================================================================================================================================
 
 .bottom-collection {
-    &__info {
-        position: relative;
-        padding: 9.43% 0px;
-    }
-
+    @include adaptiveValue("padding-top", 172, 60, 1110, 767.98, 1);
+    @include adaptiveValue("padding-bottom", 172, 60, 1110, 767.98, 1);
+    position: relative;
+    z-index: 2;
     &__container {
         position: relative;
         z-index: 2;
@@ -319,19 +311,20 @@
 
     &__content {
     }
+
     &__title {
         font-family: "Montserrat";
         font-weight: 700;
-        @include adaptiveValue("font-size", 60, 30);
+        @include adaptiveValue("font-size", 60, 30, 1110, 767.98, 1);
         line-height: math.div(80, 60);
         color: $mainColor;
-        @include adaptiveValue("padding-bottom", 22, 15);
-        @include adaptiveValue("margin-bottom", 22, 15);
+        @include adaptiveValue("padding-bottom", 22, 15, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 22, 15, 1110, 767.98, 1);
         position: relative;
         &::after {
             content: "";
             @extend %line;
-            @include adaptiveValue("width", 200, 50);
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
         }
         @media (max-width: $mobile) {
             text-align: center;
@@ -344,14 +337,14 @@
 
     &__text {
         @extend %text;
-        max-width: 540px;
+        max-width: rem(540);
         @media (max-width: $mobile) {
             max-width: none;
             text-align: center;
         }
     }
 
-    &__image {
+    &__image-ibg {
         position: absolute;
         width: 100%;
         height: 100%;

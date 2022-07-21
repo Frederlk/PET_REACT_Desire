@@ -18,4 +18,23 @@ const homeSlider = {
     chair03,
 };
 
-export default { defaultImages, homeSlider };
+import collection01 from "./../assets/img/_home/content/01.jpg";
+import collection02 from "./../assets/img/_home/content/02.jpg";
+import collection03 from "./../assets/img/_home/content/03.jpg";
+import collection04 from "./../assets/img/_home/content/04.jpg";
+import collection05 from "./../assets/img/_home/content/05.jpg";
+import collection06 from "./../assets/img/_home/content/06.jpg";
+import collection07 from "./../assets/img/_home/content/07.jpg";
+import collection08 from "./../assets/img/_home/content/08.jpg";
+const collectionImages = {
+    collection01,
+    collection02,
+    collection03,
+    collection04,
+    collection05,
+    collection06,
+    collection07,
+    collection08,
+};
+
+export default { defaultImages, homeSlider, collectionImages };
