@@ -1,65 +1,10 @@
 import React from "react";
+import { Home } from "../_containers";
 
 const HomePage = () => {
     return (
         <>
-            <section className="page__home home">
-                <div className="home__body">
-                    <div className="home__mainslider _swiper">
-                        <div className="home__slide">
-                            <div className="home__column home-image">
-                                <img src="img/_home/slider/chair.png" alt="" />
-                            </div>
-                            <div className="home__column home-content">
-                                <div className="home-content__container _container">
-                                    <div className="home-content__body">
-                                        <h1 className="home-content__title">Furniture collection</h1>
-                                        <div className="home-content__text">
-                                            Deep v you probably haven&apos;t heard of them banh mi synth actually affogato.
-                                            Aesthetic lyft ethical drinking vinegar austint
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="home__slide">
-                            <div className="home__column home-image">
-                                <img src="img/_home/slider/chair2.png" alt="" />
-                            </div>
-                            <div className="home__column home-content">
-                                <div className="home-content__container _container">
-                                    <div className="home-content__body">
-                                        <h2 className="home-content__title">Collection furniture</h2>
-                                        <div className="home-content__text">
-                                            Deep v you probably haven&apos;t heard of them banh mi synth actually affogato.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="home__slide">
-                            <div className="home__column home-image">
-                                <img src="img/_home/slider/chair3.png" alt="" />
-                            </div>
-                            <div className="home__column home-content">
-                                <div className="home-content__container _container">
-                                    <div className="home-content__body">
-                                        <h2 className="home-content__title">Collection furniture 1</h2>
-                                        <div className="home-content__text">
-                                            Deep v you probably haven&apos;t heard of them banh mi synth actually affogato. Deep v
-                                            you probably haven&apos;t heard of them banh mi synth
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="home__bg _ibg">
-                        <img src="img/_home/slider/main_slider.jpg" alt="" />
-                    </div>
-                </div>
-                <div className="home__pagination"></div>
-            </section>
+            <Home />
             <section className="page__collection collection">
                 <div className="collection__top top-collection">
                     <div className="top-collection__container _container">
