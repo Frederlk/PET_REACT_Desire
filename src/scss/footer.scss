@@ -1,37 +1,28 @@
 .footer {
     background-color: $light_01;
     &__container {
-    }
-
-    &__content {
-        display: flex;
-        @include adaptiveValue("padding-bottom", 60, 20);
-        @include adaptiveValue("padding-top", 60, 20);
+        @include adaptiveValue("padding-top", 60, 30, 1110, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 80, 40, 1110, 767.98, 1);
         @media (min-width: $mobile) {
-            @include adaptiveValue("padding-right", 50, 15);
-            @include adaptiveValue("margin-right", -50, 0);
-            @include adaptiveValue("margin-left", -50, 0);
-        }
-        @media (max-width: $mobile) {
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            @include adaptiveValue("gap", 100, 40, 1110, 991.98, 1);
         }
     }
 
     &__column {
-        margin-bottom: rem(20);
         @media (max-width: $mobile) {
-            flex: 1 1 100%;
             &:not(:last-child) {
-                margin-bottom: rem(30);
+                margin-bottom: rem(40);
             }
         }
     }
 
     &__bottom {
         background-color: $mainColor;
-        padding: 0px rem(20);
-        @include adaptiveValue("padding-bottom", 40, 10);
-        @include adaptiveValue("padding-top", 40, 10);
+        padding: 0px rem(15);
+        @include adaptiveValue("padding-bottom", 40, 20, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 40, 20, 1110, 767.98, 1);
         text-align: center;
     }
 
@@ -52,8 +43,6 @@
 }
 .info-footer {
     flex: 0 1 rem(640);
-    @include adaptiveValue("padding-right", 50, 0);
-    @include adaptiveValue("padding-left", 50, 0);
     @media (max-width: $mobile) {
         padding: 0;
         text-align: center;
@@ -90,10 +79,22 @@
     }
 
     &__form {
-        display: flex;
         @include adaptiveValue("margin-top", 22, 10);
-        @media (max-width: $mobileSmall) {
-            flex-wrap: wrap;
+        @media (min-width: $mobileSmall) {
+            display: flex;
+            position: relative;
+        }
+        .input__error {
+            color: red;
+            @media (min-width: $mobileSmall) {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                margin-top: rem(10);
+            }
+            @media (max-width: $mobileSmall) {
+                margin-bottom: rem(10);
+            }
         }
     }
 
@@ -103,57 +104,34 @@
         }
         @media (max-width: $mobileSmall) {
             margin-bottom: rem(10);
-            flex: 1 1 100%;
         }
     }
 
     &__btn {
+        @media (min-width: $mobile) {
+            @include adaptiveValue("min-width", 160, 100, 1110, 767.98, 1);
+        }
+        @media (max-width: $mobile) {
+            min-width: rem(160);
+        }
         @media (max-width: $mobileSmall) {
-            flex: 1 1 100%;
+            width: 100%;
         }
     }
 }
 .links-footer {
     display: flex;
-    flex: 1 1 auto;
+    @include adaptiveValue("gap", 30, 20, 479.98, 320, 1);
     justify-content: space-between;
-    @include adaptiveValue("padding-right", 60, 0);
-    @include adaptiveValue("padding-left", 30, 20);
-    @media (max-width: $tablet) {
-        padding-right: 0;
-    }
-    @media (max-width: $mobile) {
-        padding: 0;
-        flex: 1 1 100%;
-    }
-    &__column {
-        padding: 0px 20px;
-        &:first-child {
-            flex: 1 1 auto;
-        }
-        &:last-child {
-            min-width: 130px;
-        }
-        @media (max-width: $tablet) {
-            padding-right: 20px;
-            padding-left: 0;
-            &:last-child {
-                padding: 0;
-            }
-        }
-        @media (max-width: $mobile) {
-            flex: 0 1 50%;
-            &:last-child {
-                min-width: none;
-            }
-        }
+    &__list {
+        flex: 0 1 50%;
     }
 
-    &__list {
-        li {
-            &:not(:last-child) {
-                margin-bottom: rem(15);
-            }
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        &:not(:last-child) {
+            margin-bottom: rem(15);
         }
     }
 
@@ -174,27 +152,9 @@
                 color: $mainColor;
             }
         }
-    }
-    ._icon-youtube {
-        &::before {
-            font-size: rem(14);
-        }
-    }
-
-    &__help {
-        li {
-            &:not(:last-child) {
-                margin-bottom: rem(15);
-            }
-        }
-    }
-
-    &__item {
-        @extend %link;
-        color: $gray_04;
-        @media (min-width: $tablet) {
-            &:hover {
-                color: $mainColor;
+        &._icon-youtube {
+            &::before {
+                font-size: rem(14);
             }
         }
     }

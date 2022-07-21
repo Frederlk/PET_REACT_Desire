@@ -12,12 +12,58 @@ const FooterImput = ({ label, ...props }) => {
                 {...field}
                 className={`input ${props.className || ""} ${meta.touched && meta.error ? "_error" : ""}`}
             />
-            {meta.touched && meta.error ? <div className="form-checkout__error">{meta.error}</div> : null}
+            {meta.touched && meta.error ? <div className="input__error">{meta.error}</div> : null}
         </>
     );
 };
 
 const Footer = () => {
+    const socialLinks = [
+        {
+            title: "Facebook",
+            link: "#Facebook",
+            icon: "_icon-facebook",
+        },
+        {
+            title: "Instagram",
+            link: "#Instagram",
+            icon: "_icon-inst",
+        },
+        {
+            title: "Pinterest",
+            link: "#Pinterest",
+            icon: "_icon-pin",
+        },
+        {
+            title: "WhatsApp",
+            link: "#WhatsApp",
+            icon: "_icon-whatsapp",
+        },
+        {
+            title: "Youtube",
+            link: "#Youtube",
+            icon: "_icon-youtube",
+        },
+    ];
+    const helpLinks = [
+        {
+            title: "Delivery",
+            link: "/delivery",
+        },
+        {
+            title: "FAQ",
+            link: "/FAQ",
+        },
+        {
+            title: "Help",
+            link: "/help",
+        },
+        {
+            title: "More About Us",
+            link: "/more-about-us",
+        },
+    ];
+
     return (
         <footer className="footer">
             <div className="footer__container">
@@ -33,13 +79,14 @@ const Footer = () => {
                         initialValues={{
                             email: "",
                         }}
-                        validationSchema={{
+                        validationSchema={Yup.object({
                             email: Yup.string().email("Invalid Email").required("Requried!"),
-                        }}
-                        onSubmit={(values) => {
+                        })}
+                        onSubmit={(values, { resetForm }) => {
                             values = {
                                 ...values,
                             };
+                            resetForm();
                             console.log(JSON.stringify(values, null, 2));
                         }}>
                         <FormikForm className="info-footer__form">
@@ -59,53 +106,22 @@ const Footer = () => {
 
                 <div className="footer__column links-footer">
                     <ul className="links-footer__list">
-                        <li className="links-footer__list">
-                            <a href="#" target="_blank" rel="noreferrer" className="links-footer__link _icon-facebook">
-                                Facebook
-                            </a>
-                        </li>
-                        <li className="links-footer__list">
-                            <a href="#" target="_blank" rel="noreferrer" className="links-footer__link _icon-inst">
-                                Instagram
-                            </a>
-                        </li>
-                        <li className="links-footer__list">
-                            <a href="#" target="_blank" rel="noreferrer" className="links-footer__link _icon-pin">
-                                Pinterest
-                            </a>
-                        </li>
-                        <li className="links-footer__list">
-                            <a href="#" target="_blank" rel="noreferrer" className="links-footer__link _icon-whatsapp">
-                                WhatsApp
-                            </a>
-                        </li>
-                        <li className="links-footer__list">
-                            <a href="#" target="_blank" rel="noreferrer" className="links-footer__link _icon-youtube">
-                                Youtube
-                            </a>
-                        </li>
+                        {socialLinks.map(({ title, link, icon }, i) => (
+                            <li key={title + i} className="links-footer__item">
+                                <a href={link} target="_blank" rel="noreferrer" className={`links-footer__link ${icon}`}>
+                                    {title}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
-                    <ul className="links-footer__help">
-                        <li className="links-footer__list">
-                            <Link to="/delivery" className="links-footer__item">
-                                Delivery
-                            </Link>
-                        </li>
-                        <li className="links-footer__list">
-                            <Link to="/FAQ" className="links-footer__item">
-                                FAQ
-                            </Link>
-                        </li>
-                        <li className="links-footer__list">
-                            <Link to="/help" className="links-footer__item">
-                                Help
-                            </Link>
-                        </li>
-                        <li className="links-footer__list">
-                            <Link to="/more-about-us" className="links-footer__item">
-                                More About Us
-                            </Link>
-                        </li>
+                    <ul className="links-footer__list">
+                        {helpLinks.map(({ title, link }, i) => (
+                            <li key={title + i} className="links-footer__item">
+                                <Link to={link} className="links-footer__link">
+                                    {title}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
