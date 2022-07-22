@@ -69,51 +69,61 @@ const { galleryImages } = images;
 const galleryItems = [
     {
         img: galleryImages.gallery01,
+        thumb: galleryImages.galleryThumb01,
         alt: "01",
         categories: ["Chair", "Office furniture"],
     },
     {
         img: galleryImages.gallery02,
+        thumb: galleryImages.galleryThumb02,
         alt: "02",
         categories: ["Chair", "Living room furniture"],
     },
     {
         img: galleryImages.gallery03,
+        thumb: galleryImages.galleryThumb03,
         alt: "03",
         categories: ["Dining room futniture", "Office furniture"],
     },
     {
         img: galleryImages.gallery04,
+        thumb: galleryImages.galleryThumb04,
         alt: "04",
         categories: ["Dining room futniture", "Living room furniture"],
     },
     {
         img: galleryImages.gallery05,
+        thumb: galleryImages.galleryThumb05,
         alt: "05",
         categories: ["Dining room futniture", "Office furniture"],
     },
     {
         img: galleryImages.gallery06,
+        thumb: galleryImages.galleryThumb06,
         alt: "06",
         categories: ["Bedroom furniture", "Living room furniture", "Chair"],
     },
     {
         img: galleryImages.gallery07,
+        thumb: galleryImages.galleryThumb07,
         alt: "07",
         categories: ["Bedroom furniture", "Office furniture"],
     },
     {
         img: galleryImages.gallery08,
+        thumb: galleryImages.galleryThumb08,
         alt: "08",
         categories: ["Bedroom furniture", "Living room furniture", "Chair"],
     },
     {
         img: galleryImages.gallery09,
+        thumb: galleryImages.galleryThumb09,
         alt: "09",
         categories: ["Bedroom furniture", "Dining room futniture"],
     },
     {
         img: galleryImages.gallery10,
+        thumb: galleryImages.galleryThumb10,
         alt: "10",
         categories: ["Bedroom furniture", "Dining room futniture", "Chair"],
     },

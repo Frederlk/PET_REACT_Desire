@@ -47,6 +47,16 @@ import gallery07 from "./../assets/img/_gallery/07.jpg";
 import gallery08 from "./../assets/img/_gallery/08.jpg";
 import gallery09 from "./../assets/img/_gallery/09.jpg";
 import gallery10 from "./../assets/img/_gallery/10.jpg";
+import galleryThumb01 from "./../assets/img/_gallery/01thumb.jpg";
+import galleryThumb02 from "./../assets/img/_gallery/02thumb.jpg";
+import galleryThumb03 from "./../assets/img/_gallery/03thumb.jpg";
+import galleryThumb04 from "./../assets/img/_gallery/04thumb.jpg";
+import galleryThumb05 from "./../assets/img/_gallery/05thumb.jpg";
+import galleryThumb06 from "./../assets/img/_gallery/06thumb.jpg";
+import galleryThumb07 from "./../assets/img/_gallery/07thumb.jpg";
+import galleryThumb08 from "./../assets/img/_gallery/08thumb.jpg";
+import galleryThumb09 from "./../assets/img/_gallery/09thumb.jpg";
+import galleryThumb10 from "./../assets/img/_gallery/10thumb.jpg";
 const galleryImages = {
     gallery01,
     gallery02,
@@ -58,6 +68,16 @@ const galleryImages = {
     gallery08,
     gallery09,
     gallery10,
+    galleryThumb01,
+    galleryThumb02,
+    galleryThumb03,
+    galleryThumb04,
+    galleryThumb05,
+    galleryThumb06,
+    galleryThumb07,
+    galleryThumb08,
+    galleryThumb09,
+    galleryThumb10,
 };
 
 export default { defaultImages, homeSlider, collectionImages, galleryImages };

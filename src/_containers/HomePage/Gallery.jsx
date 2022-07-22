@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { data } from "../../constants";
 import LightGallery from "lightgallery/react";
-import lightGallery from "lightgallery";
 
-const Gallery = () => {
+const Gallery = ({ galleryPage }) => {
     const filters = ["Bedroom furniture", "Living room furniture", "Office furniture", "Dining room futniture", "Chair"];
     const [filter, setFilter] = useState("Living room furniture");
     const lightGallery = useRef(null);
@@ -16,14 +15,14 @@ const Gallery = () => {
     }, []);
 
     const getItems = useCallback(() => {
-        return galleryItems.map(({ img, alt }, i) => {
-            if (i < 5) {
-                return (
-                    <a data-src={img} key={alt + i} className={`gallery__item-ibg g g_${i}`}>
-                        <img src={img} alt={alt} />
-                    </a>
-                );
-            }
+        return galleryItems.map(({ img, thumb, alt }, i) => {
+            // if (!galleryPage && i < 5) {
+            return (
+                <a href={img} key={alt + i} className="gallery__item-ibg">
+                    <img src={thumb} alt={alt} />
+                </a>
+            );
+            // }
         });
     }, [galleryItems]);
 
@@ -41,7 +40,7 @@ const Gallery = () => {
                             key={item + i}
                             onClick={() => {
                                 setFilter(item);
-                                setGalleryItems(data.galleryItems.slice().filter((item) => item.categories.includes(filter)));
+                                setGalleryItems(data.galleryItems.slice());
                             }}
                             className={`gallery__tab-link ${filter === item ? "_active" : ""}`}>
                             {item}
