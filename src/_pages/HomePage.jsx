@@ -1,5 +1,5 @@
 import React from "react";
-import { Collection, Home, How } from "../_containers";
+import { Collection, Gallery, Home, How } from "../_containers";
 
 const HomePage = () => {
     return (
@@ -7,147 +7,14 @@ const HomePage = () => {
             <Home />
             <Collection />
             <How />
-            <section className="page__gallery gallery gallery_home _tabs">
-                <div className="gallery__top">
-                    <div className="gallery__container _container">
-                        <nav className="gallery__nav">
-                            <div className="gallery__tab-link _tabs-item">Bedroom furniture</div>
-                            <div className="gallery__tab-link _tabs-item _active">Living room furniture</div>
-                            <div className="gallery__tab-link _tabs-item">Office furniture</div>
-                            <div className="gallery__tab-link _tabs-item">Dining room futniture</div>
-                            <div className="gallery__tab-link _tabs-item">Chair</div>
-                        </nav>
-                    </div>
-                </div>
-                <div className="gallery__tabs-body tabs-body">
-                    <div className="tabs-body__body _tabs-block _gallery">
-                        <div className="tabs-body__content">
-                            <div className="tabs-body__column tabs-body__column_first">
-                                <a href="img/_home/gallery/02.jpg" className="tabs-body__item-big _ibg">
-                                    <img src="img/_home/gallery/02.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div className="tabs-body__column tabs-body__column_second">
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/05.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/05.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/03.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/03.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/01.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/01.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tabs-body__body _tabs-block _gallery _active">
-                        <div className="tabs-body__content">
-                            <div className="tabs-body__column tabs-body__column_first">
-                                <a href="img/_home/gallery/01.jpg" className="tabs-body__item-big _ibg">
-                                    <img src="img/_home/gallery/01.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div className="tabs-body__column tabs-body__column_second">
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/02.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/02.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/03.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/03.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/04.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/04.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/05.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/05.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tabs-body__body _tabs-block _gallery">
-                        <div className="tabs-body__content">
-                            <div className="tabs-body__column tabs-body__column_first">
-                                <a href="img/_home/gallery/03.jpg" className="tabs-body__item-big _ibg">
-                                    <img src="img/_home/gallery/03.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div className="tabs-body__column tabs-body__column_second">
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/05.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/05.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/01.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/01.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/04.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/04.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/02.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/02.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tabs-body__body _tabs-block _gallery">
-                        <div className="tabs-body__content">
-                            <div className="tabs-body__column tabs-body__column_first">
-                                <a href="img/_home/gallery/01.jpg" className="tabs-body__item-big _ibg">
-                                    <img src="img/_home/gallery/01.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div className="tabs-body__column tabs-body__column_second">
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/04.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/04.jpg" alt="" />
-                                    </a>
-                                </div>
-                                <div className="tabs-body__cover">
-                                    <a href="img/_home/gallery/05.jpg" className="tabs-body__item _ibg">
-                                        <img src="img/_home/gallery/05.jpg" alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="tabs-body__body _tabs-block _gallery">
-                        <div className="tabs-body__content">
-                            <div className="tabs-body__column tabs-body__column_first">
-                                <a href="img/_home/gallery/01.jpg" className="tabs-body__item-big _ibg">
-                                    <img src="img/_home/gallery/01.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div className="tabs-body__column tabs-body__column_second"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Gallery />
             <section className="page__ideas ideas">
-                <div className="ideas__container _container">
+                <div className="ideas__container">
                     <h3 className="ideas__title">More inspiration ideas in our blog</h3>
                     <div className="ideas__row">
                         <div className="ideas__column">
                             <div className="ideas__body">
-                                <a href="#" className="ideas__image _ibg">
+                                <a href="#" className="ideas__image-ibg">
                                     <img src="img/_home/content/07.jpg" alt="" />
                                 </a>
                                 <div className="ideas__links">
@@ -170,7 +37,7 @@ const HomePage = () => {
                         </div>
                         <div className="ideas__column">
                             <div className="ideas__body">
-                                <a href="#" className="ideas__image _ibg">
+                                <a href="#" className="ideas__image-ibg">
                                     <img src="img/_home/content/08.jpg" alt="" />
                                 </a>
                                 <div className="ideas__links">

@@ -55,11 +55,10 @@
     &__title {
         @extend %title;
         text-align: center;
-        max-width: 430px;
-        margin: 0 auto;
-        @include adaptiveValue("margin-bottom", 30, 20);
-        @media (max-width: $mobile) {
-            max-width: none;
+        @include adaptiveValue("margin-bottom", 30, 20, 991.98, 479.98, 1);
+        @media (min-width: $mobile) {
+            max-width: rem(430);
+            margin: 0 auto;
         }
     }
 
@@ -84,9 +83,9 @@
         }
     }
 
-    &__image {
+    &__image-ibg {
         display: flex;
-        @include adaptiveValue("margin-bottom", 20, 10);
+        @include adaptiveValue("margin-bottom", 20, 10, 991.98, 479.98, 1);
         padding-bottom: 56.6%;
         overflow: hidden;
         img {
@@ -102,7 +101,7 @@
     }
 
     &__post-quote {
-        @include adaptiveValue("margin-bottom", 40, 20);
+        @include adaptiveValue("margin-bottom", 40, 20, 991.98, 479.98, 1);
     }
     &__links {
         flex: 1 1 auto;
@@ -136,7 +135,7 @@
     &__text {
         @extend %text;
         &_post-text {
-            @include adaptiveValue("margin-bottom", 40, 35);
+            @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
         }
     }
 }

@@ -66,6 +66,8 @@ body {
         overflow: hidden;
         touch-action: none;
     }
+    .lg-on & {
+    }
     // Сайт загружен
     .loaded & {
     }
@@ -139,7 +141,7 @@ body {
 
 // Подключение стилей общих элементов проекта
 @import "common";
-// @import "lightgallery";
+@import "libs/gallery/lightgallery";
 
 // Подключение стилей отдельных блоков
 @import "header";
