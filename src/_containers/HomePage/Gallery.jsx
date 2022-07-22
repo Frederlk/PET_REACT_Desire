@@ -16,13 +16,13 @@ const Gallery = ({ galleryPage }) => {
 
     const getItems = useCallback(() => {
         return galleryItems.map(({ img, thumb, alt }, i) => {
-            // if (!galleryPage && i < 5) {
-            return (
-                <a href={img} key={alt + i} className="gallery__item-ibg">
-                    <img src={thumb} alt={alt} />
-                </a>
-            );
-            // }
+            if (!galleryPage && i < 5) {
+                return (
+                    <a href={img} key={alt + i} className="gallery__item-ibg">
+                        <img src={thumb} alt={alt} />
+                    </a>
+                );
+            }
         });
     }, [galleryItems]);
 
@@ -40,7 +40,7 @@ const Gallery = ({ galleryPage }) => {
                             key={item + i}
                             onClick={() => {
                                 setFilter(item);
-                                setGalleryItems(data.galleryItems.slice());
+                                setGalleryItems(data.galleryItems.slice().filter((item) => item.categories.includes(filter)));
                             }}
                             className={`gallery__tab-link ${filter === item ? "_active" : ""}`}>
                             {item}

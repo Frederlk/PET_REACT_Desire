@@ -158,23 +158,24 @@ body {
 
 .page {
     transition: padding-top 0.5s ease 0s;
-    @include adaptiveValue("padding-top", 120, 60, 1110, 767.98, 1);
+    @include adaptiveValue("padding-top", 120, 60, 1110, 479.98, 1);
     &__home {
-        @include adaptiveValue("margin-bottom", 46, 40, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 46, 40, 1110, 479.98, 1);
     }
 
     &__collection {
-        @include adaptiveValue("margin-bottom", 80, 50, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 80, 50, 1110, 479.98, 1);
     }
 
     &__how {
-        @include adaptiveValue("margin-bottom", 110, 50, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 110, 50, 1110, 479.98, 1);
     }
 
     &__gallery {
+        @include adaptiveValue("margin-bottom", 60, 40, 1110, 479.98, 1);
     }
 
     &__ideas {
-        @include adaptiveValue("margin-bottom", 60, 20, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 60, 40, 1110, 479.98, 1);
     }
 }

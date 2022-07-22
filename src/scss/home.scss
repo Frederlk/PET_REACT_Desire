@@ -509,7 +509,6 @@
 
 .gallery {
     &_home {
-        @include adaptiveValue("margin-bottom", 60, 30, 1110, 767.98, 1);
     }
 
     &__container {
@@ -625,6 +624,102 @@
                     transform: scale(1.1);
                 }
             }
+        }
+    }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.ideas {
+    &__container {
+    }
+
+    &__title {
+        @extend %title;
+        text-align: center;
+        max-width: rem(430);
+        margin: 0 auto;
+        @include adaptiveValue("margin-bottom", 30, 20, 991.98, 479.98, 1);
+    }
+
+    &__row {
+        @media (min-width: $mobile) {
+            gap: rem(30);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: rem(40);
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+
+    &__image-ibg {
+        display: flex;
+        @include adaptiveValue("margin-bottom", 20, 10, 991.98, 479.98, 1);
+        padding-bottom: 56.6%;
+        overflow: hidden;
+        img {
+            transition: transform 0.3s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__post-quote {
+        @include adaptiveValue("margin-bottom", 40, 20, 991.98, 479.98, 1);
+    }
+
+    &__links {
+        flex: 1 1 auto;
+        margin-bottom: rem(5);
+        @extend %link;
+        color: $gray_04;
+    }
+
+    &__line {
+        padding: 0px rem(5);
+    }
+
+    &__name,
+    &__category {
+        color: inherit;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    &__label {
+        @extend %label;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $gray_04;
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+        &_post-text {
+            @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
         }
     }
 }

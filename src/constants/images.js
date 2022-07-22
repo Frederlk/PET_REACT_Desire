@@ -80,4 +80,10 @@ const galleryImages = {
     galleryThumb10,
 };
 
-export default { defaultImages, homeSlider, collectionImages, galleryImages };
+import ideas01 from "./../assets/img/_blog/01.jpg";
+import ideas02 from "./../assets/img/_blog/02.jpg";
+const ideasImages = {
+    ideas01,
+    ideas02,
+};
+export default { defaultImages, homeSlider, collectionImages, galleryImages, ideasImages };
