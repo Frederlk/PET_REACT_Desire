@@ -141,11 +141,11 @@
         @extend %link;
         color: $gray_04;
         transition: color 0.3s ease 0s;
+        gap: rem(14);
         &::before {
             color: inherit;
             font-size: rem(16);
             flex: 0 0 rem(18);
-            margin-right: rem(14);
         }
         @media (any-hover: hover) {
             &:hover {
@@ -154,7 +154,7 @@
         }
         &._icon-youtube {
             &::before {
-                font-size: rem(14);
+                font-size: rem(12);
             }
         }
     }

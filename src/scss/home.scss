@@ -654,15 +654,17 @@
     }
 
     &__body {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding-bottom: rem(40);
-        @media (max-width: $mobile) {
-            text-align: center;
-        }
     }
+}
 
+.ideas-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: rem(40);
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
     &__image-ibg {
         display: flex;
         @include adaptiveValue("margin-bottom", 20, 10, 991.98, 479.98, 1);
@@ -689,6 +691,9 @@
         margin-bottom: rem(5);
         @extend %link;
         color: $gray_04;
+    }
+
+    &__date {
     }
 
     &__line {

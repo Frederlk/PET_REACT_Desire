@@ -1,51 +1,53 @@
+import { format } from "date-fns";
 import React from "react";
-import { images } from "../../constants";
+import { Link } from "react-router-dom";
+import { data } from "../../constants";
 
 const Ideas = () => {
+    const sortPosts = (a, b) => {
+        if (a > b) return -1;
+        if (a < b) return 1;
+        return 0;
+    };
+
+    const ideas = data.blogItems
+        .slice()
+        .sort((a, b) => {
+            return sortPosts(a.date, b.date);
+        })
+        .map(({ img, title, author, link, date, tags }, i) => {
+            if (i < 2) {
+                return (
+                    <div key={link + i} className="ideas__body ideas-item">
+                        <Link to={`/blog/${link}`} className="ideas-item__image-ibg">
+                            <img src={img} alt={title} />
+                        </Link>
+                        <div className="ideas-item__links">
+                            <span className="ideas-item__date">{format(date, "MMMM d, yyyy")}</span>
+                            <span className="ideas-item__line">|</span>
+                            <Link to="/blog" state={{ author: author }} className="ideas-item__name">
+                                by {author}
+                            </Link>
+                            <span className="ideas-item__line">|</span>
+                            {tags.map((item) => (
+                                <Link to="/blog" key={item + i} state={{ tags: item }} className="ideas-item__category">
+                                    {item}
+                                </Link>
+                            ))}
+                        </div>
+                        <Link to={`/blog/${link}`} className="ideas-item__label">
+                            {title}
+                        </Link>
+                    </div>
+                );
+            }
+        });
+
     return (
         <section className="page__ideas ideas">
             <div className="ideas__container">
                 <h3 className="ideas__title">More inspiration ideas in our blog</h3>
-                <div className="ideas__row">
-                    <div className="ideas__body">
-                        <a href="#" className="ideas__image-ibg">
-                            <img src={images.ideasImages.ideas01} alt="" />
-                        </a>
-                        <div className="ideas__links">
-                            <span className="ideas__date">March 12, 2020</span>
-                            <span className="ideas__line">|</span>
-                            <a href="" className="ideas__name">
-                                by Ann Summers
-                            </a>
-                            <span className="ideas__line">|</span>
-                            <a href="" className="ideas__category">
-                                Inrerior
-                            </a>
-                        </div>
-                        <a href="" className="ideas__label">
-                            Listicle actually selvage activated charcoal for the drinking vinegar{" "}
-                        </a>
-                    </div>
-                    <div className="ideas__body">
-                        <a href="#" className="ideas__image-ibg">
-                            <img src={images.ideasImages.ideas02} alt="" />
-                        </a>
-                        <div className="ideas__links">
-                            <span className="ideas__date">September 28,2020</span>
-                            <span className="ideas__line">|</span>
-                            <a href="" className="ideas__name">
-                                by Finnagan Morningstar
-                            </a>
-                            <span className="ideas__line">|</span>
-                            <a href="" className="ideas__category">
-                                Dining room interior
-                            </a>
-                        </div>
-                        <a href="" className="ideas__label">
-                            Red selfies edison bulb four dollar toast humblebrag
-                        </a>
-                    </div>
-                </div>
+                <div className="ideas__row">{ideas}</div>
             </div>
         </section>
     );
