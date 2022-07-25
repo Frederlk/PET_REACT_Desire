@@ -1,50 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Formik, Form as FormikForm, useField } from "formik";
+import { Formik, Form as FormikForm } from "formik";
 import * as Yup from "yup";
-
-const FooterImput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-        <>
-            <input
-                {...props}
-                {...field}
-                className={`input ${props.className || ""} ${meta.touched && meta.error ? "_error" : ""}`}
-            />
-            {meta.touched && meta.error ? <div className="input__error">{meta.error}</div> : null}
-        </>
-    );
-};
+import { data } from "../constants";
+import { Input } from "../_components";
 
 const Footer = () => {
-    const socialLinks = [
-        {
-            title: "Facebook",
-            link: "#Facebook",
-            icon: "_icon-facebook",
-        },
-        {
-            title: "Instagram",
-            link: "#Instagram",
-            icon: "_icon-inst",
-        },
-        {
-            title: "Pinterest",
-            link: "#Pinterest",
-            icon: "_icon-pin",
-        },
-        {
-            title: "WhatsApp",
-            link: "#WhatsApp",
-            icon: "_icon-whatsapp",
-        },
-        {
-            title: "Youtube",
-            link: "#Youtube",
-            icon: "_icon-youtube",
-        },
-    ];
     const helpLinks = [
         {
             title: "Delivery",
@@ -90,8 +51,7 @@ const Footer = () => {
                             console.log(JSON.stringify(values, null, 2));
                         }}>
                         <FormikForm className="info-footer__form">
-                            <FooterImput
-                                label="Ваш E-mail"
+                            <Input
                                 className="info-footer__input input_footer"
                                 placeholder="Subscribe by email"
                                 type="text"
@@ -106,7 +66,7 @@ const Footer = () => {
 
                 <div className="footer__column links-footer">
                     <ul className="links-footer__list">
-                        {socialLinks.map(({ title, link, icon }, i) => (
+                        {data.socialLinks.map(({ title, link, icon }, i) => (
                             <li key={title + i} className="links-footer__item">
                                 <a href={link} target="_blank" rel="noreferrer" className={`links-footer__link ${icon}`}>
                                     {title}

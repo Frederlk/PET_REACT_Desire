@@ -1,26 +1,11 @@
 import React from "react";
 import { data, images } from "../../constants";
+import { CollectionItem } from "../../_components";
 
 const Collection = () => {
-    const collectionItems = data.collectionItems.map(({ title, tags, img }, i) => (
-        <div key={title + i} className="body-collection__column">
-            <div className="body-collection__info">
-                <a href={title} className="body-collection__title">
-                    {title}
-                </a>
-                <div className="body-collection__text">
-                    {tags.map(({ tag, link }, k) => (
-                        <span key={link + k} className="body-collection__tag">
-                            <a href={link}>{tag}</a>
-                        </span>
-                    ))}
-                </div>
-            </div>
-            <a href={title} className="body-collection__image-ibg">
-                <img src={img} alt={title} />
-            </a>
-        </div>
-    ));
+    const collectionItems = data.collectionItems.map((item, i) => {
+        if (i < 5) return <CollectionItem key={item.link + i} item={item} className="collection__item" />;
+    });
 
     return (
         <section className="page__collection collection">
@@ -33,7 +18,7 @@ const Collection = () => {
                     </p>
                 </div>
             </div>
-            {collectionItems.length ? <div className="collection__body body-collection">{collectionItems}</div> : null}
+            {collectionItems.length ? <div className="collection__body">{collectionItems}</div> : null}
             <div className="collection__bottom bottom-collection">
                 <div className="bottom-collection__container">
                     <div className="bottom-collection__content">

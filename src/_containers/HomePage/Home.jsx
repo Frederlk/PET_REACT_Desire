@@ -48,7 +48,7 @@ const Home = () => {
                     <img src={images.defaultImages.background} alt="Background" />
                 </div>
             </div>
-            <div className="home__pagination"></div>
+            <div className="home__pagination pagination"></div>
         </section>
     );
 };

@@ -1,245 +1,190 @@
 .page {
-   &__map {
-      padding-bottom: 36.5%;
-      @include adaptiv-value("margin-bottom", 55, 40, 1);
-      min-height: 400px;
-   }
+    &__map {
+        @include adaptiveValue("min-height", 520, 250, 991.98, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 55, 40, 991.98, 767.98, 1);
+        width: 100%;
+    }
 
-   &__contact-info {
-      @include adaptiv-value("margin-bottom", 100, 40, 1);
-   }
-   &__contact-etc {
-      @include adaptiv-value("margin-bottom", 100, 40, 1);
-   }
+    &__contact-info {
+        @include adaptiveValue("margin-bottom", 100, 40, 991.98, 479.98, 1);
+    }
+    &__contact-etc {
+        @include adaptiveValue("margin-bottom", 100, 40, 991.98, 479.98, 1);
+    }
 }
 
 .contact-info {
-   &__container {
-   }
+    &__container {
+    }
 
-   &__title {
-      @extend .title;
-      position: relative;
-      @include adaptiv-value("padding-bottom", 25, 20, 1);
-      @include adaptiv-value("margin-bottom", 40, 30, 1);
-      &::after {
-         content: "";
-         @extend .line;
-         @include adaptiv-value("width", 200, 50, 1);
-      }
-      @media (max-width: $md3+px) {
-         text-align: center;
-         &::after {
-            left: 50%;
-            transform: translate(-50%, 0px);
-         }
-      }
-   }
-
-   &__body {
-      display: flex;
-      justify-content: flex-end;
-   }
-   &__inner {
-      flex: 0 1 825px;
-      @media (max-width: $md1+px) {
-         flex: 1 1 100%;
-      }
-   }
-
-   &__socials {
-      display: flex;
-      margin-bottom: 20px;
-      @media (max-width: $md3+px) {
-         justify-content: center;
-         align-items: center;
-      }
-   }
-
-   &__social-item {
-      @include adaptiv-value("margin-right", 36, 30, 1);
-      &:last-child {
-         margin: 0px 0px 0px 0px;
-      }
-      &::before {
-         transition: all 0.3s ease 0s;
-         @include adaptiv-font(16, 20, 1);
-         color: #707070;
-      }
-      @media (min-width: $md2 + px) {
-         &:hover {
-            &::before {
-               color: #363838;
+    &__title {
+        @extend %title;
+        position: relative;
+        @include adaptiveValue("padding-bottom", 25, 20, 991.98, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+        &::after {
+            content: "";
+            @extend %line;
+            @include adaptiveValue("width", 200, 50, 991.98, 479.98, 1);
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 0px);
             }
-         }
-      }
-   }
+        }
+    }
 
-   &__text {
-      @extend .text;
-      color: #a1a1a1;
-      margin-bottom: 10px;
-      @media (max-width: $md3+px) {
-         text-align: center;
-      }
-   }
+    &__body {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__inner {
+        flex: 0 1 rem(825);
+        @media (max-width: $pc) {
+            flex: 1 1 100%;
+        }
+    }
 
-   &__contacts {
-      margin-bottom: 15px;
-      @media (max-width: $md3+px) {
-         text-align: center;
-      }
-   }
+    &__socials {
+        display: flex;
+        margin-bottom: rem(20);
+        @include adaptiveValue("gap", 35, 25, 1110, 479.98, 1);
+        @media (max-width: $mobile) {
+            justify-content: center;
+            align-items: center;
+        }
+    }
 
-   &__contact-item {
-      display: flex;
-      @extend .text;
-      transition: all 0.3s ease 0s;
-      @media (min-width: $md2 + px) {
-         &:hover {
-            color: #707070;
-         }
-      }
-      @media (max-width: $md3+px) {
-         justify-content: center;
-      }
-   }
+    &__social-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 rem(28);
+        &::before {
+            transition: color 0.3s ease 0s;
+            @include adaptiveValue("font-size", 16, 20, 767.98, 479.98, 1);
+            color: $gray_04;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
 
-   &__email {
-      display: flex;
-      align-items: center;
-      @extend .link;
-      transition: all 0.3s ease 0s;
-      @include adaptiv-value("margin-bottom", 25, 20, 1);
-      &::before {
-         font-size: 16px;
-         margin: 0px 14px 0px 0px;
-      }
-      @media (min-width: $md2+px) {
-         &:hover {
-            color: #707070;
-         }
-      }
-      @media (max-width: $md3+px) {
-         justify-content: center;
-      }
-   }
+    &__text {
+        @extend %text;
+        color: $gray_05;
+        margin-bottom: rem(10);
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
 
-   &__form {
-   }
+    &__contact-item {
+        display: flex;
+        @extend %text;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $gray_04;
+            }
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            justify-content: center;
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__email {
+        display: flex;
+        align-items: center;
+        @extend %link;
+        transition: color 0.3s ease 0s;
+        gap: rem(14);
+        margin-top: rem(15);
+        @include adaptiveValue("margin-bottom", 25, 20, 767.98, 479.98, 1);
+        &::before {
+            font-size: rem(16);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $gray_04;
+            }
+        }
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__form {
+    }
 }
 
 .form-contact {
-   &__body {
-      @media (max-width: $md3+px) {
-         display: flex;
-         justify-content: center;
-         flex-wrap: wrap;
-      }
-   }
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(14);
 
-   &__row {
-      display: flex;
-      @include adaptiv-value("margin-bottom", 15, 10, 1);
-      @media (max-width: $md3+px) {
-         flex: 1 1 100%;
-         flex-wrap: wrap;
-      }
-   }
+    .input__error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color: red;
+        margin-top: rem(-10);
+    }
+    &__input-wrap {
+        position: relative;
+        flex: 0 1 calc(50% - rem(7));
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
 
-   &__input {
-      @media (min-width: $md3+px) {
-         &:first-child {
-            margin: 0px 5px 0px 0px;
-         }
-         &:last-child {
-            margin: 0px 0px 0px 5px;
-         }
-         flex: 0 1 50%;
-      }
-      flex: 1 1 100%;
-      margin: 0px 0px 10px 0px;
-      &:last-child {
-         margin: 0px 0px 0px 0px;
-      }
-   }
+    &__input,
+    &__textarea {
+        &._error {
+            margin-bottom: rem(15);
+        }
+    }
 
-   &__textarea {
-      @include adaptiv-value("margin-bottom", 20, 15, 1);
-   }
+    &__textarea-wrap {
+        position: relative;
+        flex: 1 1 100%;
+    }
 
-   &__btn {
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-      }
-   }
+    &__textarea {
+    }
+
+    &__btn {
+        flex: 0 0 rem(180);
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+        }
+    }
 }
 
 //========================================================================================================================================================
 
 .etc-contact {
-   &__slider {
-      margin: 0px 11px;
-      @include adaptiv-value("margin-bottom", 35, 20, 1);
-   }
+    &__slider {
+        margin: 0px rem(15);
+    }
 
-   &__column {
-      padding: 0px 9px;
-      position: relative;
-   }
+    &__column {
+    }
 
-   &__info {
-      position: absolute;
-      z-index: 2;
-      width: calc(100% - 18px);
-      height: 100%;
-      padding: 0px 10px;
-      top: 0;
-      left: 9px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.6);
-      opacity: 0;
-      transition: all 0.3s ease 0s;
-      @media (min-width: $md2+px) {
-         &:hover {
-            opacity: 1;
-         }
-      }
-      @media (max-width: $md2+px) {
-         opacity: 1;
-      }
-   }
-
-   &__title {
-      @extend .subtitle;
-      text-align: center;
-      color: rgba(54, 56, 56, 1);
-   }
-
-   &__image {
-      padding: 0px 0px 100% 0px;
-   }
-
-   &__pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .swiper-pagination-bullet {
-         cursor: pointer;
-         width: 8px;
-         height: 8px;
-         border-radius: 50%;
-         background-color: #363838;
-         transition: all 0.3s ease 0s;
-         @include adaptiv-value("margin-right", 30, 15, 1);
-         &:last-child {
-            margin: 0px 0px 0px 0px;
-         }
-      }
-      .swiper-pagination-bullet-active {
-         background-color: #ffef35;
-      }
-   }
+    &__pagination {
+        @media (max-width: $mobile) {
+            display: none;
+        }
+        @include adaptiveValue("margin-top", 35, 20, 991.98, 479.98, 1);
+    }
 }

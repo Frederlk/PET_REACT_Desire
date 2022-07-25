@@ -25,6 +25,7 @@ const { collectionImages } = images;
 const collectionItems = [
     {
         title: "Collection",
+        link: "27701a5f-af0f-4560-ae4a-aab01b3b9de3",
         tags: [
             { tag: "Living room", link: "Living room" },
             { tag: "Couch", link: "Couch" },
@@ -33,6 +34,7 @@ const collectionItems = [
     },
     {
         title: "Furniture",
+        link: "bc89bf1d-2605-449a-93c3-d39669bfdb23",
         tags: [
             { tag: "Living furntiture", link: "Living furntiture" },
             { tag: "Pillow", link: "Pillow" },
@@ -41,6 +43,7 @@ const collectionItems = [
     },
     {
         title: "Furniture collection",
+        link: "e4b3487b-2f56-4b09-86f9-958cfe7e994d",
         tags: [
             { tag: "Living room furntiture", link: "Living room furntiture" },
             { tag: "Chair", link: "Chair" },
@@ -49,6 +52,7 @@ const collectionItems = [
     },
     {
         title: "Truffaut literally trust literally",
+        link: "0707c4e3-fbd3-4805-a02d-ab2279e4400b",
         tags: [
             { tag: "Living room furntiture", link: "Living room furntiture" },
             { tag: "Table", link: "Table" },
@@ -57,6 +61,52 @@ const collectionItems = [
     },
     {
         title: "Furniture collection",
+        link: "d808b5b2-4bbf-4078-9ef7-db1c8f67275d",
+        tags: [
+            { tag: "Room furntiture Living room furntiture", link: "Room furntiture Living room furntiture" },
+            { tag: "Couch", link: "Couch" },
+        ],
+        img: collectionImages.collection05,
+    },
+    {
+        title: "Collection",
+        link: "ee227c5b-0d9f-406e-9529-8bd6ca9573c5",
+        tags: [
+            { tag: "Living room", link: "Living room" },
+            { tag: "Couch", link: "Couch" },
+        ],
+        img: collectionImages.collection01,
+    },
+    {
+        title: "Furniture",
+        link: "3233ee4a-10d2-4b11-bc9b-449dc27b84a3",
+        tags: [
+            { tag: "Living furntiture", link: "Living furntiture" },
+            { tag: "Pillow", link: "Pillow" },
+        ],
+        img: collectionImages.collection02,
+    },
+    {
+        title: "Furniture collection",
+        link: "e610f954-22ff-42f0-853c-e93c306d6ef5",
+        tags: [
+            { tag: "Living room furntiture", link: "Living room furntiture" },
+            { tag: "Chair", link: "Chair" },
+        ],
+        img: collectionImages.collection03,
+    },
+    {
+        title: "Truffaut literally trust literally",
+        link: "3b03c8c4-0acb-45bd-af47-81342364399a",
+        tags: [
+            { tag: "Living room furntiture", link: "Living room furntiture" },
+            { tag: "Table", link: "Table" },
+        ],
+        img: collectionImages.collection04,
+    },
+    {
+        title: "Furniture collection",
+        link: "bf1ac65c-b2fa-4a00-b66a-f78fcfaaa823",
         tags: [
             { tag: "Room furntiture Living room furntiture", link: "Room furntiture Living room furntiture" },
             { tag: "Couch", link: "Couch" },
@@ -163,4 +213,32 @@ const blogItems = [
     },
 ];
 
-export default { homeSlides, collectionItems, galleryItems, blogItems };
+const socialLinks = [
+    {
+        title: "Facebook",
+        link: "#Facebook",
+        icon: "_icon-facebook",
+    },
+    {
+        title: "Instagram",
+        link: "#Instagram",
+        icon: "_icon-inst",
+    },
+    {
+        title: "Pinterest",
+        link: "#Pinterest",
+        icon: "_icon-pin",
+    },
+    {
+        title: "WhatsApp",
+        link: "#WhatsApp",
+        icon: "_icon-whatsapp",
+    },
+    {
+        title: "Youtube",
+        link: "#Youtube",
+        icon: "_icon-youtube",
+    },
+];
+
+export default { homeSlides, collectionItems, galleryItems, blogItems, socialLinks };

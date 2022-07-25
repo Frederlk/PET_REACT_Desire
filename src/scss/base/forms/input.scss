@@ -37,4 +37,7 @@ textarea.input {
     min-height: rem(125);
     padding: rem(14) rem(18);
     border-radius: rem(24);
+    @media (max-width: $mobile) {
+        padding: rem(7) rem(18);
+    }
 }

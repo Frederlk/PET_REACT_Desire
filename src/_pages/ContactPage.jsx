@@ -1,197 +1,24 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+import { Breadcrumbs } from "../_components";
+import { ContactEtc, ContactInfo } from "../_containers";
 
 const ContactPage = () => {
     return (
         <>
-            <section className="page__breadcrumbs breadcrumbs breadcrumbs_contact breadcrumbs_no-bg">
-                <div className="breadcrumbs__container _container">
-                    <nav className="breadcrumbs__navigation">
-                        <ul className="breadcrumbs__list">
-                            <li>
-                                <a href="index.html" className="breadcrumbs__link">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog.html" className="breadcrumbs__link">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-            <div className="page__map" id="map"></div>
-            <section className="page__contact-info contact-info">
-                <div className="contact-info__container _container">
-                    <div className="contact-info__title">Contact Us</div>
-                    <div className="contact-info__body">
-                        <div className="contact-info__inner">
-                            <div className="contact-info__socials">
-                                <a href="" className="contact-info__social-item _icon-facebook"></a>
-                                <a href="" className="contact-info__social-item _icon-inst"></a>
-                                <a href="" className="contact-info__social-item _icon-pin"></a>
-                                <a href="" className="contact-info__social-item _icon-whatsapp"></a>
-                                <a href="" className="contact-info__social-item _icon-youtube"></a>
-                            </div>
-                            <div className="contact-info__text">
-                                Vexillologist vape microdosing freegan pork belly deep v direct trade cray single-origin coffee
-                                street art. Viral shaman mustache master cleanse, pour-over affogato poutine copper mug marfa
-                                fanny pack normcore. Lo-fi pop-up banjo portland, echo park hammock
-                            </div>
-                            <div className="contact-info__contacts">
-                                <a href="tel:4158297934" className="contact-info__contact-item">
-                                    (415) 829-7934
-                                </a>
-                                <a href="#" className="contact-info__contact-item">
-                                    725 Green St <br />
-                                    San Francisco, California(CA), 94133
-                                </a>
-                            </div>
-                            <a href="mailto:ouremailaddress@email.com" className="contact-info__email _icon-mail">
-                                ouremailaddress@email.com
-                            </a>
-                            <form action="#" className="contact-info__form form-contact">
-                                <div className="form-contact__body">
-                                    <div className="form-contact__row">
-                                        <input
-                                            autoComplete="off"
-                                            type="text"
-                                            name="form[]"
-                                            data-error="Ошибка"
-                                            data-value="Your name"
-                                            className="form-contact__input input _req"
-                                        />
-                                        <input
-                                            autoComplete="off"
-                                            type="email"
-                                            name="form[]"
-                                            data-error="Ошибка"
-                                            data-value="Your e-mail"
-                                            className="form-contact__input input _req _email"
-                                        />
-                                    </div>
-                                    <textarea
-                                        autoComplete="off"
-                                        name="form[]"
-                                        data-value="Your comment"
-                                        data-error="Ошибка"
-                                        className="form-contact__textarea input"></textarea>
-                                    <label className="checkbox"></label>
-                                    <button type="submit" className="form-contact__btn btn">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div className="page__contact-etc etc-contact">
-                <div className="etc-contact__slider _swiper">
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/01.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/02.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/03.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/04.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/05.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/06.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/07.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/08.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/09.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div className="etc-contact__column">
-                        <div className="etc-contact__info">
-                            <a href="#" className="etc-contact__title">
-                                Truffaut literally trust
-                            </a>
-                        </div>
-                        <div className="etc-contact__image _ibg">
-                            <img src="img/_contacts/10.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="etc-contact__pagination"></div>
-            </div>
+            <Helmet>
+                <meta name="Desire - Contacts" content="Desire - Contacts" />
+                <title>Desire - Contacts</title>
+            </Helmet>
+
+            <Breadcrumbs noBg />
+            <iframe
+                className="page__map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.6151058067267!2d-122.411081!3d37.799059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f18d8c6ea7%3A0x5d7f53fb70a3a903!2s725%20Green%20St%2C%20San%20Francisco%2C%20CA%2094133%2C%20USA!5e0!3m2!1sen!2sby!4v1658764228452!5m2!1sen!2sby"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <ContactInfo />
+            <ContactEtc />
         </>
     );
 };

@@ -72,7 +72,7 @@
         text-align: center;
         @media (min-width: $mobile) {
             display: flex;
-            @include adaptiveValue("gap", 40, 20, 1110, 767.98, 1);
+            @include adaptiveValue("gap", 80, 20, 1110, 767.98, 1);
             &_left {
                 @media (min-width: $pc) {
                     margin-left: rem(32);

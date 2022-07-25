@@ -10,7 +10,7 @@ const GalleryPage = () => {
                 <title>Desire - Gallery</title>
             </Helmet>
 
-            <Breadcrumbs />
+            <Breadcrumbs noBg />
             <Gallery galleryPage />
         </>
     );
