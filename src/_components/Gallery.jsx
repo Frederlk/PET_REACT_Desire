@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { data } from "../../constants";
+import { data } from "../constants";
 import LightGallery from "lightgallery/react";
 
 const Gallery = ({ galleryPage }) => {
@@ -16,12 +16,18 @@ const Gallery = ({ galleryPage }) => {
 
     const getItems = useCallback(() => {
         return galleryItems.map(({ img, thumb, alt }, i) => {
-            if (!galleryPage && i < 5) {
-                return (
-                    <a href={img} key={alt + i} className="gallery__item-ibg">
-                        <img src={thumb} alt={alt} />
-                    </a>
-                );
+            const item = (
+                <a href={img} key={alt + i} className="gallery__item-ibg">
+                    <img src={thumb} alt={alt} />
+                </a>
+            );
+
+            if (!galleryPage) {
+                if (i < 5) {
+                    return item;
+                }
+            } else {
+                return item;
             }
         });
     }, [galleryItems]);
@@ -31,7 +37,7 @@ const Gallery = ({ galleryPage }) => {
     }, [galleryItems]);
 
     return (
-        <section className="page__gallery gallery gallery_home">
+        <section className={`page__gallery gallery ${galleryPage ? "gallery_page" : ""}`}>
             <div className="gallery__container">
                 <nav className="gallery__nav">
                     {filters.map((item, i) => (

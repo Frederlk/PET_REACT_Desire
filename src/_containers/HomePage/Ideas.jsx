@@ -10,7 +10,7 @@ const Ideas = () => {
         return 0;
     };
 
-    const ideas = data.blogItems
+    const ideas = data?.blogItems
         .slice()
         .sort((a, b) => {
             return sortPosts(a.date, b.date);
