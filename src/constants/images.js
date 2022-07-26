@@ -93,4 +93,11 @@ const ideasImages = {
     ideas02,
 };
 
-export default { defaultImages, homeSlider, collectionImages, galleryImages, ideasImages };
+import brands01 from "./../assets/img/about/brands/01.png";
+import brands02 from "./../assets/img/about/brands/02.png";
+const brandsImages = {
+    brands01,
+    brands02,
+};
+
+export default { defaultImages, homeSlider, collectionImages, galleryImages, ideasImages, brandsImages };

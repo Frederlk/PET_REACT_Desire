@@ -162,29 +162,23 @@
 //========================================================================================================================================================
 
 .about-brands {
-    &__row {
-        display: flex;
-        align-items: center;
-        margin: 0px -6px;
-        @media (max-width: $mobile) {
-            flex-wrap: wrap;
-            margin: 0px 20px;
-            justify-content: center;
-        }
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("margin-bottom", 60, 30, 1110, 767.98, 1);
+    @include adaptiveValue("margin-left", 19, 10, 1110, 767.98, 1);
+    @include adaptiveValue("margin-right", 19, 10, 1110, 767.98, 1);
+
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    &__column {
-        @include adaptiveValue("padding-right", 34, 5);
-        @include adaptiveValue("padding-left", 34, 5);
+    &__image {
+        @include adaptiveValue("padding-left", 34, 5, 1110, 767.98, 1);
+        @include adaptiveValue("padding-right", 34, 5, 1110, 767.98, 1);
         flex: 0 1 20%;
         @media (max-width: $mobile) {
             flex: 0 1 33.333%;
-        }
-        @media (max-width: 550px) {
-            flex: 0 1 50%;
-            &:last-child {
-                display: none;
-            }
         }
         img {
             max-width: 100%;

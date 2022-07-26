@@ -5,8 +5,6 @@ import * as flsFunctions from "./js/files/functions";
 import * as flsScroll from "./js/files/scroll/scroll";
 import { Spinner } from "./_components";
 import dynamicAdaptive from "./js/libs/dynamic_adapt";
-import scrollWatch from "./js/libs/watcher";
-import "./js/libs/watcher.js";
 
 const Page404 = lazy(() => import("./_pages/Page404")),
     Home = lazy(() => import("./_pages/HomePage")),
