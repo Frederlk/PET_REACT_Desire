@@ -2,11 +2,15 @@ import logo from "./../assets/img/logo.png";
 import loadingGif from "./../assets/img/icons/loading.gif";
 import videoIcon from "./../assets/img/icons/video.png";
 import background from "./../assets/img/_home/slider/main_slider.jpg";
+import aboutBg from "./../assets/img/about/01.jpg";
+import videoBg from "./../assets/img/about/02.jpg";
 const defaultImages = {
     logo,
     loadingGif,
     videoIcon,
     background,
+    aboutBg,
+    videoBg,
 };
 
 import chair01 from "./../assets/img/_home/slider/chair.png";
@@ -86,4 +90,5 @@ const ideasImages = {
     ideas01,
     ideas02,
 };
+
 export default { defaultImages, homeSlider, collectionImages, galleryImages, ideasImages };

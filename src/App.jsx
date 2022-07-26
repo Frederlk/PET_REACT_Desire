@@ -38,7 +38,7 @@ const App = () => {
                 <Suspense fallback={<Spinner />}>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        {/* <Route path="/about" element={<About />} /> */}
+                        <Route path="/about" element={<About />} />
                         {/* <Route path="/blog" element={<Blog />} /> */}
                         {/* <Route path="/blog/:article" element={<SingleBlog />} /> */}
                         <Route path="/gallery" element={<Gallery />} />

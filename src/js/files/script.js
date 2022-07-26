@@ -10,26 +10,23 @@ if (document.querySelector(".about-video")) {
     });
 }
 
-if (document.querySelector(".about-progress")) {
-    const progressSection = document.querySelector(".about-details__bottom");
-    const progressBars = document.querySelectorAll(".about-progress__bar");
+// if (document.querySelector(".about-progress")) {
+//     const progressSection = document.querySelector(".about-details__bottom");
+//     const progressBars = document.querySelectorAll(".about-progress__bar");
 
-    function showProgress() {
-        progressBars.forEach((progressBar) => {
-            const value = progressBar.dataset.progress;
-            progressBar.style.width = `${value}%`;
-        });
-    }
+//     function showProgress() {
+//         progressBars.forEach((progressBar) => {
+//             const value = progressBar.dataset.progress;
+//             progressBar.style.width = `${value}%`;
+//         });
+//     }
 
-    window.addEventListener("scroll", () => {
-        const sectionPos = progressSection.getBoundingClientRect().top;
-        const screenPos = window.innerHeight;
+//     window.addEventListener("scroll", () => {
+//         const sectionPos = progressSection.getBoundingClientRect().top;
+//         const screenPos = window.innerHeight;
 
-        if (sectionPos < screenPos) {
-            showProgress();
-        }
-    });
-    if (progressSection.classList.contains("_active")) {
-        console.log(POgU);
-    }
-}
+//         if (sectionPos < screenPos) {
+//             showProgress();
+//         }
+//     });
+// }
