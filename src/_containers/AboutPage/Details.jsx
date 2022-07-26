@@ -1,75 +1,79 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import images from "../../constants/images";
+import { InView, useInView } from "react-intersection-observer";
+import { useCountUp } from "react-countup";
+
+const ProgressItem = ({ title, percent }) => {
+    const [width, setWidth] = useState(0);
+    const countUpRef = React.useRef(null);
+
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    });
+
+    const { start, pauseResume, reset, update } = useCountUp({
+        ref: countUpRef,
+        start: 0,
+        end: percent,
+        duration: 0.8,
+        suffix: "%",
+    });
+
+    useEffect(() => {
+        inView ? setWidth(percent) : setWidth(0);
+        inView ? start() : reset();
+    }, [inView]);
+
+    return (
+        <div ref={ref} className={`about-progress__item ${inView ? "_inView" : ""}`}>
+            <div className="about-progress__top">
+                <h5 className="about-progress__title">{title}</h5>
+                <div className="about-progress__percents" ref={countUpRef}></div>
+            </div>
+            <div className="about-progress__bottom">
+                <div className="about-progress__bar" style={{ width: width + "%" }}></div>
+            </div>
+        </div>
+    );
+};
 
 const Details = () => {
+    const addViewClass = (inView, entry) => {
+        inView ? entry.target.classList.add("_inView") : entry.target.classList.remove("_inView");
+    };
+
     return (
         <section className="page__about-details about-details">
-            <div className="about-details__top">
-                <div className="about-details__container _container">
-                    <div className="about-details__top-body">
-                        <h2 className="about-details__title">Our Inspiration in details</h2>
-                        <div className="about-details__text">
+            <InView
+                as="div"
+                triggerOnce
+                threshold={0.2}
+                onChange={(inView, entry) => addViewClass(inView, entry)}
+                className="about-details__top top-details">
+                <div className="top-details__container">
+                    <div className="top-details__body">
+                        <h3 className="top-details__title">Our Inspiration in details</h3>
+                        <p className="top-details__text">
                             Semiotics fixie four dollar toast, next level woke scenester direct trade photo booth helvetica jean
                             shorts. Fanny pack church-key cornhole, banh mi thundercats gochujang keytar.
-                        </div>
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div className="about-details__bottom _anim-items">
-                <div className="about-details__body">
-                    <div className="about-details__outer _container">
-                        <div className="about-details__column about-details-image">
-                            <div className="about-details-image__body">
-                                <img src="img/_home/slider/chair.png" alt="" />
-                            </div>
-                        </div>
-                        <div className="about-details__column about-progress">
-                            <div className="about-progress__inner">
-                                <div className="about-progress__progress">
-                                    <div className="about-progress__item ">
-                                        <div className="about-progress__top">
-                                            <div className="about-progress__title">Design and technical drawings</div>
-                                            <div className="about-progress__percents" id="percent">
-                                                80%
-                                            </div>
-                                        </div>
-                                        <div className="about-progress__bottom">
-                                            <div className="about-progress__bar" data-progress="80"></div>
-                                        </div>
-                                    </div>
-                                    <div className="about-progress__item">
-                                        <div className="about-progress__top">
-                                            <div className="about-progress__title">Measurments</div>
-                                            <div className="about-progress__percents">70%</div>
-                                        </div>
-                                        <div className="about-progress__bottom">
-                                            <div className="about-progress__bar" data-progress="70"></div>
-                                        </div>
-                                    </div>
-                                    <div className="about-progress__item">
-                                        <div className="about-progress__top">
-                                            <div className="about-progress__title">Furniture functionality analysis</div>
-                                            <div className="about-progress__percents">75%</div>
-                                        </div>
-                                        <div className="about-progress__bottom">
-                                            <div className="about-progress__bar" data-progress="75"></div>
-                                        </div>
-                                    </div>
-                                    <div className="about-progress__item">
-                                        <div className="about-progress__top">
-                                            <div className="about-progress__title">Interior visualization</div>
-                                            <div className="about-progress__percents">40%</div>
-                                        </div>
-                                        <div className="about-progress__bottom">
-                                            <div className="about-progress__bar" data-progress="40"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            </InView>
+            <div className="about-details__bottom bottom-details">
+                <div className="bottom-details__container">
+                    <div className="bottom-details__image">
+                        <img src={images.homeSlider.chair01} alt="Chair" />
+                    </div>
+                    <div className="bottom-details__progress about-progress">
+                        <ProgressItem title="Design and technical drawings" percent={80} />
+                        <ProgressItem title="Measurments" percent={70} />
+                        <ProgressItem title="Furniture functionality analysis" percent={75} />
+                        <ProgressItem title="Interior visualization" percent={40} />
                     </div>
                 </div>
-                <div className="about-details__bg _ibg">
-                    <img src="img/_home/slider/main_slider.jpg" alt="" />
+                <div className="bottom-details__bg-ibg">
+                    <img src={images.defaultImages.detailsBg} alt="Background" />
                 </div>
             </div>
         </section>

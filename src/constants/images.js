@@ -4,6 +4,7 @@ import videoIcon from "./../assets/img/icons/video.png";
 import background from "./../assets/img/_home/slider/main_slider.jpg";
 import aboutBg from "./../assets/img/about/01.jpg";
 import videoBg from "./../assets/img/about/02.jpg";
+import detailsBg from "./../assets/img/about/03.jpg";
 const defaultImages = {
     logo,
     loadingGif,
@@ -11,6 +12,7 @@ const defaultImages = {
     background,
     aboutBg,
     videoBg,
+    detailsBg,
 };
 
 import chair01 from "./../assets/img/_home/slider/chair.png";

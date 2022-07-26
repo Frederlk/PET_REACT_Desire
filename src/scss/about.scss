@@ -30,12 +30,12 @@
         @extend %title;
         line-height: math.div(60, 36);
         position: relative;
-        @include adaptiveValue("padding-bottom", 20, 10);
-        @include adaptiveValue("margin-bottom", 25, 15);
+        @include adaptiveValue("padding-bottom", 20, 10, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 15, 1110, 767.98, 1);
         &::after {
             content: "";
             @extend %line;
-            @include adaptiveValue("width", 200, 50);
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
         }
         @media (max-width: $mobile) {
             text-align: center;
@@ -201,15 +201,21 @@
     &__top {
     }
 
+    &__bottom {
+    }
+}
+
+.top-details {
     &__container {
-        display: flex;
-        justify-content: flex-end;
+        @media (min-width: $pc) {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
-    &__top-body {
-        flex: 0 1 825px;
-        @media (max-width: $pc) {
-            flex: 1 1 100%;
+    &__body {
+        @media (min-width: $pc) {
+            flex: 0 1 rem(825);
         }
     }
 
@@ -217,12 +223,12 @@
         @extend %title;
         line-height: math.div(60, 36);
         position: relative;
-        @include adaptiveValue("padding-bottom", 15, 10);
-        @include adaptiveValue("margin-bottom", 25, 15);
+        @include adaptiveValue("padding-bottom", 15, 10, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 15, 1110, 767.98, 1);
         &::after {
             content: "";
             @extend %line;
-            @include adaptiveValue("width", 200, 50);
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
         }
         @media (max-width: $mobile) {
             text-align: center;
@@ -235,34 +241,42 @@
 
     &__text {
         @extend %text;
-        @include adaptiveValue("margin-bottom", 30, 20);
+        @include adaptiveValue("margin-bottom", 30, 20, 1110, 767.98, 1);
         @media (max-width: $mobile) {
             text-align: center;
         }
     }
+}
 
-    &__bottom {
-        position: relative;
-    }
-
-    &__body {
+.bottom-details {
+    position: relative;
+    &__container {
+        @media (min-width: $pc) {
+            overflow: visible;
+            display: flex;
+            justify-content: space-between;
+        }
         position: relative;
         z-index: 2;
     }
 
-    &__outer {
-        overflow: visible;
-        display: flex;
-        justify-content: space-between;
-        @media (max-width: 1300px) {
-            align-items: center;
+    &__image {
+        @include adaptiveValue("margin-top", -135, 40, 1600, 1140, 1);
+        @include adaptiveValue("margin-left", -225, 0, 1600, 1140, 1);
+        @include adaptiveValue("margin-right", 77, 20, 1600, 1140, 1);
+        flex: 0 1 rem(432);
+        @media (max-width: $pc) {
+            display: none;
+        }
+        img {
+            max-width: 100%;
         }
     }
 
-    &__column {
+    &__progress {
     }
 
-    &__bg {
+    &__bg-ibg {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -271,50 +285,23 @@
     }
 }
 
-.about-details-image {
-    @include adaptiveValue("margin-top", -135, 135);
-    @include adaptiveValue("margin-left", -225, 225);
-    @include adaptiveValue("margin-right", 77, -40);
-    flex: 0 1 432px;
-    position: relative;
-    @media (max-width: $pc) {
-        display: none;
-    }
-    @media (max-width: 1300px) {
-        margin-top: 0;
-    }
-    &__body {
-        position: relative;
-    }
-    img {
-        max-width: 100%;
-    }
-}
-
 .about-progress {
-    @include adaptiveValue("padding-bottom", 75, 20);
-    @include adaptiveValue("padding-top", 75, 20);
-    flex: 0 0 825px;
-    @media (max-width: $pc) {
-        flex: 1 1 100%;
-    }
-    &__progress {
-        display: flex;
-        flex-wrap: wrap;
+    @include adaptiveValue("padding-bottom", 75, 20, 1110, 479.98, 1);
+    @include adaptiveValue("padding-top", 75, 20, 1110, 479.98, 1);
+    @media (min-width: $pc) {
+        flex: 0 0 rem(825);
     }
 
     &__item {
-        flex: 1 1 100%;
-        @include adaptiveValue("margin-bottom", 30, 15);
-        &:last-child {
-            margin: 0px 0px 0px 0px;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 30, 15, 1110, 479.98, 1);
         }
     }
     &__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include adaptiveValue("margin-bottom", 15, 10);
+        @include adaptiveValue("margin-bottom", 15, 10, 1110, 479.98, 1);
     }
 
     &__title {
@@ -322,25 +309,27 @@
     }
 
     &__percents {
+        flex: 0 0 rem(50);
+        text-align: right;
         @extend %subtitle;
     }
 
     &__bottom {
-        background-color: #fff;
+        background-color: $white;
         width: 100%;
-        border-radius: 4px;
+        border-radius: rem(4);
         overflow: hidden;
-        height: 2px;
+        height: rem(2);
         position: relative;
     }
 
     &__bar {
         position: absolute;
-        transition: all 0.8s ease-out 0.5s;
+        transition: width 0.8s ease-out 0s;
         width: 0%;
         height: 100%;
         top: 0;
         left: 0;
-        background-color: #363838;
+        background-color: $mainColor;
     }
 }
