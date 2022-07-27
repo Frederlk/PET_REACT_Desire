@@ -38,6 +38,29 @@
 
     &__bottom {
     }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(12);
+        @extend %link;
+        color: $gray_04;
+        li {
+            cursor: pointer;
+        }
+        .disabled {
+            display: none;
+        }
+        .selected {
+            color: $mainColor;
+        }
+        .prev {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
 }
 
 .quote {
