@@ -182,11 +182,12 @@ const galleryItems = [
 const { ideasImages } = images;
 const blogItems = [
     {
-        img: ideasImages.ideas01,
+        img: ideasImages.blog01,
         date: new Date(2022, 6, 13),
         link: "dc95be89-9c30-42d8-bf7f-c9db22c09d5f",
         author: "Ann Summers",
         tags: ["Inrerior"],
+        category: "Simple interiror design",
         title: "Listicle actually selvage activated charcoal for the drinking vinegar",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
         content: "",
@@ -201,12 +202,25 @@ const blogItems = [
         ],
     },
     {
-        img: ideasImages.ideas02,
+        img: ideasImages.blog02,
         date: new Date(2022, 6, 12),
         link: "3aaa4c30-a2ce-44af-9b0e-1e9f2442a5f2",
         author: "Finnagan Morningstar",
         tags: ["Dining room interior"],
+        category: "Dining room",
         title: "Red selfies edison bulb four dollar toast humblebrag",
+        previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
+        content: "",
+        comments: [],
+    },
+    {
+        img: ideasImages.blog03,
+        date: new Date(2022, 5, 12),
+        link: "9641d375-1354-454c-b22a-568c543096ee",
+        author: "Lux Morningstar",
+        tags: ["Design"],
+        category: "Design",
+        title: "Authentic kogi shabby chic",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
         content: "",
         comments: [],
@@ -241,4 +255,9 @@ const socialLinks = [
     },
 ];
 
-export default { homeSlides, collectionItems, galleryItems, blogItems, socialLinks };
+const blogSide = {
+    categories: ["Dining room", "Office furniture", "Simple interiror design", "Design", "Bedroom Furniture"],
+    tags: ["Dining room futniture", "Chair", "Table", "Bedroom", "Office Furniture"],
+};
+
+export default { homeSlides, collectionItems, galleryItems, blogItems, socialLinks, blogSide };

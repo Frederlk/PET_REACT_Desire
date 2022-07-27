@@ -27,6 +27,7 @@ $gray_02: #5a5a5a;
 $gray_03: #979797;
 $gray_04: #707070;
 $gray_05: #a1a1a1;
+$gray_06: #8f8d8d;
 $light_01: #dfdfdf;
 $primary_01: #ffef35;
 $primary_02: #f1d152;
@@ -150,7 +151,7 @@ body {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "about";
-// @import "blog";
+@import "blog";
 @import "contact";
 
 //========================================================================================================================================================
@@ -175,6 +176,10 @@ body {
     }
 
     &__ideas {
+        @include adaptiveValue("margin-bottom", 60, 40, 1110, 479.98, 1);
+    }
+
+    &__blog-content {
         @include adaptiveValue("margin-bottom", 60, 40, 1110, 479.98, 1);
     }
 }

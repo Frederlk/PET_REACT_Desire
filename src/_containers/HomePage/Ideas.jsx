@@ -1,7 +1,6 @@
-import { format } from "date-fns";
 import React from "react";
-import { Link } from "react-router-dom";
 import { data } from "../../constants";
+import BlogArticle from "../BlogPage/BlogArticle";
 
 const Ideas = () => {
     const sortPosts = (a, b) => {
@@ -15,31 +14,9 @@ const Ideas = () => {
         .sort((a, b) => {
             return sortPosts(a.date, b.date);
         })
-        .map(({ img, title, author, link, date, tags }, i) => {
+        .map((item, i) => {
             if (i < 2) {
-                return (
-                    <div key={link + i} className="ideas__body ideas-item">
-                        <Link to={`/blog/${link}`} className="ideas-item__image-ibg">
-                            <img src={img} alt={title} />
-                        </Link>
-                        <div className="ideas-item__links">
-                            <span className="ideas-item__date">{format(date, "MMMM d, yyyy")}</span>
-                            <span className="ideas-item__line">|</span>
-                            <Link to="/blog" state={{ author: author }} className="ideas-item__name">
-                                by {author}
-                            </Link>
-                            <span className="ideas-item__line">|</span>
-                            {tags.map((item) => (
-                                <Link to="/blog" key={item + i} state={{ tags: item }} className="ideas-item__category">
-                                    {item}
-                                </Link>
-                            ))}
-                        </div>
-                        <Link to={`/blog/${link}`} className="ideas-item__label">
-                            {title}
-                        </Link>
-                    </div>
-                );
+                return <BlogArticle key={item.link + i} item={item} className="ideas__body" />;
             }
         });
 

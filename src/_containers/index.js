@@ -13,3 +13,8 @@ export { default as CollectionAbout } from "./AboutPage/CollectionAbout";
 
 export { default as ContactInfo } from "./ContactPage/ContactInfo";
 export { default as ContactEtc } from "./ContactPage/ContactEtc";
+
+export { default as BlogSide } from "./BlogPage/BlogSide";
+export { default as BlogArticle } from "./BlogPage/BlogArticle";
+export { default as BlogQuote } from "./BlogPage/BlogQuote";
+export { default as BlogFill } from "./BlogPage/BlogFill";

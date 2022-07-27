@@ -20,7 +20,7 @@ textarea {
     line-height: math.div(28, 16);
     background: transparent;
     transition: border 0.3s ease 0s, color 0.3s ease 0s;
-    &._focus {
+    &:focus {
         border: rem(1) solid $mainColor;
         color: $mainColor;
     }

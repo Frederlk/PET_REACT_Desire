@@ -86,11 +86,13 @@ const galleryImages = {
     galleryThumb10,
 };
 
-import ideas01 from "./../assets/img/_blog/01.jpg";
-import ideas02 from "./../assets/img/_blog/02.jpg";
+import blog01 from "./../assets/img/_blog/01.jpg";
+import blog02 from "./../assets/img/_blog/02.jpg";
+import blog03 from "./../assets/img/_blog/03.jpg";
 const ideasImages = {
-    ideas01,
-    ideas02,
+    blog01,
+    blog02,
+    blog03,
 };
 
 import brands01 from "./../assets/img/about/brands/01.png";
