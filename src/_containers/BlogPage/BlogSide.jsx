@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { data } from "../../constants";
 import { Link } from "react-router-dom";
 import { Formik, Form as FormikForm } from "formik";
 import { Input } from "../../_components";
 import { format } from "date-fns";
+import dynamicAdaptive from "../../js/libs/dynamic_adapt.js";
 
-const BlogSide = () => {
+const BlogSide = ({ passedState }) => {
+    const { tag, setTag, category, setCategory, setSearch } = passedState;
+
+    useEffect(() => {
+        dynamicAdaptive();
+    }, []);
+
     const categories = data.blogSide.categories.map((item, i) => (
-        <li key={item + i} className="sidebar__item">
+        <li
+            onClick={() => (category === item ? setCategory(null) : setCategory(item))}
+            key={item + i}
+            className={`sidebar__item ${category === item ? "_active" : ""}`}>
             {item} ({data.blogItems.slice().filter((post) => post.category === item).length})
         </li>
     ));
@@ -42,7 +52,10 @@ const BlogSide = () => {
         });
 
     const tags = data.blogSide.tags.map((item, i) => (
-        <li key={item + i} className="sidebar__tags-tag">
+        <li
+            onClick={() => (tag === item ? setTag(null) : setTag(item))}
+            key={item + i}
+            className={`sidebar__tags-tag ${tag === item ? "_active" : ""}`}>
             {item}
         </li>
     ));
@@ -53,14 +66,10 @@ const BlogSide = () => {
                 initialValues={{
                     search: "",
                 }}
-                onSubmit={(values, { resetForm }) => {
-                    values = {
-                        ...values,
-                    };
-                    resetForm();
-                    console.log(JSON.stringify(values, null, 2));
+                onSubmit={(values) => {
+                    setSearch(values.search);
                 }}>
-                <FormikForm data-da=".blog-content__fill,767.98,first" className="sidebar-form">
+                <FormikForm data-da=".blog-content__fill,767.98,0" className="sidebar-form">
                     <Input className="sidebar-form__input" placeholder="Search" type="text" name="search" />
                     <button type="submit" className="sidebar-form__btn _icon-lupa"></button>
                 </FormikForm>

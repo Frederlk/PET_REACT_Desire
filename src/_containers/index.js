@@ -16,5 +16,4 @@ export { default as ContactEtc } from "./ContactPage/ContactEtc";
 
 export { default as BlogSide } from "./BlogPage/BlogSide";
 export { default as BlogArticle } from "./BlogPage/BlogArticle";
-export { default as BlogQuote } from "./BlogPage/BlogQuote";
 export { default as BlogFill } from "./BlogPage/BlogFill";

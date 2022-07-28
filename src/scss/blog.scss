@@ -61,6 +61,19 @@
             }
         }
     }
+
+    &__empty {
+        text-align: center;
+        p {
+            @extend %quote;
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+        button {
+            min-width: rem(160);
+        }
+    }
 }
 
 .quote {
@@ -147,6 +160,9 @@
 
     &__item {
         cursor: pointer;
+        &._active {
+            color: $primary_02;
+        }
     }
 
     .sidebar__line {
@@ -199,12 +215,20 @@
         border: rem(1) solid rgba(69, 70, 71, 0.5);
         border-radius: rem(14);
         @extend %hover_01;
+        transition: color 0.3s ease 0s, border 0.3s ease 0s;
+        &._active {
+            border: rem(1) solid $mainColor;
+            color: $mainColor;
+        }
     }
 
     &__social {
         display: flex;
         align-items: center;
         gap: rem(20);
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
     }
 
     &__social-item {
@@ -234,11 +258,11 @@
     &__btn {
         position: absolute;
         top: 50%;
-        right: rem(10);
+        right: rem(-10);
         transform: translate(-50%, -50%);
         z-index: 2;
-        background-color: $white;
         font-size: rem(17);
+        padding: rem(10);
     }
 }
 

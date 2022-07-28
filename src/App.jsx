@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import * as flsFunctions from "./js/files/functions";
 import * as flsScroll from "./js/files/scroll/scroll";
 import { Spinner } from "./_components";
-import dynamicAdaptive from "./js/libs/dynamic_adapt";
 
 const Page404 = lazy(() => import("./_pages/Page404")),
     Home = lazy(() => import("./_pages/HomePage")),
@@ -28,7 +27,6 @@ const App = () => {
         flsFunctions.menuInit();
         flsScroll.headerScroll();
         flsFunctions.isWebp();
-        dynamicAdaptive();
     }, []);
 
     return (

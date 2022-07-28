@@ -461,15 +461,9 @@
         padding: 0px rem(5);
     }
 
-    &__name,
     &__category {
         color: inherit;
-        transition: color 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $mainColor;
-            }
-        }
+        @extend %hover_01;
     }
 
     &__label {
