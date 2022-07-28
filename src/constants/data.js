@@ -190,7 +190,36 @@ const blogItems = [
         category: "Simple interiror design",
         title: "Listicle actually selvage activated charcoal for the drinking vinegar",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
-        content: "",
+        content: `
+        <p>
+        Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally
+        williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin
+        pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy
+        pabst enamel pin edison bulb farm-to-table.
+        </p>
+        <p>
+            Yuccie portland kickstarter, readymade ramps humblebrag ennui banjo mumblecore vaporware pickled cray
+            stumptown 8-bit mlkshk. Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony
+            intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche. Tousled yr
+            williamsburg austin edison bulb cloud bread vegan street art. Locavore food truck trust fund palo
+            santo asymmetrical, franzen deep v marfa kogi whatever swag pop-up seitan.
+        </p>
+        <div>
+            <q>“Simplicity is not the goal. It is the by-product of a good idea and modest expectations”</q>
+            <author>Paul Rand</author>
+        </div>
+        <p>
+            Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring
+            book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table.
+        </p>
+        <p>
+            Yuccie portland kickstarter, readymade ramps humblebrag ennui banjo mumblecore vaporware pickled cray
+            stumptown 8-bit mlkshk. Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony
+            intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche. Tousled yr
+            williamsburg austin edison bulb cloud bread vegan street art. Locavore food truck trust fund palo
+            santo asymmetrical, franzen deep v marfa kogi whatever swag pop-up seitan.
+        </p>
+        `,
         comments: [
             {
                 id: "bc681db7-252c-4c83-a0cf-137df9432e0b",

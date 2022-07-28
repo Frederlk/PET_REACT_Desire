@@ -8,7 +8,6 @@ import { Spinner } from "./_components";
 const Page404 = lazy(() => import("./_pages/Page404")),
     Home = lazy(() => import("./_pages/HomePage")),
     Blog = lazy(() => import("./_pages/BlogPage")),
-    SingleBlog = lazy(() => import("./_pages/SingleBlogPage")),
     About = lazy(() => import("./_pages/AboutPage")),
     Gallery = lazy(() => import("./_pages/GalleryPage")),
     Contact = lazy(() => import("./_pages/ContactPage"));

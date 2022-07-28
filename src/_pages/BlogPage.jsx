@@ -20,6 +20,7 @@ const BlogPage = () => {
 
             <div className="page__blog-content blog-content">
                 <div className="blog-content__container">
+                    {/* <SingleFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} /> */}
                     <BlogFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
                     <BlogSide passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
                 </div>
