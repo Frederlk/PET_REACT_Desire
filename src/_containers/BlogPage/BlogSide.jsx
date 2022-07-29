@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { data } from "../../constants";
 import { Link } from "react-router-dom";
 import { Formik, Form as FormikForm } from "formik";
@@ -6,7 +6,7 @@ import { Input } from "../../_components";
 import { format } from "date-fns";
 import dynamicAdaptive from "../../js/libs/dynamic_adapt.js";
 
-const BlogSide = ({ passedState }) => {
+const BlogSide = memo(function BlogSide({ passedState }) {
     const { tag, setTag, category, setCategory, setSearch } = passedState;
 
     useEffect(() => {
@@ -33,11 +33,12 @@ const BlogSide = ({ passedState }) => {
         .sort((a, b) => {
             return sortPosts(a.date, b.date);
         })
-        .map(({ title, link, date, author }, i) => {
+        .map((item, i) => {
+            const { title, link, date, author } = item;
             if (i < 3)
                 return (
-                    <article key={link} className="sidebar__post">
-                        <Link to={`/blog/${link + i}`} className="sidebar__post-text">
+                    <article key={link + i} className="sidebar__post">
+                        <Link to={`/blog/${link}`} state={{ blogArticle: item }} className="sidebar__post-text">
                             {title}
                         </Link>
                         <div className="sidebar__post-bottom">
@@ -55,7 +56,7 @@ const BlogSide = ({ passedState }) => {
         <li
             onClick={() => (tag === item ? setTag(null) : setTag(item))}
             key={item + i}
-            className={`sidebar__tags-tag ${tag === item ? "_active" : ""}`}>
+            className={`tags__item ${tag === item ? "_active" : ""}`}>
             {item}
         </li>
     ));
@@ -68,8 +69,9 @@ const BlogSide = ({ passedState }) => {
                 }}
                 onSubmit={(values) => {
                     setSearch(values.search);
+                    values.search = "";
                 }}>
-                <FormikForm data-da=".blog-content__fill,767.98,0" className="sidebar-form">
+                <FormikForm data-da=".blog-content__container,991.98,0" className="sidebar-form">
                     <Input className="sidebar-form__input" placeholder="Search" type="text" name="search" />
                     <button type="submit" className="sidebar-form__btn _icon-lupa"></button>
                 </FormikForm>
@@ -87,8 +89,8 @@ const BlogSide = ({ passedState }) => {
                 </div>
             ) : null}
             {tags.length ? (
-                <div className="sidebar__tags">
-                    <h4 className="sidebar__label">Tags</h4>
+                <div className="sidebar__tags tags">
+                    <h4 className="tags__label">Tags</h4>
                     {tags}
                 </div>
             ) : null}
@@ -104,6 +106,6 @@ const BlogSide = ({ passedState }) => {
             </div>
         </aside>
     );
-};
+});
 
 export default BlogSide;

@@ -137,13 +137,6 @@
     flex-wrap: wrap;
     gap: rem(14);
 
-    .input__error {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        color: red;
-        margin-top: rem(-10);
-    }
     &__input-wrap {
         position: relative;
         flex: 0 1 calc(50% - rem(7));

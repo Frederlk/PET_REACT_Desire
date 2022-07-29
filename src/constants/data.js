@@ -3,7 +3,7 @@ import images from "./images";
 const { homeSlider } = images;
 const homeSlides = [
     {
-        title: "Furniture collection",
+        title: "furniture collection",
         text: `Deep v you probably haven't heard of them banh mi synth actually affogato. Aesthetic
         lyft ethical drinking vinegar austint`,
         img: homeSlider.chair01,
@@ -33,7 +33,7 @@ const collectionItems = [
         img: collectionImages.collection01,
     },
     {
-        title: "Furniture",
+        title: "furniture",
         link: "bc89bf1d-2605-449a-93c3-d39669bfdb23",
         tags: [
             { tag: "Living furntiture", link: "Living furntiture" },
@@ -42,7 +42,7 @@ const collectionItems = [
         img: collectionImages.collection02,
     },
     {
-        title: "Furniture collection",
+        title: "furniture collection",
         link: "e4b3487b-2f56-4b09-86f9-958cfe7e994d",
         tags: [
             { tag: "Living room furntiture", link: "Living room furntiture" },
@@ -60,7 +60,7 @@ const collectionItems = [
         img: collectionImages.collection04,
     },
     {
-        title: "Furniture collection",
+        title: "furniture collection",
         link: "d808b5b2-4bbf-4078-9ef7-db1c8f67275d",
         tags: [
             { tag: "Room furntiture Living room furntiture", link: "Room furntiture Living room furntiture" },
@@ -78,7 +78,7 @@ const collectionItems = [
         img: collectionImages.collection01,
     },
     {
-        title: "Furniture",
+        title: "furniture",
         link: "3233ee4a-10d2-4b11-bc9b-449dc27b84a3",
         tags: [
             { tag: "Living furntiture", link: "Living furntiture" },
@@ -87,7 +87,7 @@ const collectionItems = [
         img: collectionImages.collection02,
     },
     {
-        title: "Furniture collection",
+        title: "furniture collection",
         link: "e610f954-22ff-42f0-853c-e93c306d6ef5",
         tags: [
             { tag: "Living room furntiture", link: "Living room furntiture" },
@@ -105,7 +105,7 @@ const collectionItems = [
         img: collectionImages.collection04,
     },
     {
-        title: "Furniture collection",
+        title: "furniture collection",
         link: "bf1ac65c-b2fa-4a00-b66a-f78fcfaaa823",
         tags: [
             { tag: "Room furntiture Living room furntiture", link: "Room furntiture Living room furntiture" },
@@ -133,19 +133,19 @@ const galleryItems = [
         img: galleryImages.gallery03,
         thumb: galleryImages.galleryThumb03,
         alt: "03",
-        categories: ["Dining room futniture", "Office furniture"],
+        categories: ["Dining room furniture", "Office furniture"],
     },
     {
         img: galleryImages.gallery04,
         thumb: galleryImages.galleryThumb04,
         alt: "04",
-        categories: ["Dining room futniture", "Living room furniture"],
+        categories: ["Dining room furniture", "Living room furniture"],
     },
     {
         img: galleryImages.gallery05,
         thumb: galleryImages.galleryThumb05,
         alt: "05",
-        categories: ["Dining room futniture", "Office furniture"],
+        categories: ["Dining room furniture", "Office furniture"],
     },
     {
         img: galleryImages.gallery06,
@@ -169,13 +169,13 @@ const galleryItems = [
         img: galleryImages.gallery09,
         thumb: galleryImages.galleryThumb09,
         alt: "09",
-        categories: ["Bedroom furniture", "Dining room futniture"],
+        categories: ["Bedroom furniture", "Dining room furniture"],
     },
     {
         img: galleryImages.gallery10,
         thumb: galleryImages.galleryThumb10,
         alt: "10",
-        categories: ["Bedroom furniture", "Dining room futniture", "Chair"],
+        categories: ["Bedroom furniture", "Dining room furniture", "Chair"],
     },
 ];
 
@@ -186,7 +186,7 @@ const blogItems = [
         date: new Date(2022, 6, 13),
         link: "dc95be89-9c30-42d8-bf7f-c9db22c09d5f",
         author: "Ann Summers",
-        tags: ["Interior", "Bedroom", "Office furniture", "Dining room futniture"],
+        tags: ["Interior", "Bedroom", "Office furniture", "Dining room furniture"],
         category: "Simple interiror design",
         title: "Listicle actually selvage activated charcoal for the drinking vinegar",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
@@ -206,7 +206,7 @@ const blogItems = [
         </p>
         <div>
             <q>“Simplicity is not the goal. It is the by-product of a good idea and modest expectations”</q>
-            <author>Paul Rand</author>
+            <span>Paul Rand</span>
         </div>
         <p>
             Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring
@@ -224,8 +224,8 @@ const blogItems = [
             {
                 id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
                 avatar: "Lea Brown",
-                name: "",
-                date: "August 12, 2020",
+                name: "Lea Brown",
+                date: new Date(2022, 7, 12),
                 text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
             },
         ],
@@ -235,12 +235,20 @@ const blogItems = [
         date: new Date(2022, 6, 12),
         link: "3aaa4c30-a2ce-44af-9b0e-1e9f2442a5f2",
         author: "Finnagan Morningstar",
-        tags: ["Dining room futniture", "Table"],
+        tags: ["Dining room furniture", "Table"],
         category: "Dining room",
         title: "Red selfies edison bulb four dollar toast humblebrag",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
         content: "",
-        comments: [],
+        comments: [
+            {
+                id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
+                avatar: "Lea Brown",
+                name: "Lea Brown",
+                date: new Date(2022, 7, 12),
+                text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
+            },
+        ],
     },
     {
         img: ideasImages.blog03,
@@ -252,7 +260,15 @@ const blogItems = [
         title: "Authentic kogi shabby chic",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
         content: "",
-        comments: [],
+        comments: [
+            {
+                id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
+                avatar: "Lea Brown",
+                name: "Lea Brown",
+                date: new Date(2022, 7, 12),
+                text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
+            },
+        ],
     },
 ];
 
@@ -285,8 +301,8 @@ const socialLinks = [
 ];
 
 const blogSide = {
-    categories: ["Dining room", "Office furniture", "Simple interiror design", "Design", "Bedroom Furniture"],
-    tags: ["Dining room futniture", "Interior", "Table", "Bedroom", "Office Furniture"],
+    categories: ["Dining room", "Office furniture", "Simple interiror design", "Design", "Bedroom furniture"],
+    tags: ["Dining room furniture", "Interior", "Table", "Bedroom", "Office furniture"],
 };
 
 export default { homeSlides, collectionItems, galleryItems, blogItems, socialLinks, blogSide };

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import { Breadcrumbs } from "../_components";
-import { BlogFill, BlogSide } from "../_containers";
+import { BlogArticle, BlogFill, BlogSide } from "../_containers";
 
 const BlogPage = () => {
-    let categoryLocation = useLocation();
-    const [category, setCategory] = useState(categoryLocation?.state?.category || null);
+    let { state } = useLocation();
+    const [category, setCategory] = useState(null);
     const [tag, setTag] = useState(null);
     const [search, setSearch] = useState("");
+    const [article, setArticle] = useState(null);
+
+    useEffect(() => {
+        setCategory(state?.category || null);
+        setTag(state?.tags || null);
+        setArticle(state?.blogArticle || null);
+    }, [state?.tags, state?.category, state?.blogArticle]);
+
     return (
         <>
             <Helmet>
@@ -16,12 +24,15 @@ const BlogPage = () => {
                 <title>Desire - Blog</title>
             </Helmet>
 
-            <Breadcrumbs className="breadcrumbs_blog" noBg />
+            <Breadcrumbs article={article} className="breadcrumbs_blog" noBg />
 
             <div className="page__blog-content blog-content">
                 <div className="blog-content__container">
-                    {/* <SingleFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} /> */}
-                    <BlogFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
+                    {article ? (
+                        <BlogArticle item={article} blogPage />
+                    ) : (
+                        <BlogFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
+                    )}
                     <BlogSide passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
                 </div>
             </div>

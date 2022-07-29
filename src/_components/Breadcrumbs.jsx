@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { routes } from "../constants";
 
-const Breadcrumbs = ({ noBg, title, img, className }) => {
+const Breadcrumbs = memo(function Breadcrumbs({ noBg, title, img, className, article }) {
     const breadcrumbs = useBreadcrumbs(routes);
 
     return (
@@ -13,7 +13,7 @@ const Breadcrumbs = ({ noBg, title, img, className }) => {
                     if (i == breadcrumbs.length - 1) {
                         return (
                             <li key={match.pathname} className="breadcrumbs__item">
-                                <span className="breadcrumbs__link">{breadcrumb}</span>
+                                <span className="breadcrumbs__link">{article ? article?.title : breadcrumb}</span>
                             </li>
                         );
                     } else {
@@ -37,6 +37,6 @@ const Breadcrumbs = ({ noBg, title, img, className }) => {
             )}
         </nav>
     );
-};
+});
 
 export default Breadcrumbs;
