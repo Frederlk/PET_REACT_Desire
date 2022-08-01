@@ -179,10 +179,10 @@ const galleryItems = [
     },
 ];
 
-const { ideasImages } = images;
+const { blogImages } = images;
 const blogItems = [
     {
-        img: ideasImages.blog01,
+        img: blogImages.blog01,
         date: new Date(2022, 6, 13),
         link: "dc95be89-9c30-42d8-bf7f-c9db22c09d5f",
         author: "Ann Summers",
@@ -223,15 +223,25 @@ const blogItems = [
         comments: [
             {
                 id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
-                avatar: "Lea Brown",
+                avatar: blogImages.avatar,
                 name: "Lea Brown",
                 date: new Date(2022, 7, 12),
                 text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
+                replied: [
+                    {
+                        id: "bc681db7-252c-4c83-a0cf-137df9432e0basfafasf",
+                        avatar: blogImages.avatar,
+                        name: "Kee Tar",
+                        date: new Date(2022, 7, 12),
+                        text: "Tumeric YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
+                        replied: [],
+                    },
+                ],
             },
         ],
     },
     {
-        img: ideasImages.blog02,
+        img: blogImages.blog02,
         date: new Date(2022, 6, 12),
         link: "3aaa4c30-a2ce-44af-9b0e-1e9f2442a5f2",
         author: "Finnagan Morningstar",
@@ -240,18 +250,10 @@ const blogItems = [
         title: "Red selfies edison bulb four dollar toast humblebrag",
         previewText: `Everyday carry actually neutra authentic kogi shabby chic migas small batch craft beer. Literally williamsburg tote bag farm-to-table mustache ugh deep v irony. Af man bun copper mug iPhone enamel pin pug selvage hammock palo santo godard thundercats coloring book yuccie woke. Ugh pok pok taxidermy pabst enamel pin edison bulb farm-to-table`,
         content: "",
-        comments: [
-            {
-                id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
-                avatar: "Lea Brown",
-                name: "Lea Brown",
-                date: new Date(2022, 7, 12),
-                text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
-            },
-        ],
+        comments: [],
     },
     {
-        img: ideasImages.blog03,
+        img: blogImages.blog03,
         date: new Date(2022, 5, 12),
         link: "9641d375-1354-454c-b22a-568c543096ee",
         author: "Lux Morningstar",
@@ -263,10 +265,11 @@ const blogItems = [
         comments: [
             {
                 id: "bc681db7-252c-4c83-a0cf-137df9432e0b",
-                avatar: "Lea Brown",
-                name: "Lea Brown",
+                avatar: blogImages.avatar,
+                name: "Lou Green",
                 date: new Date(2022, 7, 12),
                 text: "Tumeric tousled austin, kinfolk scenester authentic craft beer truffaut irony intelligentsia YOLO lomo bushwick coloring book. Semiotics man bun venmo viral cliche",
+                replied: [],
             },
         ],
     },

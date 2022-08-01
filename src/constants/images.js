@@ -89,10 +89,12 @@ const galleryImages = {
 import blog01 from "./../assets/img/_blog/01.jpg";
 import blog02 from "./../assets/img/_blog/02.jpg";
 import blog03 from "./../assets/img/_blog/03.jpg";
-const ideasImages = {
+import avatar from "./../assets/img/_blog/avatar.jpg";
+const blogImages = {
     blog01,
     blog02,
     blog03,
+    avatar,
 };
 
 import brands01 from "./../assets/img/about/brands/01.png";
@@ -102,4 +104,4 @@ const brandsImages = {
     brands02,
 };
 
-export default { defaultImages, homeSlider, collectionImages, galleryImages, ideasImages, brandsImages };
+export default { defaultImages, homeSlider, collectionImages, galleryImages, blogImages, brandsImages };

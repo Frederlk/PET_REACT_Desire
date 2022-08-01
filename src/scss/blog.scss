@@ -76,72 +76,6 @@
     }
 }
 
-.quote {
-    @include adaptiveValue("padding-right", 65, 20, 1110, 767.98, 1);
-    @include adaptiveValue("padding-left", 65, 20, 1110, 767.98, 1);
-    @include adaptiveValue("padding-top", 55, 15, 1110, 767.98, 1);
-    @include adaptiveValue("padding-bottom", 55, 15, 1110, 767.98, 1);
-    background-color: rgba(223, 223, 223, 0.5);
-    text-align: center;
-
-    &__label {
-        @extend %quote;
-        position: relative;
-        &::after {
-            content: "";
-            @extend %line;
-            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
-            transform: translate(-50%, 0px);
-            left: 50%;
-        }
-        @include adaptiveValue("padding-bottom", 25, 15, 1110, 767.98, 1);
-        @include adaptiveValue("margin-bottom", 25, 15, 1110, 767.98, 1);
-    }
-
-    &__author {
-        @extend %subtitle;
-        font-style: normal;
-        color: rgba(54, 56, 56, 0.9);
-    }
-}
-
-.pagination-fill {
-    &__list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: rem(12);
-        li {
-            @extend %link;
-            color: $gray_04;
-        }
-    }
-
-    &__prev,
-    &__next,
-    &__number {
-        cursor: pointer;
-        transition: color 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $mainColor;
-            }
-        }
-        &._active {
-            color: $mainColor;
-        }
-    }
-
-    &__number {
-    }
-
-    &__dots {
-    }
-
-    &__next {
-    }
-}
-
 //========================================================================================================================================================
 
 .sidebar {
@@ -243,34 +177,194 @@
 
 //========================================================================================================================================================
 
-.coments-fill {
-    &__title {
-        color: $mainColor;
-        @extend %subtitle_md;
-        margin-bottom: 20px;
-        @media (max-width: $mobileSmall) {
-            text-align: center;
+.blog-article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: rem(40);
+    &__image-ibg {
+        display: flex;
+        @include adaptiveValue("margin-bottom", 20, 10, 991.98, 479.98, 1);
+        padding-bottom: 56.6%;
+        &._link {
+            overflow: hidden;
+            img {
+                transition: transform 0.3s ease 0s;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
     }
 
-    &__body {
+    &__post-quote {
+        @include adaptiveValue("margin-bottom", 40, 20, 991.98, 479.98, 1);
+    }
+
+    &__links {
+        flex: 1 1 auto;
+        margin-bottom: rem(5);
+        @extend %link;
+        color: $gray_04;
+    }
+
+    &__date {
+    }
+
+    &__line {
+        padding: 0px rem(5);
+    }
+
+    &__category {
+        color: inherit;
+        @extend %hover_01;
+    }
+
+    &__label {
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+        @extend %label;
+        &._link {
+            transition: color 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $gray_04;
+                }
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+        &_post-text {
+            @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+        }
+    }
+
+    &__page {
+        @include adaptiveValue("margin-bottom", 60, 40, 991.98, 479.98, 1);
+        p {
+            @extend %text;
+        }
+        div {
+            @media (max-width: $mobileSmall) {
+                text-align: center;
+            }
+            @include adaptiveValue("padding-top", 40, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-bottom", 30, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-right", 40, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-left", 40, 15, 991.98, 479.98, 1);
+            q {
+                @extend %quote;
+                position: relative;
+                padding-bottom: rem(23);
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    content: "";
+                    @extend %line;
+                    width: rem(177);
+                    @include adaptiveValue("width", 177, 50, 767.98, 479.98, 1);
+                    @media (max-width: $mobileSmall) {
+                        left: 50%;
+                        transform: translate(-50%, 0px);
+                    }
+                }
+            }
+            span {
+                @extend %subtitle;
+                margin-top: rem(44);
+                display: block;
+            }
+        }
+    }
+
+    &__bottom {
     }
 }
 
-.body-coments-fill {
-    &__coment {
+.bottom-article {
+    @include adaptiveValue("margin-top", 30, 20, 991.98, 479.98, 1);
+    @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+    position: relative;
+    @include adaptiveValue("min-height", 130, 60, 991.98, 479.98, 1);
+    border-top: rem(1) solid $light_01;
+    border-bottom: rem(1) solid $light_01;
+    padding: rem(10) 0px;
+    @media (min-width: $mobileSmall) {
         display: flex;
-        margin-bottom: rem(40);
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__item {
+        flex: 0 1 rem(280);
+        @extend %link;
+        @extend %hover_01;
+        color: $gray_04;
+        display: flex;
+        @include adaptiveValue("gap", 20, 10, 767.98, 479.98, 1);
+        align-items: center;
+        &::after,
+        &::before {
+            @include adaptiveValue("font-size", 23, 18, 767.98, 479.98, 1);
+        }
+        &_prev {
+        }
+        &_next {
+            justify-content: flex-end;
+            text-align: right;
+        }
         @media (max-width: $mobileSmall) {
-            flex-wrap: wrap;
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
         }
     }
-    &__avatar {
+}
+
+//========================================================================================================================================================
+
+.article-comments {
+    &__title {
+        @extend %subtitle_md;
+        margin-bottom: rem(20);
+    }
+
+    &__items {
+        margin-bottom: rem(40);
+    }
+
+    &__item {
+        margin-bottom: rem(20);
+        .article-comments__replied & {
+            @media (min-width: $mobileSmall) {
+                padding-left: rem(80);
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: rem(15);
+        margin-bottom: rem(-4);
+        @media (max-width: $mobileSmall) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__avatar-ibg {
         flex: 0 0 rem(64);
         height: rem(64);
         border-radius: 50%;
         overflow: hidden;
-        margin-right: rem(15);
         img {
             max-width: 100%;
         }
@@ -278,25 +372,18 @@
             height: rem(48);
             flex: 0 0 rem(48);
         }
-    }
-
-    &__content {
-        flex: 1 1 auto;
-    }
-
-    &__row {
-        display: flex;
-        justify-content: space-between;
-        margin: 0px rem(-10) rem(10) rem(-10);
+        .article-comments__replied & {
+            height: rem(48);
+            flex: 0 0 rem(48);
+        }
     }
 
     &__info {
-        padding: 0px rem(10);
+        flex: 1 1 auto;
     }
 
     &__name {
         @extend %subtitle;
-        color: $mainColor;
     }
 
     &__date {
@@ -307,7 +394,6 @@
 
     &__reply {
         @extend %link;
-        padding: 0px rem(10);
         text-align: right;
         color: $gray_04;
         @extend %hover_01;
@@ -315,17 +401,25 @@
 
     &__text {
         @extend %text;
-        @media (max-width: $mobileSmall) {
-            flex: 1 1 100%;
-            text-align: center;
+        @media (min-width: $mobileSmall) {
+            padding-left: rem(80);
+        }
+        .article-comments__replied & {
+            @media (min-width: $mobileSmall) {
+                padding-left: rem(63);
+            }
+        }
+        span {
+            font-weight: 600;
+            margin-right: rem(3);
         }
     }
-}
 
-//========================================================================================================================================================
-
-.article-comments {
-    &__form {
+    &__leave {
+        @extend %text;
+        &:not(:last-child) {
+            margin-bottom: rem(40);
+        }
     }
 }
 
@@ -335,9 +429,6 @@
     &__title {
         @extend %subtitle;
         @include adaptiveValue("margin-bottom", 25, 20, 991.98, 479.98, 1);
-        @media (max-width: $mobileSmall) {
-            text-align: center;
-        }
     }
 
     &__body {

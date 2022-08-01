@@ -44,9 +44,7 @@ const BlogSide = memo(function BlogSide({ passedState }) {
                         <div className="sidebar__post-bottom">
                             <span className="sidebar__post-date">{format(date, "MMMM d, yyyy")}</span>
                             <span className="sidebar__line">|</span>
-                            <Link to="/blog" state={{ author: author }} className="blog-article__name">
-                                by {author}
-                            </Link>
+                            <span className="blog-article__name">by {author}</span>
                         </div>
                     </article>
                 );
