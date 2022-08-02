@@ -69,7 +69,7 @@ const Gallery = ({ galleryPage }) => {
                 onInit={onInit}
                 speed={500}
                 elementClassNames="gallery__body"
-                licenseKey="7EC452A9-0CFD441C-BD984C7C-17C8456E">
+                licenseKey={process.env.LIGHTGALLERY_API_KEY}>
                 {getItems()}
             </LightGallery>
         </section>
