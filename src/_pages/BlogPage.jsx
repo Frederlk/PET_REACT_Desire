@@ -29,11 +29,11 @@ const BlogPage = () => {
             <div className="page__blog-content blog-content">
                 <div className="blog-content__container">
                     {article ? (
-                        <BlogArticle item={article} blogPage />
+                        <BlogArticle className="blog-content__article" item={article} blogPage />
                     ) : (
                         <BlogFill passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
                     )}
-                    <BlogSide passedState={{ tag, setTag, category, setCategory, search, setSearch }} />
+                    <BlogSide passedState={{ article, tag, setTag, category, setCategory, search, setSearch }} />
                 </div>
             </div>
         </>

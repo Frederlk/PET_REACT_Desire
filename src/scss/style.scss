@@ -62,6 +62,8 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
+    @include scrollbars(rem(10), $gray_01, $light_01);
+
     // Скролл заблокирован
     .lock & {
         overflow: hidden;

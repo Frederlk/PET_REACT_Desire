@@ -26,20 +26,21 @@ const ContactInfo = () => {
                             art. Viral shaman mustache master cleanse, pour-over affogato poutine copper mug marfa fanny pack
                             normcore. Lo-fi pop-up banjo portland, echo park hammock
                         </p>
-                        <a href="tel:4158297934" className="contact-info__contact-item">
-                            (415) 829-7934
-                        </a>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://www.google.com/maps/place/725+Green+St,+San+Francisco,+CA+94133,+USA/@37.7990632,-122.4132697,17z/data=!3m1!4b1!4m5!3m4!1s0x808580f18d8c6ea7:0x5d7f53fb70a3a903!8m2!3d37.799059!4d-122.411081?hl=en"
-                            className="contact-info__contact-item">
-                            725 Green St <br />
-                            San Francisco, California(CA), 94133
-                        </a>
-                        <a href="mailto:ouremailaddress@email.com" className="contact-info__email _icon-mail">
-                            ouremailaddress@email.com
-                        </a>
+                        <div className="contact-info__contact-item">
+                            <a href="tel:4158297934">(415) 829-7934</a>
+                        </div>
+                        <div className="contact-info__contact-item">
+                            <a
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://www.google.com/maps/place/725+Green+St,+San+Francisco,+CA+94133,+USA/@37.7990632,-122.4132697,17z/data=!3m1!4b1!4m5!3m4!1s0x808580f18d8c6ea7:0x5d7f53fb70a3a903!8m2!3d37.799059!4d-122.411081?hl=en">
+                                725 Green St <br />
+                                San Francisco, California(CA), 94133
+                            </a>
+                        </div>
+                        <div className="contact-info__email _icon-mail">
+                            <a href="mailto:ouremailaddress@email.com">ouremailaddress@email.com</a>
+                        </div>
                         <Formik
                             initialValues={{
                                 name: "",

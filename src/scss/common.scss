@@ -100,10 +100,13 @@
 
 .spinner {
     text-align: center;
-    margin: rem(50) auto;
-    width: rem(150);
-    height: rem(150);
+    margin: rem(100) auto;
+    @include adaptiveValue("width", 300, 150, 991.98, 479.98, 1);
+    @include adaptiveValue("heigth", 300, 150, 991.98, 479.98, 1);
     svg {
+        circle {
+            fill: $mainColor;
+        }
         max-width: 100%;
     }
 }

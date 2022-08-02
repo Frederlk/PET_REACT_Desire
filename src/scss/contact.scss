@@ -90,10 +90,12 @@
     &__contact-item {
         display: flex;
         @extend %text;
-        transition: color 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                color: $gray_04;
+        a {
+            transition: color 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $gray_04;
+                }
             }
         }
         @media (max-width: $mobile) {
@@ -109,17 +111,19 @@
         display: flex;
         align-items: center;
         @extend %link;
-        transition: color 0.3s ease 0s;
         gap: rem(14);
         margin-top: rem(15);
         @include adaptiveValue("margin-bottom", 25, 20, 767.98, 479.98, 1);
+        a {
+            transition: color 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $gray_04;
+                }
+            }
+        }
         &::before {
             font-size: rem(16);
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                color: $gray_04;
-            }
         }
         @media (max-width: $mobile) {
             justify-content: center;

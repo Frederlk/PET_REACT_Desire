@@ -5,33 +5,19 @@ import { Formik, Form as FormikForm } from "formik";
 import { Input } from "../../_components";
 import { format } from "date-fns";
 import dynamicAdaptive from "../../js/libs/dynamic_adapt.js";
+import { sortData } from "../../helpers/sortData";
 
 const BlogSide = memo(function BlogSide({ passedState }) {
-    const { tag, setTag, category, setCategory, setSearch } = passedState;
+    const { article, tag, setTag, category, setCategory, setSearch } = passedState;
 
     useEffect(() => {
         dynamicAdaptive();
     }, []);
 
-    const categories = data.filters.categories.map((item, i) => (
-        <li
-            onClick={() => (category === item ? setCategory(null) : setCategory(item))}
-            key={item + i}
-            className={`sidebar__item ${category === item ? "_active" : ""}`}>
-            {item} ({data.blogItems.slice().filter((post) => post.category === item).length})
-        </li>
-    ));
-
-    const sortPosts = (a, b) => {
-        if (a > b) return -1;
-        if (a < b) return 1;
-        return 0;
-    };
-
     const recentPosts = data?.blogItems
         .slice()
         .sort((a, b) => {
-            return sortPosts(a.date, b.date);
+            return sortData(a.date, b.date);
         })
         .map((item, i) => {
             const { title, link, date, author } = item;
@@ -50,14 +36,32 @@ const BlogSide = memo(function BlogSide({ passedState }) {
                 );
         });
 
-    const tags = data.filters.tags.map((item, i) => (
-        <li
-            onClick={() => (tag === item ? setTag(null) : setTag(item))}
-            key={item + i}
-            className={`tags__item ${tag === item ? "_active" : ""}`}>
-            {item}
-        </li>
-    ));
+    const categories = data.filters.categories.map((item, i) => {
+        const classNames = `sidebar__item ${category === item ? "_active" : ""}`;
+        const length = data.blogItems.slice().filter((post) => post.category === item).length;
+        return article ? (
+            <Link to="/blog" state={{ category: item }} key={item + i} className={classNames}>
+                {item} ({length})
+            </Link>
+        ) : (
+            <li onClick={() => (category === item ? setCategory(null) : setCategory(item))} key={item + i} className={classNames}>
+                {item} ({length})
+            </li>
+        );
+    });
+
+    const tags = data.filters.tags.map((item, i) => {
+        const classNames = `tags__item ${tag === item ? "_active" : ""}`;
+        return article ? (
+            <Link to="/blog" state={{ tags: item }} key={item + i} className={classNames}>
+                {item}
+            </Link>
+        ) : (
+            <li onClick={() => (tag === item ? setTag(null) : setTag(item))} key={item + i} className={classNames}>
+                {item}
+            </li>
+        );
+    });
 
     return (
         <aside className="blog-content__sidebar sidebar">

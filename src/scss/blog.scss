@@ -5,6 +5,7 @@
     &__container {
         @media (min-width: $tablet) {
             display: flex;
+            justify-content: space-between;
             gap: rem(30);
         }
     }
@@ -21,6 +22,12 @@
     &__sidebar {
         @media (min-width: $tablet) {
             flex: 0 0 rem(350);
+        }
+    }
+
+    &__article {
+        @media (min-width: $tablet) {
+            flex: 1 1 auto;
         }
     }
 }
@@ -91,6 +98,7 @@
 
     &__item {
         cursor: pointer;
+        display: block;
         &._active {
             color: $primary_02;
         }
