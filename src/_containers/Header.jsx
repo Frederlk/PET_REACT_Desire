@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { images } from "../constants";
+import { Picture } from "../_components";
 
 const Header = () => {
     return (
@@ -8,7 +9,11 @@ const Header = () => {
             <div className="header__container">
                 <div className="header__menu menu">
                     <Link to="/" className="menu__logo">
-                        <img src={images.defaultImages.logo} alt="Logo" />
+                        <Picture
+                            srcWebp={images.defaultImages.logo_WEBP}
+                            fallbackSrc={images.defaultImages.logo}
+                            alt="Desire - Logo"
+                        />
                     </Link>
                     <nav className="menu__body">
                         <ul className="menu__list menu__list_left">

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { images, videoMp4, videoWEBM } from "../../constants";
+import { Picture } from "../../_components";
 
 const Video = () => {
     const [playing, setPlaying] = useState(false);
-
+    const { defaultImages } = images;
     useEffect(() => {
         const videoFile = document.querySelector("#video-file");
         playing ? videoFile.play() : videoFile.pause();
@@ -45,11 +46,11 @@ const Video = () => {
                     </video>
                 </div>
                 <div className={`about-video__cover-ibg ${playing ? "_playing" : "_pause"}`}>
-                    <img src={images.defaultImages.videoBg} alt="Video thumbnail" />
+                    <Picture srcWebp={defaultImages.videoBg_WEBP} fallbackSrc={defaultImages.videoBg} alt="Video thumbnail" />
                 </div>
                 <button type="button" className={`about-video__button ${playing ? "_playing" : "_pause"}`}>
                     {!playing ? (
-                        <img src={images.defaultImages.videoIcon} alt="Pause Button" />
+                        <Picture srcWebp={defaultImages.videoIcon_WEBP} fallbackSrc={defaultImages.videoIcon} alt="Play button" />
                     ) : (
                         <span className="about-video__pause">
                             <span className="about-video__line"></span>

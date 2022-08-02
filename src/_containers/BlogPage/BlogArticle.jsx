@@ -2,19 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import BlogBottom from "./BlogBottom";
+import { Picture } from "../../_components";
 
 const BlogArticle = ({ item, className, textBlock, blogPage }) => {
-    const { img, title, author, link, date, category, previewText } = item;
+    const { img, imgWebp, title, author, link, date, category, previewText } = item;
 
     return (
         <article className={`${className || ""} blog-article`}>
             {blogPage ? (
                 <div className="blog-article__image-ibg">
-                    <img src={img} alt={title} />
+                    <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
                 </div>
             ) : (
                 <Link to={`/blog/${link}`} state={{ blogArticle: item }} className="blog-article__image-ibg _link">
-                    <img src={img} alt={title} />
+                    <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
                 </Link>
             )}
             <div className="blog-article__links">

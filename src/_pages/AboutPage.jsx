@@ -12,7 +12,12 @@ const AboutPage = () => {
                 <title>Desire - About Us</title>
             </Helmet>
 
-            <Breadcrumbs title="About Us" className="breadcrumbs_about" img={images.defaultImages.aboutBg} />
+            <Breadcrumbs
+                title="About Us"
+                className="breadcrumbs_about"
+                img={images.defaultImages.aboutBg_WEBP}
+                imgWebp={images.defaultImages.aboutBg}
+            />
 
             <Video />
             <Details />

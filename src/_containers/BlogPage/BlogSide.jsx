@@ -13,7 +13,7 @@ const BlogSide = memo(function BlogSide({ passedState }) {
         dynamicAdaptive();
     }, []);
 
-    const categories = data.blogSide.categories.map((item, i) => (
+    const categories = data.filters.categories.map((item, i) => (
         <li
             onClick={() => (category === item ? setCategory(null) : setCategory(item))}
             key={item + i}
@@ -50,7 +50,7 @@ const BlogSide = memo(function BlogSide({ passedState }) {
                 );
         });
 
-    const tags = data.blogSide.tags.map((item, i) => (
+    const tags = data.filters.tags.map((item, i) => (
         <li
             onClick={() => (tag === item ? setTag(null) : setTag(item))}
             key={item + i}

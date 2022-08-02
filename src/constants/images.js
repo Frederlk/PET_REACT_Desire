@@ -1,107 +1,113 @@
-import logo from "./../assets/img/logo.png";
-import loadingGif from "./../assets/img/icons/loading.gif";
-import videoIcon from "./../assets/img/icons/video.png";
-import background from "./../assets/img/_home/slider/main_slider.jpg";
-import aboutBg from "./../assets/img/about/01.jpg";
-import videoBg from "./../assets/img/about/02.jpg";
-import detailsBg from "./../assets/img/about/03.jpg";
+import aboutBg from "./../assets/img/default/aboutBg.jpg";
+import aboutBg_WEBP from "./../assets/img/default/aboutBg.webp";
+import bg from "./../assets/img/default/bg.jpg";
+import bg_WEBP from "./../assets/img/default/bg.webp";
+import brand01 from "./../assets/img/default/brand01.png";
+import brand01_WEBP from "./../assets/img/default/brand01.webp";
+import brand02 from "./../assets/img/default/brand02.png";
+import brand02_WEBP from "./../assets/img/default/brand02.webp";
+import loading from "./../assets/img/default/loading.gif";
+import loading_WEBP from "./../assets/img/default/loading.webp";
+import videoIcon from "./../assets/img/default/video.png";
+import videoIcon_WEBP from "./../assets/img/default/video.webp";
+import videoBg from "./../assets/img/default/videoBg.jpg";
+import videoBg_WEBP from "./../assets/img/default/videoBg.webp";
+import logo from "./../assets/img/default/logo.png";
+import logo_WEBP from "./../assets/img/default/logo.webp";
 const defaultImages = {
-    logo,
-    loadingGif,
-    videoIcon,
-    background,
     aboutBg,
+    aboutBg_WEBP,
+    bg,
+    bg_WEBP,
+    brand01,
+    brand01_WEBP,
+    brand02,
+    brand02_WEBP,
+    loading,
+    loading_WEBP,
+    videoIcon,
+    videoIcon_WEBP,
     videoBg,
-    detailsBg,
+    videoBg_WEBP,
+    logo,
+    logo_WEBP,
 };
 
-import chair01 from "./../assets/img/_home/slider/chair.png";
-import chair02 from "./../assets/img/_home/slider/chair2.png";
-import chair03 from "./../assets/img/_home/slider/chair3.png";
-const homeSlider = {
+import chair01 from "./../assets/img/slider/chair01.png";
+import chair01_WEBP from "./../assets/img/slider/chair01.webp";
+import chair02 from "./../assets/img/slider/chair02.png";
+import chair02_WEBP from "./../assets/img/slider/chair02.webp";
+import chair03 from "./../assets/img/slider/chair03.png";
+import chair03_WEBP from "./../assets/img/slider/chair03.webp";
+const chairImages = {
     chair01,
+    chair01_WEBP,
     chair02,
+    chair02_WEBP,
     chair03,
+    chair03_WEBP,
 };
 
-import collection01 from "./../assets/img/_home/content/01.jpg";
-import collection02 from "./../assets/img/_home/content/02.jpg";
-import collection03 from "./../assets/img/_home/content/03.jpg";
-import collection04 from "./../assets/img/_home/content/04.jpg";
-import collection05 from "./../assets/img/_home/content/05.jpg";
-import collection06 from "./../assets/img/_home/content/06.jpg";
-import collection07 from "./../assets/img/_home/content/07.jpg";
-import collection08 from "./../assets/img/_home/content/08.jpg";
-const collectionImages = {
-    collection01,
-    collection02,
-    collection03,
-    collection04,
-    collection05,
-    collection06,
-    collection07,
-    collection08,
+import content01 from "./../assets/img/content/01.jpg";
+import content01_WEBP from "./../assets/img/content/01.webp";
+import content02 from "./../assets/img/content/02.jpg";
+import content02_WEBP from "./../assets/img/content/02.webp";
+import content03 from "./../assets/img/content/03.jpg";
+import content03_WEBP from "./../assets/img/content/03.webp";
+import content04 from "./../assets/img/content/04.jpg";
+import content04_WEBP from "./../assets/img/content/04.webp";
+import content05 from "./../assets/img/content/05.jpg";
+import content05_WEBP from "./../assets/img/content/05.webp";
+import content06 from "./../assets/img/content/06.jpg";
+import content06_WEBP from "./../assets/img/content/06.webp";
+import content07 from "./../assets/img/content/07.jpg";
+import content07_WEBP from "./../assets/img/content/07.webp";
+import content08 from "./../assets/img/content/08.jpg";
+import content08_WEBP from "./../assets/img/content/08.webp";
+import content09 from "./../assets/img/content/09.jpg";
+import content09_WEBP from "./../assets/img/content/09.webp";
+import content10 from "./../assets/img/content/10.jpg";
+import content10_WEBP from "./../assets/img/content/10.webp";
+const contentImages = {
+    content01,
+    content01_WEBP,
+    content02,
+    content02_WEBP,
+    content03,
+    content03_WEBP,
+    content04,
+    content04_WEBP,
+    content05,
+    content05_WEBP,
+    content06,
+    content06_WEBP,
+    content07,
+    content07_WEBP,
+    content08,
+    content08_WEBP,
+    content09,
+    content09_WEBP,
+    content10,
+    content10_WEBP,
 };
 
-import gallery01 from "./../assets/img/_gallery/01.jpg";
-import gallery02 from "./../assets/img/_gallery/02.jpg";
-import gallery03 from "./../assets/img/_gallery/03.jpg";
-import gallery04 from "./../assets/img/_gallery/04.jpg";
-import gallery05 from "./../assets/img/_gallery/05.jpg";
-import gallery06 from "./../assets/img/_gallery/06.jpg";
-import gallery07 from "./../assets/img/_gallery/07.jpg";
-import gallery08 from "./../assets/img/_gallery/08.jpg";
-import gallery09 from "./../assets/img/_gallery/09.jpg";
-import gallery10 from "./../assets/img/_gallery/10.jpg";
-import galleryThumb01 from "./../assets/img/_gallery/01thumb.jpg";
-import galleryThumb02 from "./../assets/img/_gallery/02thumb.jpg";
-import galleryThumb03 from "./../assets/img/_gallery/03thumb.jpg";
-import galleryThumb04 from "./../assets/img/_gallery/04thumb.jpg";
-import galleryThumb05 from "./../assets/img/_gallery/05thumb.jpg";
-import galleryThumb06 from "./../assets/img/_gallery/06thumb.jpg";
-import galleryThumb07 from "./../assets/img/_gallery/07thumb.jpg";
-import galleryThumb08 from "./../assets/img/_gallery/08thumb.jpg";
-import galleryThumb09 from "./../assets/img/_gallery/09thumb.jpg";
-import galleryThumb10 from "./../assets/img/_gallery/10thumb.jpg";
-const galleryImages = {
-    gallery01,
-    gallery02,
-    gallery03,
-    gallery04,
-    gallery05,
-    gallery06,
-    gallery07,
-    gallery08,
-    gallery09,
-    gallery10,
-    galleryThumb01,
-    galleryThumb02,
-    galleryThumb03,
-    galleryThumb04,
-    galleryThumb05,
-    galleryThumb06,
-    galleryThumb07,
-    galleryThumb08,
-    galleryThumb09,
-    galleryThumb10,
-};
-
-import blog01 from "./../assets/img/_blog/01.jpg";
-import blog02 from "./../assets/img/_blog/02.jpg";
-import blog03 from "./../assets/img/_blog/03.jpg";
-import avatar from "./../assets/img/_blog/avatar.jpg";
+import blog01 from "./../assets/img/blog/01.jpg";
+import blog01_WEBP from "./../assets/img/blog/01.webp";
+import blog02 from "./../assets/img/blog/02.jpg";
+import blog02_WEBP from "./../assets/img/blog/02.webp";
+import blog03 from "./../assets/img/blog/03.jpg";
+import blog03_WEBP from "./../assets/img/blog/03.webp";
+import avatar from "./../assets/img/blog/avatar.jpg";
+import avatar_WEBP from "./../assets/img/blog/avatar.webp";
 const blogImages = {
     blog01,
     blog02,
     blog03,
+    blog01_WEBP,
+    blog02_WEBP,
+    blog03_WEBP,
     avatar,
+    avatar_WEBP,
 };
 
-import brands01 from "./../assets/img/about/brands/01.png";
-import brands02 from "./../assets/img/about/brands/02.png";
-const brandsImages = {
-    brands01,
-    brands02,
-};
-
-export default { defaultImages, homeSlider, collectionImages, galleryImages, blogImages, brandsImages };
+export default { defaultImages, chairImages, blogImages, contentImages };

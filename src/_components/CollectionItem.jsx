@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Picture from "./Picture";
 
 const CollectionItem = ({ item, slider, className }) => {
-    const { title, link, tags, img } = item;
+    const { title, link, tags, img, imgWebp } = item;
 
     return (
-        <div className={`${className || ""} collection-item`}>
+        <article className={`${className || ""} collection-item`}>
             <div className="collection-item__info">
                 <Link to={link} className="collection-item__title">
                     {title}
@@ -23,9 +24,9 @@ const CollectionItem = ({ item, slider, className }) => {
                 )}
             </div>
             <Link to={link} className="collection-item__image-ibg">
-                <img src={img} alt={title} />
+                <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
             </Link>
-        </div>
+        </article>
     );
 };
 

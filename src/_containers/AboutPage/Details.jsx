@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import images from "../../constants/images";
 import { InView, useInView } from "react-intersection-observer";
 import { useCountUp } from "react-countup";
+import { Picture } from "../../_components";
 
 const ProgressItem = ({ title, percent }) => {
     const [width, setWidth] = useState(0);
@@ -63,7 +64,7 @@ const Details = () => {
             <div className="about-details__bottom bottom-details">
                 <div className="bottom-details__container">
                     <div className="bottom-details__image">
-                        <img src={images.homeSlider.chair01} alt="Chair" />
+                        <Picture srcWebp={images.chairImages.chair01_WEBP} fallbackSrc={images.chairImages.chair01} alt="Chair" />
                     </div>
                     <div className="bottom-details__progress about-progress">
                         <ProgressItem title="Design and technical drawings" percent={80} />
@@ -73,7 +74,7 @@ const Details = () => {
                     </div>
                 </div>
                 <div className="bottom-details__bg-ibg">
-                    <img src={images.defaultImages.detailsBg} alt="Background" />
+                    <Picture srcWebp={images.defaultImages.bg_WEBP} fallbackSrc={images.defaultImages.bg} alt="Background" />
                 </div>
             </div>
         </section>

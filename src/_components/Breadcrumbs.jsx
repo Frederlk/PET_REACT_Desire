@@ -2,8 +2,9 @@ import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { routes } from "../constants";
+import Picture from "./Picture";
 
-const Breadcrumbs = memo(function Breadcrumbs({ noBg, title, img, className, article }) {
+const Breadcrumbs = memo(function Breadcrumbs({ noBg, title, imgWebp, img, className, article }) {
     const breadcrumbs = useBreadcrumbs(routes);
 
     return (
@@ -31,7 +32,7 @@ const Breadcrumbs = memo(function Breadcrumbs({ noBg, title, img, className, art
                 <div className="breadcrumbs__bg">
                     <h2 className="breadcrumbs__title">{title}</h2>
                     <div className="breadcrumbs__image-ibg">
-                        <img src={img} alt={title} />
+                        <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
                     </div>
                 </div>
             )}

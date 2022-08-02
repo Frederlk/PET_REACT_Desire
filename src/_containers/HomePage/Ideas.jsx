@@ -1,18 +1,13 @@
 import React from "react";
 import { data } from "../../constants";
+import { sortData } from "../../helpers/sortData";
 import BlogArticle from "../BlogPage/BlogArticle";
 
 const Ideas = () => {
-    const sortPosts = (a, b) => {
-        if (a > b) return -1;
-        if (a < b) return 1;
-        return 0;
-    };
-
     const ideas = data?.blogItems
         .slice()
         .sort((a, b) => {
-            return sortPosts(a.date, b.date);
+            return sortData(a.date, b.date);
         })
         .map((item, i) => {
             if (i < 2) {

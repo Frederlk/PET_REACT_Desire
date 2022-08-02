@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Formik, Form as FormikForm, Field } from "formik";
 import * as Yup from "yup";
-import { Input } from "../../_components";
+import { Input, Picture } from "../../_components";
 import parse from "html-react-parser";
 import { data, images } from "../../constants";
 import { sortData } from "../../helpers/sortData";
@@ -42,13 +42,13 @@ const MoreArticles = ({ item }) => {
 
 const CommentsItems = ({ comments, handleFocus }) => {
     const Item = ({ item, reply }) => {
-        const { avatar, name, text, date, id, replied } = item;
+        const { avatar, avatarWebp, name, text, date, id, replied } = item;
         return (
             <>
                 <article className="article-comments__item">
                     <div className="article-comments__row">
                         <div className="article-comments__avatar-ibg">
-                            <img src={avatar} alt={name} />
+                            <Picture srcWebp={avatarWebp} fallbackSrc={avatar} alt={name} />
                         </div>
                         <div className="article-comments__info">
                             <div className="article-comments__name">{name}</div>

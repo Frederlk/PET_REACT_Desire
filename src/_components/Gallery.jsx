@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { data } from "../constants";
 import LightGallery from "lightgallery/react";
+import Picture from "./Picture";
 
 const Gallery = ({ galleryPage }) => {
-    const filters = ["Bedroom furniture", "Living room furniture", "Office furniture", "Dining room futniture", "Chair"];
-    const [filter, setFilter] = useState("Living room furniture");
+    const filters = data.filters.tags;
+    const galleryStartItems = data.galleryItems.slice();
     const lightGallery = useRef(null);
-    const [galleryItems, setGalleryItems] = useState(data.galleryItems.slice());
+    const [filter, setFilter] = useState(null);
+    const [filteredItems, setFilteredItems] = useState(galleryStartItems);
 
     const onInit = useCallback((detail) => {
         if (detail) {
@@ -14,11 +16,21 @@ const Gallery = ({ galleryPage }) => {
         }
     }, []);
 
+    const onHandleFilter = (category) => {
+        if (category !== filter) {
+            setFilter(category);
+            setFilteredItems(galleryStartItems.filter((item) => item.categories.includes(category)));
+        } else {
+            setFilter(null);
+            setFilteredItems(galleryStartItems);
+        }
+    };
+
     const getItems = useCallback(() => {
-        return galleryItems.map(({ img, thumb, alt }, i) => {
+        return filteredItems.map(({ img, imgWebp, alt }, i) => {
             const item = (
                 <a href={img} key={alt + i} className="gallery__item-ibg">
-                    <img src={thumb} alt={alt} />
+                    <Picture srcWebp={imgWebp} fallbackSrc={img} alt={alt} />
                 </a>
             );
 
@@ -30,11 +42,11 @@ const Gallery = ({ galleryPage }) => {
                 return item;
             }
         });
-    }, [galleryItems]);
+    }, [filteredItems]);
 
     useEffect(() => {
         lightGallery.current.refresh();
-    }, [galleryItems]);
+    }, [filteredItems]);
 
     return (
         <section className={`page__gallery gallery ${galleryPage ? "gallery_page" : ""}`}>
@@ -45,8 +57,7 @@ const Gallery = ({ galleryPage }) => {
                             type="button"
                             key={item + i}
                             onClick={() => {
-                                setFilter(item);
-                                setGalleryItems(data.galleryItems.slice().filter((item) => item.categories.includes(filter)));
+                                onHandleFilter(item);
                             }}
                             className={`gallery__tab-link ${filter === item ? "_active" : ""}`}>
                             {item}

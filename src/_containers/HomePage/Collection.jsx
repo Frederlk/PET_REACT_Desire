@@ -1,6 +1,6 @@
 import React from "react";
 import { data, images } from "../../constants";
-import { CollectionItem } from "../../_components";
+import { CollectionItem, Picture } from "../../_components";
 
 const Collection = () => {
     const collectionItems = data.collectionItems.map((item, i) => {
@@ -33,7 +33,11 @@ const Collection = () => {
                     </div>
                 </div>
                 <div className="bottom-collection__image-ibg">
-                    <img src={images.collectionImages.collection06} alt="Background" />
+                    <Picture
+                        srcWebp={images.contentImages.content06_WEBP}
+                        fallbackSrc={images.contentImages.content06}
+                        alt="Background"
+                    />
                 </div>
             </div>
         </section>
