@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik, Form as FormikForm, Field } from "formik";
 import * as Yup from "yup";
 import { Input, Picture } from "../../_components";
@@ -83,6 +83,7 @@ const BlogBottom = ({ item }) => {
     const { tags, content, link, title } = item;
     const comments = data.blogItems.find((item) => item.link === link).comments;
     const [length, setLength] = useState(comments.length);
+    const [localUser, setLocalUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
     const [reply, setReply] = useState(false);
     const ref = useRef(null);
 
@@ -131,10 +132,11 @@ const BlogBottom = ({ item }) => {
                 <Formik
                     initialValues={{
                         text: "",
-                        name: "",
-                        email: "",
-                        remember: false,
+                        name: localUser ? localUser.name : "",
+                        email: localUser ? localUser.email : "",
+                        remember: localUser ? true : false,
                     }}
+                    enableReinitialize
                     validationSchema={Yup.object({
                         text: Yup.string().min(2, "At least 2 symbols").required("Requried!"),
                         name: Yup.string().min(2, "At least 2 symbols").required("Requried!"),
@@ -156,6 +158,13 @@ const BlogBottom = ({ item }) => {
                             replyItem.replied.push(comment);
                             setReply(false);
                             setLength(comments.length);
+                        }
+                        if (values.remember) {
+                            localStorage.setItem("user", JSON.stringify({ name: values.name, email: values.email }));
+                            setLocalUser({ name: values.name, email: values.email });
+                        } else {
+                            setLocalUser(null);
+                            localStorage.removeItem("user");
                         }
                         resetForm();
                     }}>
