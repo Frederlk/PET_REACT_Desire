@@ -68,19 +68,6 @@
             }
         }
     }
-
-    &__empty {
-        text-align: center;
-        p {
-            @extend %quote;
-            &:not(:last-child) {
-                margin-bottom: rem(20);
-            }
-        }
-        button {
-            min-width: rem(160);
-        }
-    }
 }
 
 //========================================================================================================================================================
@@ -258,6 +245,9 @@
         @include adaptiveValue("margin-bottom", 60, 40, 991.98, 479.98, 1);
         p {
             @extend %text;
+            @media (max-width: $mobile) {
+                padding-bottom: rem(10);
+            }
         }
         div {
             @media (max-width: $mobileSmall) {
@@ -269,7 +259,9 @@
             @include adaptiveValue("padding-left", 40, 15, 991.98, 479.98, 1);
             q {
                 @extend %quote;
+                display: block;
                 position: relative;
+                width: 100%;
                 padding-bottom: rem(23);
                 &::before {
                     display: none;
@@ -280,6 +272,8 @@
                     width: rem(177);
                     @include adaptiveValue("width", 177, 50, 767.98, 479.98, 1);
                     @media (max-width: $mobileSmall) {
+                        position: absolute;
+                        bottom: 0;
                         left: 50%;
                         transform: translate(-50%, 0px);
                     }
@@ -287,8 +281,15 @@
             }
             span {
                 @extend %subtitle;
-                margin-top: rem(44);
+                margin-top: rem(23);
                 display: block;
+            }
+        }
+        img {
+            max-width: 100%;
+            @include adaptiveValue("padding-top", 30, 15, 991.98, 479.98, 1);
+            &:not(:last-child) {
+                @include adaptiveValue("padding-bottom", 30, 15, 991.98, 479.98, 1);
             }
         }
     }

@@ -48,7 +48,12 @@ const Home = () => {
                     {homeSlides}
                 </Swiper>
                 <div className="home__bg-ibg">
-                    <Picture srcWebp={defaultImages.bg_WEBP} fallbackSrc={defaultImages.bg} alt="Background" />
+                    <Picture
+                        srcWebp={defaultImages.bg_WEBP}
+                        fallbackSrc={defaultImages.bg}
+                        className="_no-loading"
+                        alt="Background"
+                    />
                 </div>
             </div>
             <div className="home__pagination pagination"></div>

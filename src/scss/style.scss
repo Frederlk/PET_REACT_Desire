@@ -70,6 +70,7 @@ body {
         touch-action: none;
     }
     .lg-on & {
+        overflow: hidden;
     }
     // Сайт загружен
     .loaded & {

@@ -1,8 +1,7 @@
 import { Header, Footer } from "./_containers";
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import * as flsFunctions from "./js/files/functions";
-import * as flsScroll from "./js/files/scroll/scroll";
+import * as flsFunctions from "./helpers/functions";
 import { Spinner } from "./_components";
 
 const Page404 = lazy(() => import("./_pages/Page404")),
@@ -16,6 +15,7 @@ const ScrollToTop = () => {
     const { pathname } = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
+        flsFunctions.menuClose();
     }, [pathname]);
     return null;
 };
@@ -23,7 +23,7 @@ const ScrollToTop = () => {
 const App = () => {
     useEffect(() => {
         flsFunctions.menuInit();
-        flsScroll.headerScroll();
+        flsFunctions.headerScroll();
         flsFunctions.isWebp();
     }, []);
 

@@ -6,14 +6,14 @@ import brand01 from "./../assets/img/default/brand01.png";
 import brand01_WEBP from "./../assets/img/default/brand01.webp";
 import brand02 from "./../assets/img/default/brand02.png";
 import brand02_WEBP from "./../assets/img/default/brand02.webp";
-import loading from "./../assets/img/default/loading.gif";
-import loading_WEBP from "./../assets/img/default/loading.webp";
 import videoIcon from "./../assets/img/default/video.png";
 import videoIcon_WEBP from "./../assets/img/default/video.webp";
 import videoBg from "./../assets/img/default/videoBg.jpg";
 import videoBg_WEBP from "./../assets/img/default/videoBg.webp";
 import logo from "./../assets/img/default/logo.png";
 import logo_WEBP from "./../assets/img/default/logo.webp";
+import skeleton from "./../assets/img/default/skeleton.jpg";
+import skeleton_WEBP from "./../assets/img/default/skeleton.webp";
 const defaultImages = {
     aboutBg,
     aboutBg_WEBP,
@@ -23,14 +23,14 @@ const defaultImages = {
     brand01_WEBP,
     brand02,
     brand02_WEBP,
-    loading,
-    loading_WEBP,
     videoIcon,
     videoIcon_WEBP,
     videoBg,
     videoBg_WEBP,
     logo,
     logo_WEBP,
+    skeleton,
+    skeleton_WEBP,
 };
 
 import chair01 from "./../assets/img/slider/chair01.png";
@@ -91,23 +91,23 @@ const contentImages = {
     content10_WEBP,
 };
 
-import blog01 from "./../assets/img/blog/01.jpg";
-import blog01_WEBP from "./../assets/img/blog/01.webp";
-import blog02 from "./../assets/img/blog/02.jpg";
-import blog02_WEBP from "./../assets/img/blog/02.webp";
-import blog03 from "./../assets/img/blog/03.jpg";
-import blog03_WEBP from "./../assets/img/blog/03.webp";
-import avatar from "./../assets/img/blog/avatar.jpg";
-import avatar_WEBP from "./../assets/img/blog/avatar.webp";
-const blogImages = {
-    blog01,
-    blog02,
-    blog03,
-    blog01_WEBP,
-    blog02_WEBP,
-    blog03_WEBP,
-    avatar,
-    avatar_WEBP,
+import avatar01 from "./../assets/img/blog/avatar01.jpg";
+import avatar01_WEBP from "./../assets/img/blog/avatar01.webp";
+import avatar02 from "./../assets/img/blog/avatar02.jpg";
+import avatar02_WEBP from "./../assets/img/blog/avatar02.webp";
+import avatar03 from "./../assets/img/blog/avatar03.jpg";
+import avatar03_WEBP from "./../assets/img/blog/avatar03.webp";
+import avatar04 from "./../assets/img/blog/avatar04.jpg";
+import avatar04_WEBP from "./../assets/img/blog/avatar04.webp";
+const avatarImages = {
+    avatar01,
+    avatar01_WEBP,
+    avatar02,
+    avatar02_WEBP,
+    avatar03,
+    avatar03_WEBP,
+    avatar04,
+    avatar04_WEBP,
 };
 
-export default { defaultImages, chairImages, blogImages, contentImages };
+export default { defaultImages, chairImages, avatarImages, contentImages };

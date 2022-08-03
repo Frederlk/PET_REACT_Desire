@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Formik, Form as FormikForm } from "formik";
 import { Input } from "../../_components";
 import { format } from "date-fns";
-import dynamicAdaptive from "../../js/libs/dynamic_adapt.js";
-import { sortData } from "../../helpers/sortData";
+import dynamicAdaptive from "../../helpers/dynamic_adapt";
+import { sortData } from "../../helpers/functions";
 
 const BlogSide = memo(function BlogSide({ passedState }) {
     const { article, tag, setTag, category, setCategory, setSearch } = passedState;

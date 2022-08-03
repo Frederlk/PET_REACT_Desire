@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "../../constants";
-import { sortData } from "../../helpers/sortData";
+import { sortData } from "../../helpers/functions";
 import BlogArticle from "../BlogPage/BlogArticle";
 
 const Ideas = () => {
@@ -11,7 +11,7 @@ const Ideas = () => {
         })
         .map((item, i) => {
             if (i < 2) {
-                return <BlogArticle key={item.link + i} item={item} className="ideas__body" />;
+                return <BlogArticle key={item.link + i} item={item} textBlock className="ideas__body" />;
             }
         });
 

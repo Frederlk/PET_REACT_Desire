@@ -5,7 +5,7 @@ import { Autoplay, Pagination, Lazy } from "swiper";
 import { CollectionItem } from "../../_components";
 
 const ContactEtc = () => {
-    const homeSlides = data.collectionItems.map((item, i) => (
+    const homeSlides = data.blogItems.map((item, i) => (
         <SwiperSlide key={item.link + i} className="etc-contact__slide">
             <CollectionItem key={item.link + i} item={item} slider className="etc-contact__column" />
         </SwiperSlide>

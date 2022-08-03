@@ -3,7 +3,7 @@ import { data, images } from "../../constants";
 import { CollectionItem, Picture } from "../../_components";
 
 const Collection = () => {
-    const collectionItems = data.collectionItems.map((item, i) => {
+    const collectionItems = data.blogItems.map((item, i) => {
         if (i < 5) return <CollectionItem key={item.link + i} item={item} className="collection__item" />;
     });
 
@@ -36,6 +36,7 @@ const Collection = () => {
                     <Picture
                         srcWebp={images.contentImages.content06_WEBP}
                         fallbackSrc={images.contentImages.content06}
+                        className="_no-loading"
                         alt="Background"
                     />
                 </div>

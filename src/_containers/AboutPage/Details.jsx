@@ -10,6 +10,7 @@ const ProgressItem = ({ title, percent }) => {
 
     const { ref, inView, entry } = useInView({
         threshold: 0,
+        triggerOnce: true,
     });
 
     const { start, pauseResume, reset, update } = useCountUp({
@@ -74,7 +75,12 @@ const Details = () => {
                     </div>
                 </div>
                 <div className="bottom-details__bg-ibg">
-                    <Picture srcWebp={images.defaultImages.bg_WEBP} fallbackSrc={images.defaultImages.bg} alt="Background" />
+                    <Picture
+                        srcWebp={images.defaultImages.bg_WEBP}
+                        fallbackSrc={images.defaultImages.bg}
+                        className="_no-loading"
+                        alt="Background"
+                    />
                 </div>
             </div>
         </section>

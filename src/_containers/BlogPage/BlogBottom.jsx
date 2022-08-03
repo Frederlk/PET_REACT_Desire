@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Formik, Form as FormikForm, Field } from "formik";
 import * as Yup from "yup";
 import { Input, Picture } from "../../_components";
 import parse from "html-react-parser";
 import { data, images } from "../../constants";
-import { sortData } from "../../helpers/sortData";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
-import { findNested } from "../../helpers/findNested";
+import { findNested, sortData } from "../../helpers/functions";
 import { useEvent } from "../../helpers/useEvent";
 
 const MoreArticles = ({ item }) => {
@@ -145,7 +144,8 @@ const BlogBottom = ({ item }) => {
                     onSubmit={(values, { resetForm }) => {
                         const comment = {
                             id: "bc681db7-252c-4c83-a0cf-137df9432e0b23" + +new Date(),
-                            avatar: images.blogImages.avatar,
+                            avatar: images.defaultImages.skeleton,
+                            avatarWebp: images.defaultImages.skeletonWebp,
                             name: values.name,
                             date: new Date(),
                             text: values.text,

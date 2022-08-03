@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { data } from "../../constants";
 import BlogArticle from "./BlogArticle";
 import ReactPaginate from "react-paginate";
-import { sortData } from "../../helpers/sortData";
-import { gotoBlock } from "../../js/files/scroll/gotoblock";
+import { sortData } from "../../helpers/functions";
 
 const BlogFill = ({ passedState }) => {
     const { tag, setTag, category, setCategory, search, setSearch } = passedState;
 
-    const [itemsPerPage, setItemsPerPage] = useState(2);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     const [defaultItems, setDefaultItems] = useState(data?.blogItems.slice().sort((a, b) => sortData(a.date, b.date)));
     const [blogItems, setBlogItems] = useState(defaultItems);
     const [currentItems, setCurrentItems] = useState([]);
@@ -40,7 +39,7 @@ const BlogFill = ({ passedState }) => {
     }, [itemOffset, itemsPerPage, blogItems]);
 
     const handlePageClick = (e) => {
-        gotoBlock(".breadcrumbs");
+        window.scrollTo(0, 120);
         const newOffset = (e.selected * itemsPerPage) % blogItems.length;
         setItemOffset(newOffset);
     };
@@ -51,7 +50,7 @@ const BlogFill = ({ passedState }) => {
                 {currentItems.length ? (
                     currentItems.map((item, i) => <BlogArticle key={item.link + i} textBlock item={item} />)
                 ) : (
-                    <div className="fill__empty">
+                    <div className="empty">
                         <p>Unfortunately, we did not find articles on such filtering...</p>
                         <button
                             type="button"

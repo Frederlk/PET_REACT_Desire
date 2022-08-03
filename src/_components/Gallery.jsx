@@ -2,10 +2,11 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { data } from "../constants";
 import LightGallery from "lightgallery/react";
 import Picture from "./Picture";
+import { getRandomInt } from "../helpers/functions";
 
 const Gallery = ({ galleryPage }) => {
     const filters = data.filters.tags;
-    const galleryStartItems = data.galleryItems.slice();
+    const galleryStartItems = data.blogItems.slice();
     const lightGallery = useRef(null);
     const [filter, setFilter] = useState(null);
     const [filteredItems, setFilteredItems] = useState(galleryStartItems);
@@ -16,10 +17,10 @@ const Gallery = ({ galleryPage }) => {
         }
     }, []);
 
-    const onHandleFilter = (category) => {
-        if (category !== filter) {
-            setFilter(category);
-            setFilteredItems(galleryStartItems.filter((item) => item.categories.includes(category)));
+    const onHandleFilter = (tag) => {
+        if (tag !== filter) {
+            setFilter(tag);
+            setFilteredItems(galleryStartItems.filter((item) => item.tags.includes(tag)));
         } else {
             setFilter(null);
             setFilteredItems(galleryStartItems);
@@ -27,21 +28,36 @@ const Gallery = ({ galleryPage }) => {
     };
 
     const getItems = useCallback(() => {
-        return filteredItems.map(({ img, imgWebp, alt }, i) => {
-            const item = (
-                <a href={img} key={alt + i} className="gallery__item-ibg">
-                    <Picture srcWebp={imgWebp} fallbackSrc={img} alt={alt} />
-                </a>
-            );
+        if (filteredItems.length) {
+            return filteredItems.map(({ img, imgWebp, title }, i) => {
+                const item = (
+                    <a href={img} key={title + getRandomInt(1, 999)} className="gallery__item-ibg">
+                        <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
+                    </a>
+                );
 
-            if (!galleryPage) {
-                if (i < 5) {
+                if (!galleryPage) {
+                    if (i < 5) {
+                        return item;
+                    }
+                } else {
                     return item;
                 }
-            } else {
-                return item;
-            }
-        });
+            });
+        } else {
+            <div className="empty">
+                <p>Unfortunately, we did not find pictures on such filtering...</p>
+                <button
+                    type="button"
+                    onClick={() => {
+                        setFilter(null);
+                        setFilteredItems(galleryStartItems);
+                    }}
+                    className="btn">
+                    Reset filtration
+                </button>
+            </div>;
+        }
     }, [filteredItems]);
 
     useEffect(() => {

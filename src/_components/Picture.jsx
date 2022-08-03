@@ -4,7 +4,7 @@ const Picture = ({ srcWebp, alt, fallbackSrc, mediaType = "image/webp", ...deleg
     return (
         <picture>
             <source srcSet={srcWebp} type={mediaType} />
-            <img src={fallbackSrc} alt={alt} {...delegated} />
+            <img src={fallbackSrc} alt={alt} {...delegated} loading="lazy" />
         </picture>
     );
 };

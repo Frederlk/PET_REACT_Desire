@@ -12,12 +12,18 @@
     font-weight: 600;
     font-size: rem(16);
     line-height: math.div(28, 16);
+    border: rem(1) solid transparent;
     color: $white;
-    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border 0.3s ease 0s, box-shadow 0.1s ease 0s;
     @media (any-hover: hover) {
         &:hover {
             background-color: $white;
             color: $mainColor;
+            border: rem(1) solid $mainColor;
+            box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.3);
         }
+    }
+    &:active {
+        box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.3);
     }
 }

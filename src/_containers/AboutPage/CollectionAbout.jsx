@@ -3,7 +3,7 @@ import { data } from "../../constants";
 import { CollectionItem } from "../../_components";
 
 const CollectionAbout = () => {
-    const collectionItems = data.collectionItems.map((item, i) => {
+    const collectionItems = data.blogItems.map((item, i) => {
         if (i < 5) return <CollectionItem key={item.link + i} item={item} className="collection__item" />;
     });
     return (

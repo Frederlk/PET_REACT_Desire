@@ -32,7 +32,7 @@ const Breadcrumbs = memo(function Breadcrumbs({ noBg, title, imgWebp, img, class
                 <div className="breadcrumbs__bg">
                     <h2 className="breadcrumbs__title">{title}</h2>
                     <div className="breadcrumbs__image-ibg">
-                        <Picture srcWebp={imgWebp} fallbackSrc={img} alt={title} />
+                        <Picture srcWebp={imgWebp} fallbackSrc={img} className="_no-loading" alt={title} />
                     </div>
                 </div>
             )}
