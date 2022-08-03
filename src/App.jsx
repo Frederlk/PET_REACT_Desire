@@ -25,6 +25,7 @@ const App = () => {
         flsFunctions.menuInit();
         flsFunctions.headerScroll();
         flsFunctions.isWebp();
+        // flsFunctions.addTouchClass();
     }, []);
 
     return (

@@ -10,7 +10,7 @@ const Home = () => {
     const homeSlides = data.homeSlides.map(({ title, text, img, imgWebp }, i) => (
         <SwiperSlide key={title + i} className="home__slide">
             <div className="home__column home-image">
-                <Picture srcWebp={imgWebp} alt={title || "Furniture"} fallbackSrc={img} />
+                <Picture srcWebp={imgWebp} alt={title || "Furniture"} noLazy fallbackSrc={img} />
             </div>
             <div className="home__column home-content">
                 <div className="home-content__container">

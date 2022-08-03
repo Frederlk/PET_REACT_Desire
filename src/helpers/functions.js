@@ -150,6 +150,11 @@ export const sortData = (a, b) => {
     return 0;
 };
 
+// Добавление класса _touch для HTML если браузер мобильный
+export function addTouchClass() {
+    if (isMobile.any()) document.documentElement.classList.add("touch");
+}
+
 // Найти вложженный элемент массива
 export const findNested = (obj, key, value) => {
     // Base case

@@ -16,7 +16,7 @@ const Header = () => {
                         />
                     </Link>
                     <nav className="menu__body">
-                        <ul className="menu__list menu__list_left">
+                        <ul className="menu__list">
                             <li className="menu__item">
                                 <NavLink to="/about" className="menu__link">
                                     About
@@ -28,7 +28,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                         </ul>
-                        <ul className="menu__list menu__list_right">
+                        <ul className="menu__list">
                             <li className="menu__item">
                                 <NavLink to="/blog" className="menu__link">
                                     Blog

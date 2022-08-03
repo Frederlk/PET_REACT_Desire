@@ -83,6 +83,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    .lg-on & {
+        @media (any-hover: hover) {
+            margin-right: rem(10);
+        }
+    }
     // Прижимаем footer
     > main {
         flex: 1 1 auto;
@@ -161,7 +166,7 @@ body {
 
 .page {
     transition: padding-top 0.5s ease 0s;
-    @include adaptiveValue("padding-top", 120, 60, 1110, 479.98, 1);
+    @include adaptiveValue("padding-top", 120, 60, 1110, 767.98, 1);
     &__home {
         @include adaptiveValue("margin-bottom", 46, 40, 1110, 479.98, 1);
     }

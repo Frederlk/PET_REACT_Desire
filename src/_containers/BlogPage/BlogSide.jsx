@@ -8,7 +8,7 @@ import dynamicAdaptive from "../../helpers/dynamic_adapt";
 import { sortData } from "../../helpers/functions";
 
 const BlogSide = memo(function BlogSide({ passedState }) {
-    const { article, tag, setTag, category, setCategory, setSearch } = passedState;
+    const { article, tag, setTag, category, setCategory, search, setSearch } = passedState;
 
     useEffect(() => {
         dynamicAdaptive();
@@ -67,8 +67,9 @@ const BlogSide = memo(function BlogSide({ passedState }) {
         <aside className="blog-content__sidebar sidebar">
             <Formik
                 initialValues={{
-                    search: "",
+                    search: search || "",
                 }}
+                enableReinitialize
                 onSubmit={(values) => {
                     setSearch(values.search);
                     values.search = "";
