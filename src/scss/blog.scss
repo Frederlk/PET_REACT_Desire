@@ -1,0 +1,487 @@
+.blog-content {
+    &_post {
+        margin-bottom: rem(40);
+    }
+    &__container {
+        @media (min-width: $tablet) {
+            display: flex;
+            justify-content: space-between;
+            gap: rem(30);
+        }
+    }
+
+    &__fill {
+        @media (min-width: $tablet) {
+            flex: 1 1 auto;
+        }
+        @media (max-width: $tablet) {
+            @include adaptiveValue("margin-bottom", 60, 40, 767.98, 1);
+        }
+    }
+
+    &__sidebar {
+        @media (min-width: $tablet) {
+            flex: 0 0 rem(350);
+        }
+    }
+
+    &__article {
+        @media (min-width: $tablet) {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+.fill {
+    &__item {
+        @include adaptiveValue("margin-bottom", 70, 40, 1110, 767.98, 1);
+        &_post {
+            margin-bottom: 0;
+        }
+    }
+    &__quote {
+        @include adaptiveValue("padding-bottom", 50, 25, 1110, 767.98, 1);
+    }
+
+    &__bottom {
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(12);
+        @extend %link;
+        color: $gray_04;
+        li {
+            cursor: pointer;
+        }
+        .disabled {
+            display: none;
+        }
+        .selected {
+            color: $mainColor;
+        }
+        .prev {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.sidebar {
+    &__categories,
+    &__posts {
+        @include adaptiveValue("margin-bottom", 45, 20, 991.98, 479.98, 1);
+    }
+
+    &__label {
+        @extend %subtitle;
+        @include adaptiveValue("margin-bottom", 20, 15, 991.98, 479.98, 1);
+    }
+
+    &__item {
+        cursor: pointer;
+        display: block;
+        &._active {
+            color: $primary_02;
+        }
+    }
+
+    .sidebar__line {
+        margin: 0px rem(3);
+    }
+
+    &__post,
+    &__item {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 12, 10, 991.98, 479.98, 1);
+        }
+    }
+
+    &__post-text,
+    &__item {
+        @extend %text;
+        @extend %hover_01;
+    }
+
+    &__post-bottom {
+        font-size: rem(14);
+        line-height: math.div(28, 14);
+        color: $gray_05;
+    }
+
+    &__post-name {
+        color: inherit;
+        @extend %hover_01;
+    }
+
+    &__post-name {
+    }
+
+    &__tags {
+        @include adaptiveValue("margin-bottom", 50, 20, 991.98, 479.98, 1);
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__social-item {
+        &::before {
+            @include adaptiveValue("font-size", 16, 20, 767.98, 479.98, 1);
+            transition: color 0.3s ease 0s;
+            color: $gray_02;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+.sidebar-form {
+    position: relative;
+    @include adaptiveValue("margin-bottom", 45, 20, 991.98, 479.98, 1);
+    &__input {
+        padding-right: rem(45);
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        right: rem(-10);
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        font-size: rem(17);
+        padding: rem(10);
+    }
+}
+
+//========================================================================================================================================================
+
+.blog-article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: rem(40);
+    &__image-ibg {
+        display: flex;
+        @include adaptiveValue("margin-bottom", 20, 10, 991.98, 479.98, 1);
+        padding-bottom: 56.6%;
+        &._link {
+            overflow: hidden;
+            img {
+                transition: transform 0.3s ease 0s;
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &__post-quote {
+        @include adaptiveValue("margin-bottom", 40, 20, 991.98, 479.98, 1);
+    }
+
+    &__links {
+        flex: 1 1 auto;
+        margin-bottom: rem(5);
+        @extend %link;
+        color: $gray_04;
+    }
+
+    &__date {
+    }
+
+    &__line {
+        padding: 0px rem(5);
+    }
+
+    &__category {
+        color: inherit;
+        @extend %hover_01;
+    }
+
+    &__label {
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+        @extend %label;
+        &._link {
+            transition: color 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $gray_04;
+                }
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+        &_post-text {
+            @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+        }
+    }
+
+    &__page {
+        @include adaptiveValue("margin-bottom", 60, 40, 991.98, 479.98, 1);
+        p {
+            @extend %text;
+            padding-bottom: rem(10);
+        }
+        div {
+            @media (max-width: $mobileSmall) {
+                text-align: center;
+            }
+            @include adaptiveValue("padding-top", 40, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-bottom", 30, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-right", 40, 15, 991.98, 479.98, 1);
+            @include adaptiveValue("padding-left", 40, 15, 991.98, 479.98, 1);
+            q {
+                @extend %quote;
+                display: block;
+                position: relative;
+                width: 100%;
+                padding-bottom: rem(23);
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    content: "";
+                    @extend %line;
+                    width: rem(177);
+                    @include adaptiveValue("width", 177, 50, 767.98, 479.98, 1);
+                    @media (max-width: $mobileSmall) {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0px);
+                    }
+                }
+            }
+            span {
+                @extend %subtitle;
+                margin-top: rem(23);
+                display: block;
+            }
+        }
+        img {
+            max-width: 100%;
+            @include adaptiveValue("padding-top", 30, 15, 991.98, 479.98, 1);
+            &:not(:last-child) {
+                @include adaptiveValue("padding-bottom", 30, 15, 991.98, 479.98, 1);
+            }
+        }
+    }
+
+    &__bottom {
+    }
+}
+
+.bottom-article {
+    @include adaptiveValue("margin-top", 30, 20, 991.98, 479.98, 1);
+    @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+    position: relative;
+    @include adaptiveValue("min-height", 130, 60, 991.98, 479.98, 1);
+    border-top: rem(1) solid $light_01;
+    border-bottom: rem(1) solid $light_01;
+    padding: rem(10) 0px;
+    @media (min-width: $mobileSmall) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__item {
+        flex: 0 1 rem(280);
+        @extend %link;
+        @extend %hover_01;
+        color: $gray_04;
+        display: flex;
+        @include adaptiveValue("gap", 20, 10, 767.98, 479.98, 1);
+        align-items: center;
+        &::after,
+        &::before {
+            @include adaptiveValue("font-size", 23, 18, 767.98, 479.98, 1);
+        }
+        &_prev {
+        }
+        &_next {
+            justify-content: flex-end;
+            text-align: right;
+        }
+        @media (max-width: $mobileSmall) {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.article-comments {
+    &__title {
+        @extend %subtitle_md;
+        margin-bottom: rem(20);
+    }
+
+    &__items {
+        margin-bottom: rem(40);
+    }
+
+    &__item {
+        margin-bottom: rem(20);
+        .article-comments__replied & {
+            @media (min-width: $mobileSmall) {
+                padding-left: rem(80);
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: rem(15);
+        margin-bottom: rem(-4);
+        @media (max-width: $mobileSmall) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__avatar-ibg {
+        flex: 0 0 rem(64);
+        height: rem(64);
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+        }
+        @media (max-width: $mobileSmall) {
+            height: rem(48);
+            flex: 0 0 rem(48);
+        }
+        .article-comments__replied & {
+            height: rem(48);
+            flex: 0 0 rem(48);
+        }
+    }
+
+    &__info {
+        flex: 1 1 auto;
+    }
+
+    &__name {
+        @extend %subtitle;
+    }
+
+    &__date {
+        font-size: rem(14);
+        line-height: math.div(28, 14);
+        color: $gray_05;
+    }
+
+    &__reply {
+        @extend %link;
+        text-align: right;
+        color: $gray_04;
+        @extend %hover_01;
+    }
+
+    &__text {
+        @extend %text;
+        @media (min-width: $mobileSmall) {
+            padding-left: rem(80);
+        }
+        .article-comments__replied & {
+            @media (min-width: $mobileSmall) {
+                padding-left: rem(63);
+            }
+        }
+        span {
+            font-weight: 600;
+            margin-right: rem(3);
+        }
+    }
+
+    &__leave {
+        @extend %text;
+        &:not(:last-child) {
+            margin-bottom: rem(40);
+        }
+    }
+}
+
+.form-comments {
+    @include adaptiveValue("margin-bottom", 60, 20, 991.98, 479.98, 1);
+
+    &__title {
+        @extend %subtitle;
+        @include adaptiveValue("margin-bottom", 25, 20, 991.98, 479.98, 1);
+    }
+
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: rem(10);
+        @include adaptiveValue("margin-bottom", 20, 15, 991.98, 479.98, 1);
+    }
+
+    &__wrap-textarea {
+        position: relative;
+        flex: 1 1 100%;
+    }
+
+    &__input,
+    &__textarea {
+        &._error {
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        flex: 0 1 calc(50% - rem(5));
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__checkbox {
+        display: block;
+        @include adaptiveValue("margin-bottom", 20, 15, 991.98, 479.98, 1);
+        @media (max-width: $mobileSmall) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__btn {
+        min-width: rem(160);
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+
+    .input__error {
+    }
+}

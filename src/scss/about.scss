@@ -1,0 +1,327 @@
+.page {
+    &__about-info {
+        @include adaptiveValue("margin-bottom", 90, 40);
+    }
+
+    &__about-video {
+        @include adaptiveValue("margin-bottom", 100, 40);
+    }
+
+    &__about-brands {
+        @include adaptiveValue("margin-bottom", 60, 40);
+    }
+
+    &__about-details {
+        margin-bottom: rem(10);
+    }
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.about-info {
+    &__container {
+    }
+
+    &__title {
+        @extend %title;
+        line-height: math.div(60, 36);
+        position: relative;
+        @include adaptiveValue("padding-bottom", 20, 10, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 15, 1110, 767.98, 1);
+        &::after {
+            content: "";
+            @extend %line;
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__text {
+        @extend %text;
+        flex: 0 1 rem(825);
+        @media (max-width: $pc) {
+            flex: 1 1 100%;
+        }
+        p {
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 20, 10, 1110, 767.98, 1);
+            }
+        }
+    }
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.about-video {
+    position: relative;
+    cursor: pointer;
+    @media (any-hover: hover) {
+        &:hover {
+            .about-video__button {
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+    &__video-row {
+        @include adaptiveValue("min-height", 420, 250, 991.98, 479.98, 1);
+        background-color: $black;
+        @extend %responsiveVideo;
+        video {
+            @media (max-width: $mobileSmall) {
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__cover-ibg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+        pointer-events: none;
+        &._playing {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &._pause {
+            opacity: 1;
+            visibility: visible;
+        }
+        img {
+            object-position: 0 80%;
+        }
+    }
+
+    &__button {
+        border-radius: 50%;
+        background: rgba(54, 56, 56, 0.4);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 3;
+        @include adaptiveValue("width", 80, 60, 991.98, 479.98, 1);
+        @include adaptiveValue("height", 80, 60, 991.98, 479.98, 1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        transition: background-color 0.3s ease 0s, visibility 0.3s ease 0s, opacity 0.3s ease 0s;
+        &._playing {
+            visibility: hidden;
+            opacity: 0;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+                background-color: rgba(54, 56, 56, 0.8);
+            }
+        }
+        img {
+            transform: translate(rem(3), rem(2));
+        }
+    }
+
+    &__pause {
+        display: flex;
+        align-items: center;
+        gap: rem(6);
+    }
+
+    &__line {
+        width: rem(10);
+        height: rem(40);
+        background-color: $white;
+        position: relative;
+    }
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.about-brands {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("margin-bottom", 60, 30, 1110, 767.98, 1);
+    @include adaptiveValue("margin-left", 19, 10, 1110, 767.98, 1);
+    @include adaptiveValue("margin-right", 19, 10, 1110, 767.98, 1);
+
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__image {
+        @include adaptiveValue("padding-left", 34, 5, 1110, 767.98, 1);
+        @include adaptiveValue("padding-right", 34, 5, 1110, 767.98, 1);
+        flex: 0 1 20%;
+        @media (max-width: $mobile) {
+            flex: 0 1 33.333%;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.about-details {
+    &__top {
+    }
+
+    &__bottom {
+    }
+}
+
+.top-details {
+    &__container {
+        @media (min-width: $pc) {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__body {
+        @media (min-width: $pc) {
+            flex: 0 1 rem(825);
+        }
+    }
+
+    &__title {
+        @extend %title;
+        line-height: math.div(60, 36);
+        position: relative;
+        @include adaptiveValue("padding-bottom", 15, 10, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 15, 1110, 767.98, 1);
+        &::after {
+            content: "";
+            @extend %line;
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+        @include adaptiveValue("margin-bottom", 30, 20, 1110, 767.98, 1);
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+}
+
+.bottom-details {
+    position: relative;
+    &__container {
+        @media (min-width: $pc) {
+            overflow: visible;
+            display: flex;
+            justify-content: space-between;
+        }
+        position: relative;
+        z-index: 2;
+    }
+
+    &__image {
+        @include adaptiveValue("margin-top", -135, 40, 1600, 1140, 1);
+        @include adaptiveValue("margin-left", -225, 0, 1600, 1140, 1);
+        @include adaptiveValue("margin-right", 77, 20, 1600, 1140, 1);
+        flex: 0 1 rem(432);
+        @media (max-width: $pc) {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__progress {
+    }
+
+    &__bg-ibg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.about-progress {
+    @include adaptiveValue("padding-bottom", 75, 20, 1110, 479.98, 1);
+    @include adaptiveValue("padding-top", 75, 20, 1110, 479.98, 1);
+    @media (min-width: $pc) {
+        flex: 0 0 rem(825);
+    }
+
+    &__item {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 30, 15, 1110, 479.98, 1);
+        }
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptiveValue("margin-bottom", 15, 10, 1110, 479.98, 1);
+    }
+
+    &__title {
+        @extend %subtitle;
+    }
+
+    &__percents {
+        flex: 0 0 rem(50);
+        text-align: right;
+        @extend %subtitle;
+    }
+
+    &__bottom {
+        background-color: $white;
+        width: 100%;
+        border-radius: rem(4);
+        overflow: hidden;
+        height: rem(2);
+        position: relative;
+    }
+
+    &__bar {
+        position: absolute;
+        transition: width 0.8s ease-out 0s;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $mainColor;
+    }
+}

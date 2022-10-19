@@ -1,0 +1,412 @@
+.home {
+    &__body {
+        position: relative;
+    }
+    &__mainslider {
+        position: relative;
+        z-index: 2;
+        overflow: visible;
+    }
+
+    &__slide {
+        @media (min-width: $mobile) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__column {
+        @media (max-width: $tablet) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__pagination {
+        @include adaptiveValue("padding-top", 85, 20, 991.98, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 85, 20, 991.98, 479.98, 1);
+    }
+
+    &__bg-ibg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+//========================================================================================================================================================
+
+.home-image {
+    position: relative;
+    @include adaptiveValue("margin-bottom", -90, 0, 1110, 767.98, 1);
+    @media (min-width: $tablet) {
+        flex: 0 1 rem(772);
+        @include adaptiveValue("margin-left", 170, 0, 1920, 991.98, 1);
+    }
+    @media (max-width: $tablet) {
+        padding-left: rem(15);
+    }
+    @media (max-width: $mobile) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: rem(20);
+    }
+    img {
+        max-width: 100%;
+        @include adaptiveValue("max-height", 815, 250, 1110, 479.98, 1);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 65%;
+        height: 89%;
+        top: 10%;
+        left: 21%;
+        background-color: $primary_02;
+    }
+}
+
+//========================================================================================================================================================
+
+.home-content {
+    @media (min-width: $tablet) {
+        flex: 1 1 auto;
+    }
+    &__container {
+        display: flex;
+    }
+    &__body {
+        flex: 0 1 rem(635);
+        @include adaptiveValue("padding-top", 60, 20, 991.98, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 60, 20, 991.98, 479.98, 1);
+        @media (max-width: $mobile) {
+            text-align: center;
+            flex: 1 1 100%;
+        }
+    }
+
+    &__title {
+        font-family: "Montserrat";
+        font-weight: 700;
+        @include adaptiveValue("font-size", 110, 40, 1440, 479.98, 1);
+        line-height: math.div(134, 110);
+        color: $mainColor;
+        position: relative;
+        @include adaptiveValue("padding-bottom", 25, 15, 991.98, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 15, 991.98, 479.98, 1);
+        &::after {
+            content: "";
+            @extend %line;
+            width: rem(185);
+        }
+        @media (max-width: $mobile) {
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+    }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.collection {
+    &__top {
+        @include adaptiveValue("margin-bottom", 50, 40, 1110, 767.98, 1);
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        @include adaptiveValue("gap", 28, 20, 1110, 991.98, 1);
+        @include adaptiveValue("margin-right", 28, 20, 1110, 991.98, 1);
+        @include adaptiveValue("margin-left", 28, 20, 1110, 991.98, 1);
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr;
+        }
+        @include adaptiveValue("margin-bottom", 104, 40, 1110, 767.98, 1);
+    }
+
+    &__bottom {
+    }
+}
+
+//========================================================================================================================================================
+
+.top-collection {
+    &__container {
+        text-align: center;
+    }
+
+    &__title {
+        @extend %title;
+        position: relative;
+        @include adaptiveValue("padding-bottom", 25, 20, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 25, 20, 1110, 767.98, 1);
+        &::after {
+            content: "";
+            @extend %line;
+            @include adaptiveValue("width", 250, 100, 1110, 767.98, 1);
+            left: 50%;
+            transform: translate(-50%, 0px);
+        }
+    }
+
+    &__text {
+        @extend %text;
+        @media (min-width: $mobile) {
+            max-width: rem(730);
+            margin: 0px auto;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.bottom-collection {
+    @include adaptiveValue("padding-top", 172, 60, 1110, 767.98, 1);
+    @include adaptiveValue("padding-bottom", 172, 60, 1110, 767.98, 1);
+    position: relative;
+    z-index: 2;
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__content {
+    }
+
+    &__title {
+        font-family: "Montserrat";
+        font-weight: 700;
+        @include adaptiveValue("font-size", 60, 30, 1110, 767.98, 1);
+        line-height: math.div(80, 60);
+        color: $mainColor;
+        @include adaptiveValue("padding-bottom", 22, 15, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 22, 15, 1110, 767.98, 1);
+        position: relative;
+        &::after {
+            content: "";
+            @extend %line;
+            @include adaptiveValue("width", 200, 50, 1110, 767.98, 1);
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            &::after {
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+        }
+    }
+
+    &__text {
+        @extend %text;
+        max-width: rem(540);
+        @media (max-width: $mobile) {
+            max-width: none;
+            text-align: center;
+        }
+    }
+
+    &__image-ibg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: hsla(0, 0%, 100%, 0.8);
+        }
+    }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.how {
+    &__container {
+        @media (max-width: $mobile) {
+            overflow: hidden;
+        }
+        overflow: auto;
+    }
+
+    &__title {
+        @extend %title;
+        text-align: center;
+        @include adaptiveValue("margin-bottom", 40, 30, 991.98, 479.98, 1);
+    }
+
+    &__row-top {
+        display: flex;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            margin: 0px rem(-15);
+            &::after {
+                display: none;
+            }
+        }
+        @media (max-width: em(560)) {
+            margin: 0;
+        }
+    }
+
+    &__row-bottom {
+        display: flex;
+        .how__column {
+            padding-bottom: 0;
+            @include adaptiveValue("padding-top", 40, 25, 1110, 767.98, 1);
+            &::after {
+                display: none;
+            }
+        }
+        .how__body {
+            &::after {
+                top: 0;
+            }
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__column {
+        flex: 0 1 25%;
+        @include adaptiveValue("padding-bottom", 40, 20, 1110, 560, 1);
+        position: relative;
+        @media (max-width: em(860)) {
+            flex: 0 0 rem(245);
+        }
+        @media (max-width: $mobile) {
+            flex: 0 1 50%;
+            padding-bottom: rem(30);
+            &::after {
+                display: none;
+            }
+        }
+        @media (max-width: em(560)) {
+            flex: 1 1 100%;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+        &:first-child {
+            .how__body {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: rem(10);
+                    height: rem(10);
+                    border-radius: 50%;
+                    background-color: $mainColor;
+                    bottom: rem(-4);
+                    left: rem(-4);
+                }
+            }
+        }
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            bottom: 0;
+            left: 0;
+            background-color: rgba(55, 57, 57, 0.7);
+        }
+    }
+
+    &__body {
+        @include adaptiveValue("padding-right", 30, 5, 1110, 991.98, 1);
+        &::after {
+            content: "";
+            position: absolute;
+            width: rem(2);
+            height: rem(20);
+            bottom: 0;
+            left: 0;
+            background-color: $mainColor;
+        }
+        @media (max-width: $mobile) {
+            padding: 0px rem(15);
+            text-align: center;
+            &::after {
+                display: none;
+            }
+        }
+        @media (max-width: em(560)) {
+            padding: 0;
+        }
+    }
+
+    &__top {
+        @extend %subtitle;
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("margin-bottom", 15, 10, 1110, 767.98, 1);
+        &::before {
+            font-size: rem(34);
+            margin-right: rem(10);
+        }
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__text {
+        @extend %text;
+    }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.ideas {
+    &__container {
+    }
+
+    &__title {
+        @extend %title;
+        text-align: center;
+        max-width: rem(430);
+        margin: 0 auto;
+        @include adaptiveValue("margin-bottom", 30, 20, 991.98, 479.98, 1);
+    }
+
+    &__row {
+        @media (min-width: $mobile) {
+            gap: rem(30);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__body {
+    }
+}

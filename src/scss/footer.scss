@@ -1,0 +1,158 @@
+.footer {
+    background-color: $light_01;
+    &__container {
+        @include adaptiveValue("padding-top", 60, 30, 1110, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 80, 40, 1110, 767.98, 1);
+        @media (min-width: $mobile) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            @include adaptiveValue("gap", 100, 40, 1110, 991.98, 1);
+        }
+    }
+
+    &__column {
+        @media (max-width: $mobile) {
+            &:not(:last-child) {
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: $mainColor;
+        padding: 0px rem(15);
+        @include adaptiveValue("padding-bottom", 40, 20, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 40, 20, 1110, 767.98, 1);
+        text-align: center;
+    }
+
+    &__adress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $gray_05;
+        font-size: rem(16);
+        line-height: math.div(28, 16);
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+.info-footer {
+    flex: 0 1 rem(640);
+    @media (max-width: $mobile) {
+        padding: 0;
+        text-align: center;
+    }
+    &__title {
+        @extend %subtitle;
+        @include adaptiveValue("margin-bottom", 15, 10);
+    }
+
+    &__text {
+        @extend %text;
+        @include adaptiveValue("margin-bottom", 15, 10);
+        @media (min-width: $mobile) {
+            @include adaptiveValue("padding-right", 60, 0);
+        }
+    }
+
+    &__mail {
+        @extend %link;
+        display: flex;
+        align-items: center;
+        transition: opacity 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+        &::before {
+            margin-right: rem(12);
+        }
+    }
+
+    &__form {
+        @include adaptiveValue("margin-top", 22, 10);
+        @media (min-width: $mobileSmall) {
+            display: flex;
+            position: relative;
+        }
+        .input__error {
+            color: red;
+            margin-top: rem(10);
+            text-align: left;
+            @media (max-width: $mobileSmall) {
+                position: relative !important;
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__input {
+        @media (min-width: $mobileSmall) {
+            margin-right: rem(10);
+        }
+        @media (max-width: $mobileSmall) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__btn {
+        @media (min-width: $mobile) {
+            @include adaptiveValue("min-width", 160, 100, 1110, 767.98, 1);
+        }
+        @media (max-width: $mobile) {
+            min-width: rem(160);
+        }
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+}
+.links-footer {
+    display: flex;
+    @include adaptiveValue("gap", 30, 20, 479.98, 320, 1);
+    justify-content: space-between;
+    &__list {
+        flex: 0 1 50%;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        @extend %link;
+        color: $gray_04;
+        transition: color 0.3s ease 0s;
+        gap: rem(14);
+        &::before {
+            color: inherit;
+            font-size: rem(16);
+            flex: 0 0 rem(18);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+        &._icon-youtube {
+            &::before {
+                font-size: rem(12);
+            }
+        }
+    }
+}

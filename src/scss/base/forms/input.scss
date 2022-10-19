@@ -1,0 +1,51 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(40);
+    padding: 0px rem(18);
+    border: rem(1) solid $light_01;
+    border-radius: rem(20);
+    color: $gray_05;
+    font-size: rem(16);
+    line-height: math.div(28, 16);
+    background: transparent;
+    transition: border 0.3s ease 0s, color 0.3s ease 0s;
+    &:focus {
+        border: rem(1) solid $mainColor;
+        color: $mainColor;
+    }
+    &._error {
+        border: rem(1) solid red;
+        color: red;
+    }
+    &_footer {
+        border: rem(1) solid $mainColor;
+    }
+}
+textarea.input {
+    resize: none;
+    min-height: rem(125);
+    padding: rem(14) rem(18);
+    border-radius: rem(24);
+    @media (max-width: $mobile) {
+        padding: rem(7) rem(18);
+    }
+}
+
+.input__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    margin-top: rem(-10);
+}
